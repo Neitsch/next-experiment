@@ -1,0 +1,46 @@
+{
+  "name": "next-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server/index.ts",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "start": "NODE_ENV=production node .next/production-server/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@types/next": "^6.0.0",
+    "@types/react": "^16.3.17",
+    "@zeit/next-typescript": "^1.0.1",
+    "apollo-cache-inmemory": "^1.2.4",
+    "apollo-client": "^2.3.4",
+    "apollo-link-http": "^1.5.4",
+    "babel-loader": "^7.1.4",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "husky": "^1.0.0-rc.9",
+    "isomorphic-unfetch": "^2.0.0",
+    "jest": "^23.1.0",
+    "jest-runner-prettier": "^0.2.6",
+    "jest-runner-tslint": "^1.0.5",
+    "next": "^6.0.3",
+    "prettier": "^1.13.5",
+    "react": "^16.4.1",
+    "react-apollo": "^2.1.5",
+    "react-dom": "^16.4.1",
+    "tslint-config-airbnb": "^5.9.2",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5",
+    "ts-node": "^6.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  }
+}
