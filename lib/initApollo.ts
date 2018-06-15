@@ -22,6 +22,10 @@ function create(initialState) {
   });
 }
 
+export const resetClient = () => {
+  apolloClient = null;
+};
+
 export default function initApollo(initialState) {
   if (!process.browser) {
     return create(initialState);
@@ -29,6 +33,5 @@ export default function initApollo(initialState) {
   if (!apolloClient) {
     apolloClient = create(initialState);
   }
-
   return apolloClient;
 }

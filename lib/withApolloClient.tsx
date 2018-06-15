@@ -31,7 +31,7 @@ export default App => {
         );
       } catch (error) {
         /* tslint:disable-next-line */
-        console.error("Error while running `getDataFromTree`", error);
+        // console.warn("Error while running `getDataFromTree`", error);
       }
 
       if (!process.browser) {
