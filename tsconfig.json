@@ -5,7 +5,7 @@
     "module": "esnext",
     "jsx": "react",
     "allowJs": false,
-    "moduleResolution": "node",
+    "moduleResolution": "classic",
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
