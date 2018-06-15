@@ -1,7 +1,39 @@
 module.exports = {
+    collectCoverage: true,
+    collectCoverageFrom: [
+      '<rootDir>/{server,lib,pages}/**/*.?(!d.){ts,tsx}',
+    ],
+    coverageThreshold: {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    globals: {
+      "ts-jest": {
+        useBabelrc: true,
+        enableTsDiagnostics: true
+      }
+    },
     projects: [
       {
-        displayName: 'test'
+        snapshotSerializers: ["enzyme-to-json/serializer"],
+        setupTestFrameworkScriptFile: "<rootDir>lib/setupTests.js",
+        displayName: 'test',
+        transform: {
+          "^.+\\.tsx?$": "ts-jest"
+        },
+        testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        moduleFileExtensions: [
+          "ts",
+          "tsx",
+          "js",
+          "jsx",
+          "json",
+          "node"
+        ]
       },
       {
         runner: 'jest-runner-tslint',

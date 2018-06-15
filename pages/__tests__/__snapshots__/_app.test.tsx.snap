@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App page renders 1`] = `
+<Container>
+  <ApolloProvider
+    client={Object {}}
+  >
+    <Component />
+  </ApolloProvider>
+</Container>
+`;

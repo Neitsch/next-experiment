@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "jsx": "preserve",
+    "jsx": "react",
     "allowJs": false,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "typeRoots": [
       "./node_modules/@types",
-      "./lib"
+      "./typeDefs"
     ],
     "lib": [
       "dom",

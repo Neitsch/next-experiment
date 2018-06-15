@@ -6,7 +6,10 @@ import { ApolloProvider } from "react-apollo";
 
 import withApolloClient from "../lib/withApolloClient";
 
-class MyApp extends App<{ apolloClient: ApolloClient<any> }> {
+class MyApp extends App<{
+  apolloClient: ApolloClient<any>;
+  Component: React.Factory<any>;
+}> {
   public render() {
     const { Component, pageProps, apolloClient } = this.props;
     return (
