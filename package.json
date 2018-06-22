@@ -7,7 +7,11 @@
     "dev": "nodemon server/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .next/production-server/index.js",
-    "test": "jest --silent --ci"
+    "test": "jest --silent --ci",
+    "pretest": "yarn format",
+    "format": "prettier --write '**/*.{js,css,md}'",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.51",
@@ -43,6 +47,7 @@
   },
   "devDependencies": {
     "nodemon": "^1.17.5",
+    "react-styleguidist": "^7.0.17",
     "ts-node": "^6.1.1"
   },
   "husky": {
