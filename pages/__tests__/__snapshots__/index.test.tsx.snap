@@ -1,7 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index page renders 1`] = `
-<div>
-  Welcome to next.js, Nigel!
-</div>
+exports[`Index page renders auth Data 1`] = `
+<Index
+  isAuthenticated={true}
+>
+  <MyMock>
+    <span>
+      Hi!
+    </span>
+  </MyMock>
+</Index>
+`;
+
+exports[`Index page renders auth Error 1`] = `
+<Index
+  isAuthenticated={true}
+>
+  <MyMock>
+    <div>
+      Error :(
+    </div>
+  </MyMock>
+</Index>
+`;
+
+exports[`Index page renders auth Loading 1`] = `
+<Index
+  isAuthenticated={true}
+>
+  <MyMock>
+    <div>
+      Loading...
+    </div>
+  </MyMock>
+</Index>
+`;
+
+exports[`Index page renders unauth 1`] = `
+<Link
+  href="/auth/sign-in"
+  prefetch={true}
+>
+  <a>
+    Sign In
+  </a>
+</Link>
 `;

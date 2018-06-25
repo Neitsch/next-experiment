@@ -1,20 +1,6 @@
 import { shallow } from "enzyme";
 import React from "react";
 
-import withApolloClient from "../withApolloClient";
-
-jest.mock("apollo-client", () => ({
-  ApolloClient: ({ children }) => children,
-}));
-jest.mock("../initApollo", () => data => ({
-  cache: {
-    extract: () => ({}),
-  },
-}));
-jest.mock("next/head", () => ({
-  rewind: jest.fn(),
-}));
-
 /* tslint:disable */
 class TestClassWithInit extends React.Component {
   public static async getInitialProps(ctx) {
@@ -34,12 +20,34 @@ class TestClass extends React.Component {
 /* tslint:enable */
 
 describe("SSR", () => {
+  beforeEach(() => {
+    jest.doMock("apollo-client", () => ({
+      ApolloClient: ({ children }) => children,
+    }));
+    jest.doMock("../initApollo", () => data => ({
+      cache: {
+        extract: () => ({}),
+      },
+    }));
+    jest.doMock("next/head", () => ({
+      rewind: jest.fn(),
+    }));
+    jest.doMock("../auth/index", () => ({
+      getLocalCookie: () => "Cooookies",
+      getServerCookie: a => a,
+    }));
+  });
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.resetModules();
+  });
   it("Renders", async () => {
     jest.doMock("react-apollo", () => ({
       getDataFromTree: async () => <div />,
     }));
+    const withApolloClient = require("../withApolloClient").default;
     const App = withApolloClient(TestClassWithInit);
-    await App.getInitialProps({});
+    await App.getInitialProps({ ctx: { req: {} } });
     const rendered = shallow(<App apolloState={{ data: {} }} />);
     expect(rendered).toMatchSnapshot();
   });
@@ -51,8 +59,9 @@ describe("SSR", () => {
         throw Error();
       },
     }));
+    const withApolloClient = require("../withApolloClient").default;
     const App = withApolloClient(TestClass);
-    await App.getInitialProps({});
+    await App.getInitialProps({ ctx: { req: {} } });
     const rendered = shallow(<App apolloState={{ data: {} }} />);
     expect(rendered).toMatchSnapshot();
   });

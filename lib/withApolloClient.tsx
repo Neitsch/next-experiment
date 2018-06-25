@@ -4,6 +4,7 @@ import Head from "next/head";
 import React from "react";
 import { getDataFromTree } from "react-apollo";
 
+import { getLocalCookie, getServerCookie } from "./auth/index";
 import initApollo from "./initApollo";
 
 export default App => {
@@ -11,6 +12,9 @@ export default App => {
     public static displayName = "withApollo(App)";
     public static async getInitialProps(ctx) {
       const { Component, router } = ctx;
+      const jwt = process.browser
+        ? getLocalCookie()
+        : getServerCookie(ctx.ctx.req);
       let appProps = {};
       if (App.getInitialProps) {
         appProps = await App.getInitialProps(ctx);
@@ -18,7 +22,7 @@ export default App => {
       const apolloState = {
         data: {},
       };
-      const apollo = initApollo({});
+      const apollo = initApollo({}, jwt);
       try {
         await getDataFromTree(
           <App
@@ -31,7 +35,7 @@ export default App => {
         );
       } catch (error) {
         /* tslint:disable-next-line */
-        // console.warn("Error while running `getDataFromTree`", error);
+        console.warn("Error while running `getDataFromTree`", error);
       }
 
       if (!process.browser) {

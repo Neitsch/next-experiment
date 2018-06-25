@@ -1,6 +1,8 @@
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { ApolloClient } from "apollo-client";
+import { setContext } from "apollo-link-context";
 import { HttpLink } from "apollo-link-http";
+import { createPersistedQueryLink } from "apollo-link-persisted-queries";
 import isomorphicUnfetch from "isomorphic-unfetch";
 
 let apolloClient = null;
@@ -10,14 +12,26 @@ let apolloClient = null;
 //   global.fetch = fetch
 // }
 
-function create(initialState) {
+export const setAuthorizationLink = jwt =>
+  setContext(() => ({
+    headers: {
+      authorization: "Bearer " + jwt,
+    },
+  }));
+
+function create(initialState, jwt) {
   return new ApolloClient({
     cache: new InMemoryCache().restore(initialState || {}),
     connectToDevTools: !!process.browser,
-    link: new HttpLink({
-      credentials: "same-origin",
-      fetch: isomorphicUnfetch,
-    }),
+    link: setAuthorizationLink(jwt).concat(
+      createPersistedQueryLink().concat(
+        new HttpLink({
+          credentials: "same-origin",
+          fetch: isomorphicUnfetch,
+          uri: "http://localhost:3000/graphql",
+        }),
+      ),
+    ),
     ssrMode: !process.browser,
   });
 }
@@ -26,12 +40,12 @@ export const resetClient = () => {
   apolloClient = null;
 };
 
-export default function initApollo(initialState) {
+export default function initApollo(initialState, jwt) {
   if (!process.browser) {
-    return create(initialState);
+    return create(initialState, jwt);
   }
   if (!apolloClient) {
-    apolloClient = create(initialState);
+    apolloClient = create(initialState, jwt);
   }
   return apolloClient;
 }

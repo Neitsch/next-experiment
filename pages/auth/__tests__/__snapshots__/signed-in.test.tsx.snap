@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signed In fails without token 1`] = `""`;
+
+exports[`Signed In works 1`] = `""`;

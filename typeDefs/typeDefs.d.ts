@@ -5,4 +5,6 @@ declare namespace NodeJS {
     browser: boolean;
   }
 }
+
+declare module "jwks-rsa";
 /* tslint:enable */

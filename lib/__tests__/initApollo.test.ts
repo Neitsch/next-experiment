@@ -1,4 +1,4 @@
-import InitApollo, { resetClient } from "../initApollo";
+import InitApollo, { resetClient, setAuthorizationLink } from "../initApollo";
 
 describe("Init Apollo", () => {
   beforeEach(() => {
@@ -45,5 +45,16 @@ describe("Init Apollo", () => {
       const apollo2 = InitApollo({});
       expect(Object.is(apollo1, apollo2)).toBe(true);
     });
+  });
+
+  it("Auth link", () => {
+    jest.resetAllMocks();
+    jest.resetModules();
+    const setContext = jest.fn();
+    jest.doMock("apollo-link-context", () => ({
+      setContext,
+    }));
+    require("../initApollo").setAuthorizationLink("My jwt");
+    expect(setContext.mock.calls[0][0]()).toMatchSnapshot();
   });
 });
