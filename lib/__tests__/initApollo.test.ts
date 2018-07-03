@@ -1,4 +1,4 @@
-import InitApollo, { resetClient, setAuthorizationLink } from "../initApollo";
+import InitApollo, { resetClient } from "../initApollo";
 
 describe("Init Apollo", () => {
   beforeEach(() => {
