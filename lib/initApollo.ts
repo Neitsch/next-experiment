@@ -7,11 +7,6 @@ import isomorphicUnfetch from "isomorphic-unfetch";
 
 let apolloClient = null;
 
-// Polyfill fetch() on the server (used by apollo-client)
-// if (!process.browser) {
-//   global.fetch = fetch
-// }
-
 export const setAuthorizationLink = jwt =>
   setContext(() => ({
     headers: {

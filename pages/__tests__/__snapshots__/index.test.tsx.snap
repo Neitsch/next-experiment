@@ -23,7 +23,7 @@ exports[`Index page renders auth Data 1`] = `
         >
           <WithStyles(Paper)
             className="MuiCard-root-1"
-            elevation={2}
+            elevation={1}
           >
             <Paper
               className="MuiCard-root-1"
@@ -59,11 +59,11 @@ exports[`Index page renders auth Data 1`] = `
                 }
               }
               component="div"
-              elevation={2}
+              elevation={1}
               square={false}
             >
               <div
-                className="MuiPaper-root-2 MuiPaper-elevation2-6 MuiPaper-rounded-3 MuiCard-root-1"
+                className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1"
               >
                 <WithStyles(CardContent)>
                   <CardContent
