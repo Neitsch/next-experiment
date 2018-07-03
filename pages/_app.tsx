@@ -7,14 +7,14 @@ import { ApolloProvider } from "react-apollo";
 import withApolloClient from "../lib/withApolloClient";
 
 class MyApp extends App<{
-  apolloClient: ApolloClient<any>;
+  apollo: ApolloClient<any>;
   Component: React.Factory<any>;
 }> {
   public render() {
-    const { Component, pageProps, apolloClient } = this.props;
+    const { Component, pageProps, apollo } = this.props;
     return (
       <Container>
-        <ApolloProvider client={apolloClient}>
+        <ApolloProvider client={apollo}>
           <Component {...pageProps} />
         </ApolloProvider>
       </Container>

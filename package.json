@@ -18,7 +18,7 @@
     "gen:schema": "yarn run gen:schema:graphql && yarn run gen:schema:json && yarn run gen:schema:types"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.42",
     "@material-ui/core": "^1.2.3",
     "@types/body-parser": "^1.17.0",
     "@types/compression": "^0.0.36",
@@ -68,13 +68,13 @@
     "jwks-rsa": "^1.2.1",
     "jwt-decode": "^2.2.0",
     "next": "^6.0.3",
+    "next-with-apollo": "^3.1.1",
     "prettier": "^1.13.5",
     "react": "^16.4.1",
     "react-apollo": "^2.1.6",
     "react-dom": "^16.4.1",
     "react-jss": "^8.5.1",
     "ts-jest": "^22.4.6",
-    "tslint-config-airbnb": "^5.9.2",
     "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.9.2",
     "uuid": "^3.2.1"
@@ -83,7 +83,7 @@
     "babel-plugin-graphql-tag": "^1.6.0",
     "nodemon": "^1.17.5",
     "react-styleguidist": "^7.0.17",
-    "ts-node": "^6.1.1"
+    "ts-node": "^7.0.0"
   },
   "husky": {
     "hooks": {
