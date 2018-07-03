@@ -5,9 +5,88 @@ exports[`Index page renders auth Data 1`] = `
   isAuthenticated={true}
 >
   <MyMock>
-    <span>
-      Hi!
-    </span>
+    <Home
+      data={
+        Object {
+          "user": "Hi!",
+        }
+      }
+    >
+      <WithStyles(Card)>
+        <Card
+          classes={
+            Object {
+              "root": "MuiCard-root-1",
+            }
+          }
+          raised={false}
+        >
+          <WithStyles(Paper)
+            className="MuiCard-root-1"
+            elevation={2}
+          >
+            <Paper
+              className="MuiCard-root-1"
+              classes={
+                Object {
+                  "elevation0": "MuiPaper-elevation0-4",
+                  "elevation1": "MuiPaper-elevation1-5",
+                  "elevation10": "MuiPaper-elevation10-14",
+                  "elevation11": "MuiPaper-elevation11-15",
+                  "elevation12": "MuiPaper-elevation12-16",
+                  "elevation13": "MuiPaper-elevation13-17",
+                  "elevation14": "MuiPaper-elevation14-18",
+                  "elevation15": "MuiPaper-elevation15-19",
+                  "elevation16": "MuiPaper-elevation16-20",
+                  "elevation17": "MuiPaper-elevation17-21",
+                  "elevation18": "MuiPaper-elevation18-22",
+                  "elevation19": "MuiPaper-elevation19-23",
+                  "elevation2": "MuiPaper-elevation2-6",
+                  "elevation20": "MuiPaper-elevation20-24",
+                  "elevation21": "MuiPaper-elevation21-25",
+                  "elevation22": "MuiPaper-elevation22-26",
+                  "elevation23": "MuiPaper-elevation23-27",
+                  "elevation24": "MuiPaper-elevation24-28",
+                  "elevation3": "MuiPaper-elevation3-7",
+                  "elevation4": "MuiPaper-elevation4-8",
+                  "elevation5": "MuiPaper-elevation5-9",
+                  "elevation6": "MuiPaper-elevation6-10",
+                  "elevation7": "MuiPaper-elevation7-11",
+                  "elevation8": "MuiPaper-elevation8-12",
+                  "elevation9": "MuiPaper-elevation9-13",
+                  "root": "MuiPaper-root-2",
+                  "rounded": "MuiPaper-rounded-3",
+                }
+              }
+              component="div"
+              elevation={2}
+              square={false}
+            >
+              <div
+                className="MuiPaper-root-2 MuiPaper-elevation2-6 MuiPaper-rounded-3 MuiCard-root-1"
+              >
+                <WithStyles(CardContent)>
+                  <CardContent
+                    classes={
+                      Object {
+                        "root": "MuiCardContent-root-29",
+                      }
+                    }
+                    component="div"
+                  >
+                    <div
+                      className="MuiCardContent-root-29"
+                    >
+                      Hi!
+                    </div>
+                  </CardContent>
+                </WithStyles(CardContent)>
+              </div>
+            </Paper>
+          </WithStyles(Paper)>
+        </Card>
+      </WithStyles(Card)>
+    </Home>
   </MyMock>
 </Index>
 `;
@@ -18,7 +97,7 @@ exports[`Index page renders auth Error 1`] = `
 >
   <MyMock>
     <div>
-      Error :(
+      Some error
     </div>
   </MyMock>
 </Index>

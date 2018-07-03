@@ -1,15 +1,17 @@
 import gql from "graphql-tag";
-/* tslint:disable-next-line */
 import Link from "next/link";
 import React from "react";
-import { Query } from "react-apollo";
+import { Query, QueryResult } from "react-apollo";
 
+import Home, { HOME_QUERY } from "../components/Home";
 import { getLocalCookie, getServerCookie } from "../lib/auth/index";
+import { HomeQuery } from "../query-types/HomeQuery";
 
 export const GET_USER = gql`
-  query {
-    user
+  query HomeQuery {
+    ...HomeFragment
   }
+  ${HOME_QUERY}
 `;
 
 export default class Index extends React.Component<{
@@ -32,15 +34,14 @@ export default class Index extends React.Component<{
     }
     return (
       <Query query={GET_USER}>
-        {({ loading, error, data }) => {
+        {({ loading, error, data }: QueryResult<HomeQuery>) => {
           if (loading) {
             return <div>Loading...</div>;
           }
           if (error) {
-            return <div>Error :(</div>;
+            return <div>{error.message}</div>;
           }
-
-          return <span>{data.user}</span>;
+          return <Home data={data} />;
         }}
       </Query>
     );

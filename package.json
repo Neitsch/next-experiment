@@ -11,10 +11,15 @@
     "posttest": "yarn format",
     "format": "prettier --loglevel silent --write '{,!(node_modules)/**/}*.{ts,tsx,js,css,md}'",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "gen:schema:graphql": "ts-node --compilerOptions '{\"module\":\"commonjs\"}' typeDefs/printSchema.ts",
+    "gen:schema:json": "apollo-codegen introspect-schema schema.graphql --output schema.json",
+    "gen:schema:types": "apollo-codegen generate '{,!(node_modules)/**/}*.{ts,tsx,js}' --target typescript --output query-types --schema ./schema.json",
+    "gen:schema": "yarn run gen:schema:graphql && yarn run gen:schema:json && yarn run gen:schema:types"
   },
   "dependencies": {
     "@babel/core": "^7.0.0-beta.51",
+    "@material-ui/core": "^1.2.3",
     "@types/body-parser": "^1.17.0",
     "@types/compression": "^0.0.36",
     "@types/cookie-parser": "^1.4.1",
@@ -59,13 +64,15 @@
     "jest-runner-prettier": "^0.2.6",
     "jest-runner-tslint": "^1.0.5",
     "js-cookie": "^2.2.0",
+    "jss": "^9.8.7",
     "jwks-rsa": "^1.2.1",
     "jwt-decode": "^2.2.0",
     "next": "^6.0.3",
     "prettier": "^1.13.5",
     "react": "^16.4.1",
-    "react-apollo": "^2.1.5",
+    "react-apollo": "^2.1.6",
     "react-dom": "^16.4.1",
+    "react-jss": "^8.5.1",
     "ts-jest": "^22.4.6",
     "tslint-config-airbnb": "^5.9.2",
     "tslint-config-prettier": "^1.13.0",
@@ -73,6 +80,7 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
+    "babel-plugin-graphql-tag": "^1.6.0",
     "nodemon": "^1.17.5",
     "react-styleguidist": "^7.0.17",
     "ts-node": "^6.1.1"

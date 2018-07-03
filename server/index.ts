@@ -49,6 +49,9 @@ app
     server.get("*", (req, res) => {
       return handle(req, res);
     });
+    server.use((error, _, res, __) => {
+      res.json({ errors: [{ name: error.name, message: error.message }] });
+    });
     server.listen(port, err => {
       if (err) {
         throw err;

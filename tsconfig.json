@@ -5,7 +5,7 @@
     "module": "esnext",
     "jsx": "react",
     "allowJs": false,
-    "moduleResolution": "classic",
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -14,14 +14,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
-    "typeRoots": [
-      "./node_modules/@types",
-      "./typeDefs"
-    ],
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016"
-    ]
+    "typeRoots": ["./node_modules/@types", "./typeDefs"],
+    "lib": ["dom", "es2015", "es2016"]
   }
 }

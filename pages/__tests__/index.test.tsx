@@ -57,7 +57,11 @@ describe("Index page", () => {
       jest.doMock("graphql-tag");
       jest.doMock("next/link");
       jest.doMock("react-apollo", () => ({
-        Query: ContainerMock({ data: {}, error: {}, loading: false }),
+        Query: ContainerMock({
+          data: {},
+          error: { message: "Some error" },
+          loading: false,
+        }),
       }));
       const Index = require("../index").default;
       expect(mount(<Index isAuthenticated={true} />)).toMatchSnapshot();
