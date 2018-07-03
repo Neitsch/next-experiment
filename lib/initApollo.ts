@@ -1,9 +1,11 @@
-import { InMemoryCache } from "apollo-cache-inmemory";
+import { Hermes } from "apollo-cache-hermes";
+import { persistCache } from "apollo-cache-persist";
 import { ApolloClient } from "apollo-client";
 import { setContext } from "apollo-link-context";
 import { HttpLink } from "apollo-link-http";
 import { createPersistedQueryLink } from "apollo-link-persisted-queries";
 import isomorphicUnfetch from "isomorphic-unfetch";
+import localForage from "localforage";
 
 let apolloClient = null;
 
@@ -14,9 +16,16 @@ export const setAuthorizationLink = jwt =>
     },
   }));
 
-function create(initialState, jwt) {
+function create(jwt) {
+  const cache = new Hermes({});
+  if (process.browser) {
+    persistCache({
+      cache,
+      storage: localForage,
+    });
+  }
   return new ApolloClient({
-    cache: new InMemoryCache().restore(initialState || {}),
+    cache,
     connectToDevTools: !!process.browser,
     link: setAuthorizationLink(jwt).concat(
       createPersistedQueryLink().concat(
@@ -35,12 +44,12 @@ export const resetClient = () => {
   apolloClient = null;
 };
 
-export default function initApollo(initialState, jwt) {
+export default function initApollo(jwt) {
   if (!process.browser) {
-    return create(initialState, jwt);
+    return create(jwt);
   }
   if (!apolloClient) {
-    apolloClient = create(initialState, jwt);
+    apolloClient = create(jwt);
   }
   return apolloClient;
 }

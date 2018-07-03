@@ -5,6 +5,6 @@ import initApollo from "./initApollo";
 
 export default withApollo(req => {
   const jwt = !req.headers ? getLocalCookie() : getServerCookie(req);
-  const client = initApollo({}, jwt);
+  const client = initApollo(jwt);
   return client;
 });
