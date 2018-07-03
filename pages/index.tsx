@@ -7,6 +7,8 @@ import Home, { HOME_QUERY } from "../components/Home";
 import { getLocalCookie, getServerCookie } from "../lib/auth/index";
 import { HomeQuery } from "../query-types/HomeQuery";
 
+import initApollo, { setupLink } from "../lib/initApollo";
+
 export const GET_USER = gql`
   query HomeQuery {
     ...HomeFragment

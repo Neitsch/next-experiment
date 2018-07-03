@@ -7,6 +7,7 @@ import {
   extractInfoFromHash,
   setToken,
 } from "../../lib/auth/index";
+import initApollo, { setupLink } from "../../lib/initApollo";
 
 export default class SignedIn extends React.Component {
   public componentDidMount() {
@@ -17,6 +18,8 @@ export default class SignedIn extends React.Component {
       return;
     }
     setToken(token, access_token);
+    const client = initApollo(token);
+    client.link = setupLink(token);
     Router.router.push("/");
   }
 

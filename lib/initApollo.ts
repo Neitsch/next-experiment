@@ -16,6 +16,17 @@ export const setAuthorizationLink = jwt =>
     },
   }));
 
+export const setupLink = jwt =>
+  setAuthorizationLink(jwt).concat(
+    createPersistedQueryLink().concat(
+      new HttpLink({
+        credentials: "same-origin",
+        fetch: isomorphicUnfetch,
+        uri: "http://localhost:3000/graphql",
+      }),
+    ),
+  );
+
 function create(jwt) {
   const cache = new Hermes({});
   if (process.browser) {
