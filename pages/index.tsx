@@ -1,5 +1,5 @@
 import gql from "graphql-tag";
-import Link from "next/link";
+import { Link } from "../lib/routes";
 import React from "react";
 import { Query, QueryResult } from "react-apollo";
 
@@ -27,7 +27,7 @@ export default class Index extends React.Component<{
   public render() {
     if (!this.props.isAuthenticated) {
       return (
-        <Link prefetch href="/auth/sign-in">
+        <Link prefetch route="sign-in">
           <a>Sign In</a>
         </Link>
       );

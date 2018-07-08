@@ -1,5 +1,5 @@
 /* tslint:disable-next-line */
-import Router from "next/router";
+import { Router } from "../../lib/routes";
 import React from "react";
 
 import {
@@ -20,7 +20,7 @@ export default class SignedIn extends React.Component {
     setToken(token, access_token, parseInt(expires_in));
     const client = initApollo(token);
     client.link = setupLink(token);
-    Router.router.push("/");
+    Router.pushRoute("index");
   }
 
   public render() {

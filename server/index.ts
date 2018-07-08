@@ -3,6 +3,7 @@ import {
   graphiqlExpress,
 } from "apollo-server-express";
 
+import routes from "../lib/routes";
 import {
   bodyParser,
   compression,
@@ -18,7 +19,7 @@ import GraphqlSchema from "./graphql/schema";
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== "production";
 const app = nextServer({ dev });
-const handle = app.getRequestHandler();
+const handle = routes.getRequestHandler(app);
 
 const checkJwt = jwt({
   algorithms: ["RS256"],
