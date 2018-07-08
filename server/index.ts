@@ -1,9 +1,14 @@
 import {
+  graphqlExpress as graphqlHTTP,
+  graphiqlExpress,
+} from "apollo-server-express";
+
+import {
+  bodyParser,
   compression,
   cookieParser,
   cors,
   expressServer,
-  graphqlHTTP,
   jwksRsa,
   jwt,
 } from "../typeDefs/expressShim";
@@ -38,13 +43,25 @@ app
       }),
     );
     server.use(cookieParser());
-    server.use("/graphql", checkJwt, (req, res) =>
-      graphqlHTTP({
-        context: req.user.sub,
-        graphiql: true,
+    server.use(
+      "/graphql",
+      checkJwt,
+      bodyParser.json(),
+      graphqlHTTP(req => ({
+        cacheControl: true,
+        context: {
+          userSub: req.user.sub,
+        },
         rootValue: req.user.sub,
         schema: GraphqlSchema,
-      })(req, res),
+        tracing: dev,
+      })),
+    );
+    server.use(
+      "/graphiql",
+      graphiqlExpress({
+        endpointURL: "/graphql",
+      }),
     );
     server.get("*", (req, res) => {
       return handle(req, res);

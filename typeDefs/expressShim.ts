@@ -1,3 +1,4 @@
+import * as _bodyParser from "body-parser";
 import * as _compression from "compression";
 import * as _cookieParser from "cookie-parser";
 import * as _cors from "cors";
@@ -6,6 +7,7 @@ import * as _graphqlHTTP from "express-graphql";
 import * as _jwt from "express-jwt";
 import * as _jwksRsa from "jwks-rsa";
 
+export const bodyParser = _bodyParser;
 export const compression = _compression;
 export const cookieParser = _cookieParser;
 export const cors = _cors;

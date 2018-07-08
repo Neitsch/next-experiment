@@ -16,17 +16,19 @@ export const extractInfoFromHash = () => {
   if (!process.browser) {
     return undefined;
   }
-  const { id_token, access_token, state } = getQueryParams();
-  return { token: id_token, access_token, secret: state };
+  const { id_token, access_token, state, expires_in } = getQueryParams();
+  return { token: id_token, access_token, secret: state, expires_in };
 };
 
-export const setToken = (token, accessToken) => {
+export const setToken = (token, accessToken, expires_in) => {
   if (!process.browser) {
     return;
   }
-  Cookie.set("user", jwtDecode(token));
-  Cookie.set("jwt", token);
-  Cookie.set("token", accessToken);
+  const expires = new Date();
+  expires.setSeconds(expires.getSeconds() + expires_in);
+  Cookie.set("user", jwtDecode(token), { expires });
+  Cookie.set("jwt", token, { expires });
+  Cookie.set("token", accessToken, { expires });
 };
 
 export const unsetToken = () => {
