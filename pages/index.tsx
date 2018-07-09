@@ -27,7 +27,7 @@ export default class Index extends React.Component<{
   public render() {
     if (!this.props.isAuthenticated) {
       return (
-        <Link prefetch route="sign-in">
+        <Link prefetch route="auth/sign-in">
           <a>Sign In</a>
         </Link>
       );
