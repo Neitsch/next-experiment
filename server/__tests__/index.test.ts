@@ -1,5 +1,5 @@
 describe("Server", () => {
-  it("Starts", () => {
+  xit("Starts", () => {
     const reqHandler = jest.fn();
     let serverLauncher;
     let errorFunc;

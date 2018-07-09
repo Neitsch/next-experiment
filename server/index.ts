@@ -1,9 +1,9 @@
+import { formatError } from "apollo-errors";
 import {
-  graphqlExpress as graphqlHTTP,
   graphiqlExpress,
+  graphqlExpress as graphqlHTTP,
 } from "apollo-server-express";
 import { createComplexityLimitRule } from "graphql-validation-complexity";
-import { formatError } from "apollo-errors";
 
 import routes from "../lib/routes";
 import {
@@ -61,9 +61,9 @@ app
         tracing: dev,
         validationRules: [
           createComplexityLimitRule(1000, {
-            scalarCost: 1,
-            objectCost: 1,
             listFactor: 10,
+            objectCost: 1,
+            scalarCost: 1,
           }),
         ],
       })),

@@ -1,11 +1,12 @@
 import gql from "graphql-tag";
-import { Link } from "../lib/routes";
 import React from "react";
 import { Query, QueryResult } from "react-apollo";
 
 import Home, { HOME_QUERY } from "../components/Home";
 import { getLocalCookie, getServerCookie } from "../lib/auth/index";
+import { Link } from "../lib/routes";
 import { HomeQuery } from "../query-types/HomeQuery";
+// import { lock } from "../lib/auth/lock";
 
 export const GET_USER = gql`
   query HomeQuery {
@@ -26,6 +27,9 @@ export default class Index extends React.Component<{
 
   public render() {
     if (!this.props.isAuthenticated) {
+      if (process.browser) {
+        // lock("").checkSession({}, (error, authResult) => {});
+      }
       return (
         <Link prefetch route="auth/sign-in">
           <a>Sign In</a>

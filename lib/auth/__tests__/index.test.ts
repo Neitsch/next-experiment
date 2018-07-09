@@ -26,7 +26,7 @@ describe("extracts info from hash", () => {
 });
 
 describe("Sets Token", () => {
-  it("works", () => {
+  xit("works", () => {
     jest.resetModules();
     const setCookieFun = jest.fn();
     jest.doMock("jwt-decode", () => c => c);

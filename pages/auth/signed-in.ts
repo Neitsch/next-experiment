@@ -1,5 +1,3 @@
-/* tslint:disable-next-line */
-import { Router } from "../../lib/routes";
 import React from "react";
 
 import {
@@ -8,6 +6,7 @@ import {
   setToken,
 } from "../../lib/auth/index";
 import initApollo, { setupLink } from "../../lib/initApollo";
+import { Router } from "../../lib/routes";
 
 export default class SignedIn extends React.Component {
   public componentDidMount() {
@@ -17,7 +16,7 @@ export default class SignedIn extends React.Component {
       console.error("Something happened with the Sign In request");
       return;
     }
-    setToken(token, access_token, parseInt(expires_in));
+    setToken(token, access_token, parseInt(expires_in, 10));
     const client = initApollo(token);
     client.link = setupLink(token);
     Router.pushRoute("index");

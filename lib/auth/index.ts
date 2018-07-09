@@ -20,12 +20,12 @@ export const extractInfoFromHash = () => {
   return { token: id_token, access_token, secret: state, expires_in };
 };
 
-export const setToken = (token, accessToken, expires_in) => {
+export const setToken = (token, accessToken, expiresIn) => {
   if (!process.browser) {
     return;
   }
   const expires = new Date();
-  expires.setSeconds(expires.getSeconds() + expires_in);
+  expires.setSeconds(expires.getSeconds() + expiresIn);
   Cookie.set("user", jwtDecode(token), { expires });
   Cookie.set("jwt", token, { expires });
   Cookie.set("token", accessToken, { expires });
@@ -74,4 +74,6 @@ export const getUserFromLocalCookie = () => {
 
 export const setSecret = secret => Cookie.set("secret", secret);
 
-export const checkSecret = secret => Cookie.get("secret") === secret;
+export const checkSecret = secret => {
+  return Cookie.get("secret") === secret;
+};

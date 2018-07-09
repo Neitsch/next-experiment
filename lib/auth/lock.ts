@@ -2,7 +2,7 @@ import { setSecret } from "./index";
 
 import uuid from "uuid";
 
-const getLock = options => {
+export const getLock = options => {
   const config = require("./config.json");
   const Auth0Lock = require("auth0-lock").default;
   return new Auth0Lock(
@@ -31,5 +31,6 @@ const getOptions = container => {
   };
 };
 
-export const show = container => getLock(getOptions(container)).show();
+export const lock = container => getLock(getOptions(container));
+export const show = container => lock(container).show();
 export const logout = () => getLock({}).logout({ returnTo: getBaseUrl() });
