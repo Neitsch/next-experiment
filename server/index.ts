@@ -4,6 +4,7 @@ import {
   graphqlExpress as graphqlHTTP,
 } from "apollo-server-express";
 import { createComplexityLimitRule } from "graphql-validation-complexity";
+// import parseDbUrl from "parse-database-url";
 
 import routes from "../lib/routes";
 import {
@@ -38,6 +39,7 @@ const checkJwt = jwt({
 app
   .prepare()
   .then(() => {
+    // const dbConfig = parseDbUrl(process.env["DATABASE_URL"] ? );
     const server = expressServer();
     server.use(compression());
     server.use(
