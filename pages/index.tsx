@@ -27,9 +27,9 @@ export default class Index extends React.Component<{
 
   public render() {
     if (!this.props.isAuthenticated) {
-      if (process.browser) {
-        // lock("").checkSession({}, (error, authResult) => {});
-      }
+      // if (process.browser) {
+      // lock("").checkSession({}, (error, authResult) => {});
+      // }
       return (
         <Link prefetch route="auth/sign-in">
           <a>Sign In</a>

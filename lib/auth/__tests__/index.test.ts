@@ -26,7 +26,7 @@ describe("extracts info from hash", () => {
 });
 
 describe("Sets Token", () => {
-  xit("works", () => {
+  it("works", () => {
     jest.resetModules();
     const setCookieFun = jest.fn();
     jest.doMock("jwt-decode", () => c => c);
@@ -34,10 +34,14 @@ describe("Sets Token", () => {
       set: setCookieFun,
     }));
     process.browser = true;
-    require("../index").setToken("token", "access token");
-    expect(setCookieFun).toBeCalledWith("user", "token");
-    expect(setCookieFun).toBeCalledWith("jwt", "token");
-    expect(setCookieFun).toBeCalledWith("token", "access token");
+    require("../index").setToken("token", "access token", 100);
+    expect(setCookieFun).toBeCalledWith("user", "token", expect.anything());
+    expect(setCookieFun).toBeCalledWith("jwt", "token", expect.anything());
+    expect(setCookieFun).toBeCalledWith(
+      "token",
+      "access token",
+      expect.anything(),
+    );
     expect(setCookieFun).toHaveBeenCalledTimes(3);
   });
   it("works server", () => {

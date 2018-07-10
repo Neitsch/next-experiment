@@ -8,7 +8,6 @@
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .next/production-server/server/index.js",
     "test": "jest --silent --ci",
-    "posttest": "yarn format",
     "format": "prettier --loglevel silent --write '{,!(node_modules)/**/}*.{ts,tsx,js,css,md}'",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",

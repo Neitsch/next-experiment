@@ -1,5 +1,5 @@
 describe("Server", () => {
-  xit("Starts", () => {
+  it("Starts", () => {
     const reqHandler = jest.fn();
     let serverLauncher;
     let errorFunc;
@@ -7,6 +7,9 @@ describe("Server", () => {
     const promise = {
       catch: jest.fn(),
     };
+    jest.doMock("../../lib/routes", () => ({
+      getRequestHandler: () => reqHandler,
+    }));
     jest.doMock("../../typeDefs/nextShim", () => ({
       nextServer: () => ({
         getRequestHandler: () => reqHandler,
@@ -24,6 +27,7 @@ describe("Server", () => {
     const useFn = jest.fn();
     jest.doMock("../../typeDefs/expressShim", () => {
       return {
+        bodyParser: { json: jest.fn() },
         compression: jest.fn(),
         cookieParser: jest.fn(),
         cors: jest.fn(),
@@ -42,6 +46,11 @@ describe("Server", () => {
         jwt: jest.fn(),
       };
     });
+    jest.doMock("apollo-server-express", () => ({
+      graphiqlExpress: jest.fn(),
+      graphqlExpress: gqlFn,
+    }));
+    jest.doMock("graphql-validation-complexity");
     require("../index");
     serverLauncher();
     expect(reqHandler).toHaveBeenCalledTimes(0);
@@ -59,10 +68,16 @@ describe("Server", () => {
       errorFunc();
     }).not.toThrow();
     const reqIn = { user: { sub: "SUB" } };
-    useFn.mock.calls[3][2](reqIn, otherArg);
-    expect(innerGql).toHaveBeenCalledWith(reqIn, otherArg);
+    useFn.mock.calls[3][3](reqIn, otherArg);
+    expect(useFn.mock.calls[3][3]).toEqual(innerGql);
+    expect(
+      gqlFn.mock.calls[0][0]({ user: { sub: "MySub" } }),
+    ).toMatchSnapshot();
     expect(() => {
       promise.catch.mock.calls[0][0]("Test");
     }).not.toThrow();
+    const resFn = jest.fn();
+    useFn.mock.calls[5][0](new Error("test"), null, { json: resFn });
+    expect(resFn.mock.calls).toMatchSnapshot();
   });
 });

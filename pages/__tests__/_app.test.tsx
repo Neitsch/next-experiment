@@ -20,7 +20,7 @@ jest.doMock("next/app", () => {
 
 describe("App page", () => {
   it("renders", () => {
-    const app = <App Component={() => <div />} apolloClient={{}} />;
+    const app = <App Component={() => <div />} apollo={{}} />;
     const rendered = shallow(app);
     expect(rendered).toMatchSnapshot();
   });
