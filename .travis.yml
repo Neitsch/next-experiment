@@ -10,11 +10,3 @@ node_js:
 - 9
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-deploy:
-  provider: heroku
-  api_key:
-    secure: wubcWHORRpZ2SS51UsM3VI5CxLfxWwxChpFKFqktFOKKS06qzH0ZDO+FpuYuSS6Lu38nBIt/mUYtwHoTd64DMnt42RGaFC1Pjsk58cn0iL/hXE2T/gbhCmzVKqgwQa63LCAsKqK3pxsfz1Ex9sGE1ULSAj3GNAR6t8Tle0PySuGTbnuSf+t6p4NHjXVBzkmqGcoKxKMTkPwFaTqn1S8f7y4DGSpL51evYXrMOEpYimyCVDUwTYAXsYynvt0kNn+6VpTH1rFlhNjXrqsMLeXzqJnhm+qNhIu7Rq0YNmRzexrenbsPNv89WBxLZhTIqHrVKDJ6ezcJfpObMq3L4KOgYmTm8ePjWJoORJBNRn6lxTtgT4FO4K/JkX/m1qg+eFycLXae0OPIAlt7xIk9yDRrbhZtR13MToVT4iL7+H+JYmQmvil4VgNFpUQaqfKRIKuWG5L8FhjaAwIlpl390d1f/xdDHFvQK/WyU5piFPUm+oKnluEV1MmElKjgGpiiJ/YFczL89mRgJNxbeZTs6kvs/d+YqXE7LmXUOmXn8qRXmkOTZu7LMu0EiGRXSIBd2klujzwDwgHnrJWFnIID7mxOnKTmVfGybse8W/dagDjTOouHLICEJfGIj47UP0zELRdnuRbEEEHP+2H4XxmoUZ8C3TkKnupy1rNKNNoQ9JgZaYA=
-  app: next-experiment
-  on:
-    repo: Neitsch/next-experiment
-    branch: master
