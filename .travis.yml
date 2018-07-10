@@ -4,9 +4,16 @@ branches:
 language: node_js
 cache:
   directories:
-    - node_modules
+  - node_modules
   yarn: true
 node_js:
-  - 9
+- 9
 after_success:
-  - 'bash <(curl -s https://codecov.io/bash)'
+- bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: heroku
+  api_key:
+    secure: gHAuTF9HI0INKbTknPYl8mjPsdPBWBzEmBKDZUUHndFfoUxSh/8YO4sPgq79npEC/nidUE3qMv+zCEyFohIeKgFv6nsIAd1RpT6FCcTGLE715MT9Mjq2ovwQsW+BGI7FbR56jibqjcWWdAw5ui0XfK0L4vpnmvsiSH7BV8drnY6+FJSjEBi4iZZG3rC//D4OFOk+PBpkGxzOSxbmj0RzDdX90W7pPt28aa7KsvilLWfFfIo2Sz2JEcQyUIq2V+2ualckX5jFj3pS+0CoYJcd0O1vosA4GWo3iD9UCPHshChG7dkLzydCfbeEHc5fyC4QHm63PBVQdZEyiRn1MLAezS34U61f8wZ7iyscSEXmgCHEHDBW1dyx3LzwgSFzjJhlpg3BTOqe26RhMaQHJ+Fm5mrBbb/ZGVOrfBxdNULBPjNedgi6JHP9bj03plgmVk+dLg06kxDBgmfULS9e6pv/bV6c+vDOihDDUKaM86iiPOGOfJ6dcMlQ5lO/XIB1h9eg0bVpY+ioIL/9WxX6AcXmcgzOHyj23LSfk4oG85yw3CpeCst3RWch7V+GrnuxRVXFWTeWs/tH4MBcV2s+use3SMoyoCPz4TdDqJFtwQYIMTSBdqGBqzCF6GvTmL+kILdxf+cQpWjeYMlCITXTiK7XBIDnDFxZOZZEq8iLE2W98Yg=
+  app: next-experiment
+  on:
+    repo: Neitsch/next-experiment
