@@ -2,7 +2,9 @@
 
 exports[`App page renders 1`] = `
 <Container>
-  <ApolloProvider>
+  <ApolloProvider
+    client={Object {}}
+  >
     <Component />
   </ApolloProvider>
 </Container>

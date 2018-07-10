@@ -2,7 +2,7 @@ import { shallow } from "enzyme";
 import React from "react";
 
 describe("Signed In", () => {
-  xit("works", () => {
+  it("works", () => {
     const checkSecretFn = jest.fn().mockReturnValue(true);
     const extractInfoFromHashFn = jest.fn().mockReturnValue({
       access_token: "access token",
@@ -11,13 +11,13 @@ describe("Signed In", () => {
     });
     const setTokenFn = jest.fn();
     const innerRouter = {
-      push: jest.fn(),
+      pushRoute: jest.fn(),
     };
     const Router = {
-      router: innerRouter,
+      Router: innerRouter,
     };
 
-    jest.doMock("next/router", () => Router);
+    jest.doMock("../../../lib/routes", () => Router);
     jest.doMock("../../../lib/auth/index", () => ({
       checkSecret: checkSecretFn,
       extractInfoFromHash: extractInfoFromHashFn,
@@ -29,7 +29,7 @@ describe("Signed In", () => {
     expect(rendered).toMatchSnapshot();
     expect(checkSecretFn).toHaveBeenCalledTimes(1);
     expect(extractInfoFromHashFn).toHaveBeenCalledTimes(1);
-    expect(innerRouter.push).toHaveBeenCalledWith("/");
+    expect(innerRouter.pushRoute).toHaveBeenCalledWith("index");
   });
   it("fails without token", () => {
     jest.resetModules();
