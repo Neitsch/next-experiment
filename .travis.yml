@@ -14,3 +14,4 @@ deploy:
   app: next-experiment
   on:
     repo: Neitsch/next-experiment
+    branch: master
