@@ -20,6 +20,9 @@ describe("Index page", () => {
       getLocalCookie,
       getServerCookie,
     }));
+    jest.doMock("../../lib/routes", () => ({
+      Link: () => <div>Link</div>,
+    }));
     const Index = require("../index").default;
     process.browser = false;
     const retServer = await Index.getInitialProps({ req: jest.fn() });

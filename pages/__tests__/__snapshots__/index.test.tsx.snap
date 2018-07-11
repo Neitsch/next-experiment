@@ -116,12 +116,12 @@ exports[`Index page renders auth Loading 1`] = `
 `;
 
 exports[`Index page renders unauth 1`] = `
-<LinkRoutes
+<Link
   prefetch={true}
   route="auth/sign-in"
 >
   <a>
     Sign In
   </a>
-</LinkRoutes>
+</Link>
 `;
