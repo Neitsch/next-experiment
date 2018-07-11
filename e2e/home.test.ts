@@ -1,4 +1,5 @@
-const { Builder, By, Key, until } = require("selenium-webdriver");
+const { Builder, until } = require("selenium-webdriver");
+const axeBuilder = require("axe-webdriverjs");
 
 describe("Smoke", () => {
   let webdriver = null;
@@ -11,6 +12,15 @@ describe("Smoke", () => {
 
   it("Title", async () => {
     await webdriver.wait(until.titleIs("Condor Club"), 1000);
+  });
+
+  it("Axe", () => {
+    return new Promise(resolve => {
+      axeBuilder(webdriver).analyze(result => {
+        expect(result.violations).toHaveLength(0);
+        resolve();
+      });
+    });
   });
 
   afterAll(async () => {
