@@ -16,13 +16,18 @@ export const setAuthorizationLink = jwt =>
     },
   }));
 
+const getUri = () =>
+  process.browser
+    ? "/graphql"
+    : `http://localhost:${parseInt(process.env.PORT, 10) || 3000}/graphql`;
+
 export const setupLink = jwt =>
   setAuthorizationLink(jwt).concat(
     createPersistedQueryLink().concat(
       new HttpLink({
         credentials: "same-origin",
         fetch: isomorphicUnfetch,
-        uri: "http://localhost:3000/graphql",
+        uri: getUri(),
       }),
     ),
   );
@@ -43,7 +48,7 @@ function create(jwt) {
         new HttpLink({
           credentials: "same-origin",
           fetch: isomorphicUnfetch,
-          uri: "http://localhost:3000/graphql",
+          uri: getUri(),
         }),
       ),
     ),
