@@ -87,7 +87,12 @@ class MyDocument extends Document {
   }
   public render() {
     const { pageContext } = this.props;
-
+    /* 
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      />
+    */
     return (
       <html lang="en" dir="ltr">
         <Head>
@@ -105,10 +110,6 @@ class MyDocument extends Document {
           <meta
             name="theme-color"
             content={pageContext.theme.palette.primary.main}
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
         </Head>
         <body>
