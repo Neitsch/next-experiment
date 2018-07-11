@@ -11,9 +11,14 @@ node_js:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 addons:
-  firefox: stable
+  firefox: latest
 env:
   - MOZ_HEADLESS=1
+before_install:
+- wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
+- mkdir geckodriver
+- tar -xzf geckodriver-v0.21.0-linux64.tar.gz -C geckodriver
+- export PATH=$PATH:$PWD/geckodriver
 script:
 - yarn run test
 - yarn run build
