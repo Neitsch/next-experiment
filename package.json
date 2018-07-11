@@ -91,6 +91,7 @@
     "babel-plugin-graphql-tag": "^1.6.0",
     "nodemon": "^1.17.5",
     "react-styleguidist": "^7.0.17",
+    "selenium-webdriver": "^4.0.0-alpha.1",
     "ts-node": "^7.0.0"
   },
   "husky": {
