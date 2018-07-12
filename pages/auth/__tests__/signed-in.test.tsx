@@ -2,6 +2,9 @@ import { shallow } from "enzyme";
 import React from "react";
 
 describe("Signed In", () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
   it("works", () => {
     const checkSecretFn = jest.fn().mockReturnValue(true);
     const extractInfoFromHashFn = jest.fn().mockReturnValue({
