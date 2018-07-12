@@ -31,9 +31,15 @@ export default class Index extends React.Component<{
       // lock("").checkSession({}, (error, authResult) => {});
       // }
       return (
-        <Link prefetch route="auth/sign-in">
-          <a>Sign In</a>
-        </Link>
+        <div>
+          <h1 role="banner">Hello World</h1>
+          <div role="navigation">
+            <Link prefetch route="auth/sign-in">
+              <a>Sign In</a>
+            </Link>
+          </div>
+          <div role="main">This will be the landing page for Condor Club.</div>
+        </div>
       );
     }
     return (
