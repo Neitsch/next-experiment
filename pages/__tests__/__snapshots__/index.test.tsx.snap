@@ -117,11 +117,13 @@ exports[`Index page renders auth Loading 1`] = `
 
 exports[`Index page renders unauth 1`] = `
 <div>
-  <h1
+  <div
     role="banner"
   >
-    Hello World
-  </h1>
+    <h1>
+      Hello World
+    </h1>
+  </div>
   <div
     role="navigation"
   >
