@@ -2,6 +2,9 @@ import { shallow } from "enzyme";
 import * as React from "react";
 
 describe("Sign In", () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
   it("renders", () => {
     const show = jest.fn();
     jest.doMock("../../../lib/auth/lock", () => ({
