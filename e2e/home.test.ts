@@ -1,13 +1,29 @@
-const { Builder, By, Key, until } = require("selenium-webdriver");
+const { Builder, until } = require("selenium-webdriver");
+const axeBuilder = require("axe-webdriverjs");
 
 describe("Smoke", () => {
+  let webdriver = null;
+  beforeAll(async () => {
+    webdriver = await new Builder().forBrowser("firefox").build();
+  });
+  beforeEach(async () => {
+    await webdriver.get("http://localhost:3000");
+  });
+
   it("Title", async () => {
-    let driver = await new Builder().forBrowser("firefox").build();
-    try {
-      await driver.get("http://localhost:3000");
-      await driver.wait(until.titleIs("My page"), 1000);
-    } finally {
-      await driver.quit();
-    }
+    await webdriver.wait(until.titleIs("Condor Club"), 1000);
+  });
+
+  it("Axe", () => {
+    return new Promise(resolve => {
+      axeBuilder(webdriver).analyze(result => {
+        expect(result.violations).toHaveLength(0);
+        resolve();
+      });
+    });
+  });
+
+  afterAll(async () => {
+    webdriver.quit();
   });
 });
