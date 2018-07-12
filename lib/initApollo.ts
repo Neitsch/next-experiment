@@ -56,10 +56,6 @@ function create(jwt) {
   });
 }
 
-export const resetClient = () => {
-  apolloClient = null;
-};
-
 export default function initApollo(jwt) {
   if (!process.browser) {
     return create(jwt);

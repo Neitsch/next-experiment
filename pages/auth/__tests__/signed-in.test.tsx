@@ -2,6 +2,9 @@ import { shallow } from "enzyme";
 import React from "react";
 
 describe("Signed In", () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
   it("works", () => {
     const checkSecretFn = jest.fn().mockReturnValue(true);
     const extractInfoFromHashFn = jest.fn().mockReturnValue({
@@ -34,6 +37,8 @@ describe("Signed In", () => {
   it("fails without token", () => {
     jest.resetModules();
     jest.resetAllMocks();
+    const consoleErrorSave = console.error;
+    console.error = jest.fn();
     const checkSecretFn = jest.fn().mockReturnValue(false);
     const extractInfoFromHashFn = jest.fn().mockReturnValue({
       access_token: "access token",
@@ -61,5 +66,7 @@ describe("Signed In", () => {
     expect(checkSecretFn).toHaveBeenCalledTimes(1);
     expect(extractInfoFromHashFn).toHaveBeenCalledTimes(1);
     expect(innerRouter.push).not.toHaveBeenCalled();
+    expect(console.error).toHaveBeenCalled();
+    console.error = consoleErrorSave;
   });
 });

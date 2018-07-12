@@ -4,6 +4,8 @@ describe("Server", () => {
     let serverLauncher;
     let errorFunc;
     let setPort;
+    const consoleErrorSave = console.error;
+    console.error = jest.fn();
     const promise = {
       catch: jest.fn(),
     };
@@ -79,5 +81,7 @@ describe("Server", () => {
     const resFn = jest.fn();
     useFn.mock.calls[5][0](new Error("test"), null, { json: resFn });
     expect(resFn.mock.calls).toMatchSnapshot();
+    expect(console.error).toHaveBeenCalledWith("Test");
+    console.error = consoleErrorSave;
   });
 });
