@@ -1,14 +1,5 @@
-import { mount, shallow } from "enzyme";
-import React, { Children } from "react";
-/* tslint:disable-next-line */
-import { MockedProvider } from "react-apollo/test-utils";
-
-const ContainerMock = mockData =>
-  class MyMock extends React.Component {
-    public render() {
-      return this.props.children(mockData);
-    }
-  };
+import { shallow } from "enzyme";
+import React from "react";
 
 describe("Index page", () => {
   it("Initial props", async () => {
@@ -33,56 +24,48 @@ describe("Index page", () => {
     expect(retLocal).toEqual({ isAuthenticated: "local" });
     expect(getLocalCookie).toHaveBeenCalledTimes(1);
   });
-  it("renders unauth", () => {
-    jest.resetAllMocks();
-    jest.resetModules();
-    jest.doMock("graphql-tag");
-    jest.doMock("next/link");
-    jest.doMock("react-apollo");
-    const Index = require("../index").default;
-    expect(shallow(<Index isAuthenticated={false} />)).toMatchSnapshot();
-  });
-  describe("renders auth", () => {
-    it("Loading", () => {
+  describe("Renders", () => {
+    it("unauth", () => {
       jest.resetAllMocks();
       jest.resetModules();
       jest.doMock("graphql-tag");
       jest.doMock("next/link");
-      jest.doMock("react-apollo", () => ({
-        Query: ContainerMock({ data: {}, error: null, loading: true }),
-      }));
+      jest.doMock("react-apollo");
       const Index = require("../index").default;
-      expect(mount(<Index isAuthenticated={true} />)).toMatchSnapshot();
+      expect(shallow(<Index isAuthenticated={false} />)).toMatchSnapshot();
     });
-    it("Error", () => {
-      jest.resetAllMocks();
-      jest.resetModules();
-      jest.doMock("graphql-tag");
-      jest.doMock("next/link");
-      jest.doMock("react-apollo", () => ({
-        Query: ContainerMock({
-          data: {},
-          error: { message: "Some error" },
-          loading: false,
-        }),
-      }));
-      const Index = require("../index").default;
-      expect(mount(<Index isAuthenticated={true} />)).toMatchSnapshot();
-    });
-    it("Data", () => {
-      jest.resetAllMocks();
-      jest.resetModules();
-      jest.doMock("graphql-tag");
-      jest.doMock("next/link");
-      jest.doMock("react-apollo", () => ({
-        Query: ContainerMock({
-          data: { user: "Hi!" },
-          error: null,
-          loading: false,
-        }),
-      }));
-      const Index = require("../index").default;
-      expect(mount(<Index isAuthenticated={true} />)).toMatchSnapshot();
+    describe("auth", () => {
+      let shallowRendered;
+      beforeEach(() => {
+        jest.resetModules();
+        const Index = require("../index").default;
+        shallowRendered = shallow(<Index isAuthenticated={true} />);
+      });
+      it("Exists", () => {
+        expect(shallowRendered).toMatchSnapshot();
+      });
+      describe("Query", () => {
+        it("Loading", () => {
+          expect(
+            shallowRendered.props().children({ loading: true }),
+          ).toMatchSnapshot();
+        });
+        it("Error", () => {
+          expect(
+            shallowRendered.props().children({
+              error: { message: "Test Error" },
+              loading: false,
+            }),
+          ).toMatchSnapshot();
+        });
+        it("Data", () => {
+          expect(
+            shallowRendered
+              .props()
+              .children({ loading: false, data: "Test Data" }),
+          ).toMatchSnapshot();
+        });
+      });
     });
   });
 });

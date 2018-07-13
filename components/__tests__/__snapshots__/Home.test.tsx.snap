@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders 1`] = `
+<WithStyles(Card)>
+  <WithStyles(CardContent)>
+    Test User
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
+`;
