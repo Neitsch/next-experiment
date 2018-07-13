@@ -20,7 +20,11 @@ describe("Documents", () => {
   });
   it("init props server", async () => {
     const Document = require("../_document").default;
-    const renderPage = jest.fn();
+    const renderPage = jest.fn().mockImplementation(fn => {
+      const wrapped = fn(Helper);
+      const component = wrapped({ pageContext: { sheetsRegistry: {} } });
+      expect(shallow(component)).toMatchSnapshot();
+    });
     const propsInit = await Document.getInitialProps({ renderPage });
     const jssFun = renderPage.mock.calls[0][0];
     const JssComp = jssFun(Helper);
@@ -33,7 +37,11 @@ describe("Documents", () => {
   it("init props client", async () => {
     process.browser = true;
     const Document = require("../_document").default;
-    const renderPage = jest.fn();
+    const renderPage = jest.fn().mockImplementation(fn => {
+      const wrapped = fn(Helper);
+      const component = wrapped({ pageContext: { sheetsRegistry: {} } });
+      expect(shallow(component)).toMatchSnapshot();
+    });
     const propsInit = await Document.getInitialProps({ renderPage });
     const jssFun = renderPage.mock.calls[0][0];
     const JssComp = jssFun(Helper);
