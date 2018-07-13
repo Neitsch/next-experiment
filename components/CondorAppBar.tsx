@@ -26,7 +26,7 @@ interface IState {
   openAccountMenu?: HTMLElement;
 }
 
-export class CondorAppBar extends React.Component<Props, IState> {
+class CondorAppBar extends React.Component<Props, IState> {
   constructor(props: Props) {
     super(props);
     this.state = {

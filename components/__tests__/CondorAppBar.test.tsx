@@ -1,17 +1,17 @@
-import { shallow } from "enzyme";
+import { createShallow } from "@material-ui/core/test-utils";
 import React from "react";
 
 describe("AppBar", () => {
+  let shallow;
   beforeEach(() => {
     jest.resetModules();
+    shallow = createShallow({ dive: true });
   });
   describe("unauthenticated", () => {
     let AppBarRendered = null;
     beforeEach(() => {
-      const CondorAppBar = require("../CondorAppBar").CondorAppBar;
-      const AppBarComponent = (
-        <CondorAppBar isAuthenticated={false} classes={{ flex: "flex" }} />
-      );
+      const CondorAppBar = require("../CondorAppBar").default;
+      const AppBarComponent = <CondorAppBar isAuthenticated={false} />;
       AppBarRendered = shallow(AppBarComponent);
     });
     it("renders", () => {
@@ -21,10 +21,8 @@ describe("AppBar", () => {
   describe("authenticated", () => {
     let AppBarRendered = null;
     beforeEach(() => {
-      const CondorAppBar = require("../CondorAppBar").CondorAppBar;
-      const AppBarComponent = (
-        <CondorAppBar isAuthenticated={true} classes={{ flex: "flex" }} />
-      );
+      const CondorAppBar = require("../CondorAppBar").default;
+      const AppBarComponent = <CondorAppBar isAuthenticated={true} />;
       AppBarRendered = shallow(AppBarComponent);
     });
     it("renders", () => {
