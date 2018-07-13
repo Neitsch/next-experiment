@@ -2,24 +2,19 @@
 import Document, { Head, Main, NextScript } from "next/document";
 import React from "react";
 /* tslint:disable-next-line */
-import JssProvider from "react-jss/lib/JssProvider";
 /* tslint:disable-next-line */
 import flush from "styled-jsx/server";
 
-import { getPageContext } from "../lib/material-helper";
-
 class MyDocument extends Document {
   public static async getInitialProps(ctx) {
-    const pageContext = getPageContext();
-    const page = ctx.renderPage(Component => props => (
-      <JssProvider
-        registry={pageContext.sheetsRegistry}
-        generateClassName={pageContext.generateClassName}
-      >
-        <Component pageContext={pageContext} {...props} />
-      </JssProvider>
-    ));
-
+    let pageContext;
+    const page = ctx.renderPage(Component => {
+      const WrappedComponent = props => {
+        pageContext = props.pageContext;
+        return <Component {...props} />;
+      };
+      return WrappedComponent;
+    });
     return {
       ...page,
       pageContext,

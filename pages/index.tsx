@@ -1,3 +1,5 @@
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 import gql from "graphql-tag";
 import React from "react";
 import { Query, QueryResult } from "react-apollo";
@@ -31,17 +33,19 @@ export default class Index extends React.Component<{
       // lock("").checkSession({}, (error, authResult) => {});
       // }
       return (
-        <div>
-          <div role="navigation">
-            <Link prefetch route="auth/sign-in">
-              <a>Sign In</a>
-            </Link>
-          </div>
-          <div role="main">
-            <h1>Hello World</h1>
-            <div>This will be the landing page for Condor Club.</div>
-          </div>
-        </div>
+        <Card>
+          <CardContent>
+            <div role="navigation">
+              <Link prefetch route="auth/sign-in">
+                <a>Sign In</a>
+              </Link>
+            </div>
+            <div role="main">
+              <h1>Hello World</h1>
+              <div>This will be the landing page for Condor Club.</div>
+            </div>
+          </CardContent>
+        </Card>
       );
     }
     return (

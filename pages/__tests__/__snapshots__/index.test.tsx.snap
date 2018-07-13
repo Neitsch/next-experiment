@@ -21,28 +21,30 @@ exports[`Index page Renders auth Query Loading 1`] = `
 `;
 
 exports[`Index page Renders unauth 1`] = `
-<div>
-  <div
-    role="navigation"
-  >
-    <Link
-      prefetch={true}
-      route="auth/sign-in"
+<WithStyles(Card)>
+  <WithStyles(CardContent)>
+    <div
+      role="navigation"
     >
-      <a>
-        Sign In
-      </a>
-    </Link>
-  </div>
-  <div
-    role="main"
-  >
-    <h1>
-      Hello World
-    </h1>
-    <div>
-      This will be the landing page for Condor Club.
+      <Link
+        prefetch={true}
+        route="auth/sign-in"
+      >
+        <a>
+          Sign In
+        </a>
+      </Link>
     </div>
-  </div>
-</div>
+    <div
+      role="main"
+    >
+      <h1>
+        Hello World
+      </h1>
+      <div>
+        This will be the landing page for Condor Club.
+      </div>
+    </div>
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
 `;
