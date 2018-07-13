@@ -11,7 +11,7 @@ exports[`AppBar authenticated renders 1`] = `
       <pure(Menu) />
     </WithStyles(IconButton)>
     <WithStyles(Typography)
-      className="flex"
+      className="CondorAppBar-flex-1"
       color="inherit"
       variant="title"
     >
@@ -43,7 +43,7 @@ exports[`AppBar unauthenticated renders 1`] = `
       <pure(Menu) />
     </WithStyles(IconButton)>
     <WithStyles(Typography)
-      className="flex"
+      className="CondorAppBar-flex-1"
       color="inherit"
       variant="title"
     >
