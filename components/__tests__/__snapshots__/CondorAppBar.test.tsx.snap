@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar authenticated renders 1`] = `
+<WithStyles(AppBar)
+  position="static"
+>
+  <WithStyles(Toolbar)>
+    <WithStyles(IconButton)
+      aria-label="Menu"
+    >
+      <pure(Menu) />
+    </WithStyles(IconButton)>
+    <WithStyles(Typography)
+      className="flex"
+      color="inherit"
+      variant="title"
+    >
+      Condor Club
+    </WithStyles(Typography)>
+    <div>
+      <WithStyles(IconButton)
+        aria-haspopup="true"
+        aria-owns="menu-appbar"
+        color="inherit"
+        id="accountButton"
+        onClick={[Function]}
+      >
+        <pure(AccountCircle) />
+      </WithStyles(IconButton)>
+    </div>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
+
+exports[`AppBar unauthenticated renders 1`] = `
+<WithStyles(AppBar)
+  position="static"
+>
+  <WithStyles(Toolbar)>
+    <WithStyles(IconButton)
+      aria-label="Menu"
+    >
+      <pure(Menu) />
+    </WithStyles(IconButton)>
+    <WithStyles(Typography)
+      className="flex"
+      color="inherit"
+      variant="title"
+    >
+      Condor Club
+    </WithStyles(Typography)>
+    <WithStyles(Button)
+      color="inherit"
+    >
+      Login
+    </WithStyles(Button)>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;

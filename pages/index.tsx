@@ -32,15 +32,15 @@ export default class Index extends React.Component<{
       // }
       return (
         <div>
-          <div role="banner">
-            <h1>Hello World</h1>
-          </div>
           <div role="navigation">
             <Link prefetch route="auth/sign-in">
               <a>Sign In</a>
             </Link>
           </div>
-          <div role="main">This will be the landing page for Condor Club.</div>
+          <div role="main">
+            <h1>Hello World</h1>
+            <div>This will be the landing page for Condor Club.</div>
+          </div>
         </div>
       );
     }

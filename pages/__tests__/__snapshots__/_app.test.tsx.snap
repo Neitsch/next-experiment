@@ -5,6 +5,7 @@ exports[`App page renders 1`] = `
   <ApolloProvider
     client={Object {}}
   >
+    <WithStyles(CondorAppBar) />
     <Component />
   </ApolloProvider>
 </Container>
