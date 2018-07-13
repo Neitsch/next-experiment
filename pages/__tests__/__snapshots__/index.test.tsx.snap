@@ -118,13 +118,6 @@ exports[`Index page renders auth Loading 1`] = `
 exports[`Index page renders unauth 1`] = `
 <div>
   <div
-    role="banner"
-  >
-    <h1>
-      Hello World
-    </h1>
-  </div>
-  <div
     role="navigation"
   >
     <Link
@@ -139,7 +132,12 @@ exports[`Index page renders unauth 1`] = `
   <div
     role="main"
   >
-    This will be the landing page for Condor Club.
+    <h1>
+      Hello World
+    </h1>
+    <div>
+      This will be the landing page for Condor Club.
+    </div>
   </div>
 </div>
 `;
