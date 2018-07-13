@@ -1,6 +1,8 @@
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: ["<rootDir>/{server,lib,pages}/**/*.?(!d.){ts,tsx}"],
+  collectCoverageFrom: [
+    "<rootDir>/{components,server,lib,pages}/**/*.?(!d.){ts,tsx}",
+  ],
   coverageThreshold: {
     global: {
       branches: 100,
@@ -44,7 +46,7 @@ module.exports = {
         "md",
         "markdown",
       ],
-      testMatch: ["<rootDir>/{server,lib,pages}/**/*.{ts,tsx}"],
+      testMatch: ["<rootDir>/{components,server,lib,pages}/**/*.{ts,tsx}"],
     },
     {
       runner: "jest-runner-prettier",
@@ -62,7 +64,7 @@ module.exports = {
         "md",
         "markdown",
       ],
-      testMatch: ["<rootDir>/{server,lib,pages}/**/*.{ts,tsx}"],
+      testMatch: ["<rootDir>/{components,server,lib,pages}/**/*.{ts,tsx}"],
     },
   ],
 };

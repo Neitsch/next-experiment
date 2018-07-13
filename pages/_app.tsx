@@ -4,6 +4,7 @@ import App, { Container } from "next/app";
 import React from "react";
 import { ApolloProvider } from "react-apollo";
 
+import CondorAppBar from "../components/CondorAppBar";
 import withApolloClient from "../lib/withApolloClient";
 
 class MyApp extends App<{
@@ -15,6 +16,7 @@ class MyApp extends App<{
     return (
       <Container>
         <ApolloProvider client={apollo}>
+          <CondorAppBar {...pageProps} />
           <Component {...pageProps} />
         </ApolloProvider>
       </Container>
