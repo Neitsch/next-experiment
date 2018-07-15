@@ -12,8 +12,8 @@ import { getPageContext } from "../lib/material-helper";
 import withApolloClient from "../lib/withApolloClient";
 
 class MyApp extends App<{
-  apollo: ApolloClient<any>;
-  Component: React.Factory<any>;
+  apollo: ApolloClient<{}>;
+  Component: React.Factory<{}>;
 }> {
   private pageContext = null;
   constructor(props) {

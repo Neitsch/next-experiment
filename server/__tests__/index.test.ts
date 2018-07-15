@@ -12,42 +12,34 @@ describe("Server", () => {
     jest.doMock("../../lib/routes", () => ({
       getRequestHandler: () => reqHandler,
     }));
-    jest.doMock("../../typeDefs/nextShim", () => ({
-      nextServer: () => ({
-        getRequestHandler: () => reqHandler,
-        prepare: () => ({
-          then: fn => {
-            serverLauncher = fn;
-            return promise;
-          },
-        }),
+    jest.doMock("next", () => () => ({
+      prepare: () => ({
+        then: fn => {
+          serverLauncher = fn;
+          return promise;
+        },
       }),
     }));
     const innerGql = jest.fn();
     const getFn = jest.fn();
     const gqlFn = jest.fn().mockReturnValue(innerGql);
     const useFn = jest.fn();
-    jest.doMock("../../typeDefs/expressShim", () => {
-      return {
-        bodyParser: { json: jest.fn() },
-        compression: jest.fn(),
-        cookieParser: jest.fn(),
-        cors: jest.fn(),
-        expressServer: () => ({
-          get: getFn,
-          listen: jest.fn().mockImplementation((port, fn2) => {
-            setPort = port;
-            errorFunc = fn2;
-          }),
-          use: useFn,
-        }),
-        graphqlHTTP: gqlFn,
-        jwksRsa: {
-          expressJwtSecret: jest.fn(),
-        },
-        jwt: jest.fn(),
-      };
-    });
+    jest.doMock("body-parser", () => ({ json: jest.fn() }));
+    jest.doMock("compression", () => jest.fn());
+    jest.doMock("cookie-parser", () => jest.fn());
+    jest.doMock("cors", () => jest.fn());
+    jest.doMock("express", () => () => ({
+      get: getFn,
+      listen: jest.fn().mockImplementation((port, fn2) => {
+        setPort = port;
+        errorFunc = fn2;
+      }),
+      use: useFn,
+    }));
+    jest.doMock("express-jwt", () => jest.fn());
+    jest.doMock("jwks-rsa", () => ({
+      expressJwtSecret: jest.fn(),
+    }));
     jest.doMock("apollo-server-express", () => ({
       graphiqlExpress: jest.fn(),
       graphqlExpress: gqlFn,
