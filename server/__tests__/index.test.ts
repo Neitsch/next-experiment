@@ -9,6 +9,10 @@ describe("Server", () => {
     const promise = {
       catch: jest.fn(),
     };
+    const nonce = "abc";
+    jest.doMock("uuid", () => ({
+      v4: jest.fn().mockReturnValue(nonce),
+    }));
     jest.doMock("../../lib/routes", () => ({
       getRequestHandler: () => reqHandler,
     }));
@@ -57,9 +61,14 @@ describe("Server", () => {
     serverLauncher();
     expect(reqHandler).toHaveBeenCalledTimes(0);
     const url = "http://www.abc.com/123";
-    const urlCall = { url };
-    const otherArg = jest.fn();
+    const urlCall = { url, params: {} };
+    const otherArg = {
+      set: jest.fn(),
+    };
     getFn.mock.calls[0][1](urlCall, otherArg);
+    expect(otherArg.set).toHaveBeenCalled();
+    // @ts-ignore
+    expect(urlCall.params.nonce).toEqual(nonce);
     expect(reqHandler).toHaveBeenCalledTimes(1);
     expect(reqHandler).toHaveBeenCalledWith(urlCall, otherArg);
     expect(setPort).toEqual(3000);

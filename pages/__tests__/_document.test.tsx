@@ -25,7 +25,12 @@ describe("Documents", () => {
       const component = wrapped({ pageContext: { sheetsRegistry: {} } });
       expect(shallow(component)).toMatchSnapshot();
     });
-    const propsInit = await Document.getInitialProps({ renderPage });
+    const propsInit = await Document.getInitialProps({
+      renderPage,
+      req: {
+        params: { nonce: "ghi" },
+      },
+    });
     const jssFun = renderPage.mock.calls[0][0];
     const JssComp = jssFun(Helper);
     const JssInst = <JssComp />;
@@ -39,10 +44,17 @@ describe("Documents", () => {
     const Document = require("../_document").default;
     const renderPage = jest.fn().mockImplementation(fn => {
       const wrapped = fn(Helper);
-      const component = wrapped({ pageContext: { sheetsRegistry: {} } });
+      const component = wrapped({
+        pageContext: { sheetsRegistry: {} },
+      });
       expect(shallow(component)).toMatchSnapshot();
     });
-    const propsInit = await Document.getInitialProps({ renderPage });
+    const propsInit = await Document.getInitialProps({
+      renderPage,
+      req: {
+        params: { nonce: "ghi" },
+      },
+    });
     const jssFun = renderPage.mock.calls[0][0];
     const JssComp = jssFun(Helper);
     const JssInst = <JssComp />;
@@ -51,6 +63,11 @@ describe("Documents", () => {
     expect(JssRender).toMatchSnapshot();
     expect(propsInit).toMatchSnapshot();
 
-    const propsInit2 = await Document.getInitialProps({ renderPage });
+    const propsInit2 = await Document.getInitialProps({
+      renderPage,
+      req: {
+        params: { nonce: "ghi" },
+      },
+    });
   });
 });

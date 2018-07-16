@@ -5,6 +5,7 @@ import {
 } from "apollo-server-express";
 import { createComplexityLimitRule } from "graphql-validation-complexity";
 // import parseDbUrl from "parse-database-url";
+import { v4 as uuidv4 } from "uuid";
 
 import routes from "../lib/routes";
 import {
@@ -77,6 +78,12 @@ app
       }),
     );
     server.get("*", (req, res) => {
+      const nonce = uuidv4();
+      req.params.nonce = nonce;
+      res.set(
+        "Content-Security-Policy",
+        `default-src 'self' *.auth0.com 'nonce-${nonce}'; script-src 'self' *.auth0.com 'nonce-${nonce}'; style-src 'self' *.auth0.com 'nonce-${nonce}' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-HHV9fpgXZciNMx/a9/fYJs5easPqtqmMjfsvEiT6J58=';`,
+      );
       return handle(req, res);
     });
     server.use((error, _, res, __) => {

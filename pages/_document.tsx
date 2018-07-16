@@ -2,7 +2,6 @@
 import Document, { Head, Main, NextScript } from "next/document";
 import React from "react";
 /* tslint:disable-next-line */
-/* tslint:disable-next-line */
 import flush from "styled-jsx/server";
 
 class MyDocument extends Document {
@@ -15,12 +14,15 @@ class MyDocument extends Document {
       };
       return WrappedComponent;
     });
+    const { nonce } = ctx.req.params;
     return {
+      nonce,
       ...page,
       pageContext,
       styles: (
         <React.Fragment>
           <style
+            nonce={nonce}
             id="jss-server-side"
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
@@ -33,7 +35,7 @@ class MyDocument extends Document {
     };
   }
   public render() {
-    const { pageContext } = this.props;
+    const { pageContext, nonce } = this.props;
     /* 
       <link
         rel="stylesheet"
@@ -42,7 +44,7 @@ class MyDocument extends Document {
     */
     return (
       <html lang="en" dir="ltr">
-        <Head>
+        <Head nonce={nonce}>
           <title>Condor Club</title>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
@@ -53,6 +55,7 @@ class MyDocument extends Document {
               "minimum-scale=1, width=device-width, height=device-height"
             }
           />
+          <meta property="csp-nonce" content={nonce} />
           {/* PWA primary color */}
           <meta
             name="theme-color"
@@ -61,7 +64,7 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-          <NextScript />
+          <NextScript nonce={nonce} />
         </body>
       </html>
     );
