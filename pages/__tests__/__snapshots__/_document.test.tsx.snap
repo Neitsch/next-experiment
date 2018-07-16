@@ -10,6 +10,7 @@ exports[`Documents init props client 2`] = `<Helper />`;
 
 exports[`Documents init props client 3`] = `
 Object {
+  "nonce": "ghi",
   "pageContext": Object {
     "sheetsRegistry": Object {},
   },
@@ -21,6 +22,7 @@ Object {
         }
       }
       id="jss-server-side"
+      nonce="ghi"
     />
   </React.Fragment>,
 }
@@ -42,6 +44,7 @@ exports[`Documents init props server 2`] = `<Helper />`;
 
 exports[`Documents init props server 3`] = `
 Object {
+  "nonce": "ghi",
   "pageContext": Object {
     "sheetsRegistry": Object {},
   },
@@ -53,6 +56,7 @@ Object {
         }
       }
       id="jss-server-side"
+      nonce="ghi"
     />
   </React.Fragment>,
 }
@@ -73,6 +77,9 @@ exports[`Documents renders 1`] = `
     <meta
       content="user-scalable=0, initial-scale=1, minimum-scale=1, width=device-width, height=device-height"
       name="viewport"
+    />
+    <meta
+      property="csp-nonce"
     />
     <meta
       content="test"
