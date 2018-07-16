@@ -67,6 +67,7 @@ describe("Server", () => {
     };
     getFn.mock.calls[0][1](urlCall, otherArg);
     expect(otherArg.set).toHaveBeenCalled();
+    // @ts-ignore
     expect(urlCall.params.nonce).toEqual(nonce);
     expect(reqHandler).toHaveBeenCalledTimes(1);
     expect(reqHandler).toHaveBeenCalledWith(urlCall, otherArg);
