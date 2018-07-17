@@ -1,11 +1,16 @@
+import { GraphQLResolveInfo } from "graphql";
+
 import Schema from "../schema";
 
 describe("Graphql", () => {
   describe("Query", () => {
     it("Resolves", () => {
-      const res = Schema.getQueryType()
-        .getFields()
-        .user.resolve("test", null, null, null);
+      const querytypes = Schema!.getQueryType()!;
+      const fields = querytypes.getFields()!;
+      const userField = fields.user!;
+      // @ts-ignore
+      const resolveInfo: GraphQLResolveInfo = {};
+      const res = userField.resolve!("test", {}, null, resolveInfo)!;
       expect(res).toBe("test");
     });
   });

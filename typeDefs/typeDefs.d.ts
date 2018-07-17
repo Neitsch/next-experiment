@@ -7,4 +7,5 @@ declare namespace NodeJS {
 }
 
 declare module "jwks-rsa";
+
 /* tslint:enable */
