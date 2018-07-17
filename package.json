@@ -92,7 +92,7 @@
     "prettier": "^1.13.5",
     "react-styleguidist": "^7.0.17",
     "selenium-webdriver": "^4.0.0-alpha.1",
-    "ts-jest": "^22.4.6",
+    "ts-jest": "^23.0.1",
     "ts-node": "^7.0.0",
     "tslint-config-prettier": "^1.13.0"
   },
