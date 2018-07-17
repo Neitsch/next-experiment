@@ -12,6 +12,7 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "typeRoots": ["./node_modules/@types", "./typeDefs"],
