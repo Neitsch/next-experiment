@@ -61,14 +61,9 @@ describe("Server", () => {
     serverLauncher();
     expect(reqHandler).toHaveBeenCalledTimes(0);
     const url = "http://www.abc.com/123";
-    const urlCall = { url, params: {} };
-    const otherArg = {
-      set: jest.fn(),
-    };
+    const urlCall = { url };
+    const otherArg = {};
     getFn.mock.calls[0][1](urlCall, otherArg);
-    expect(otherArg.set).toHaveBeenCalled();
-    // @ts-ignore
-    expect(urlCall.params.nonce).toEqual(nonce);
     expect(reqHandler).toHaveBeenCalledTimes(1);
     expect(reqHandler).toHaveBeenCalledWith(urlCall, otherArg);
     expect(setPort).toEqual(3000);
@@ -79,8 +74,8 @@ describe("Server", () => {
       errorFunc();
     }).not.toThrow();
     const reqIn = { user: { sub: "SUB" } };
-    useFn.mock.calls[3][3](reqIn, otherArg);
-    expect(useFn.mock.calls[3][3]).toEqual(innerGql);
+    useFn.mock.calls[5][3](reqIn, otherArg);
+    expect(useFn.mock.calls[5][3]).toEqual(innerGql);
     expect(
       gqlFn.mock.calls[0][0]({ user: { sub: "MySub" } }),
     ).toMatchSnapshot();
@@ -88,8 +83,13 @@ describe("Server", () => {
       promise.catch.mock.calls[0][0]("Test");
     }).not.toThrow();
     const resFn = jest.fn();
-    useFn.mock.calls[5][0](new Error("test"), null, { json: resFn });
+    useFn.mock.calls[7][0](new Error("test"), null, { json: resFn });
     expect(resFn.mock.calls).toMatchSnapshot();
+    const cb = jest.fn();
+    const res = { locals: {} };
+    useFn.mock.calls[4][0]({}, res, cb);
+    expect(cb).toHaveBeenCalled();
+    expect(res.locals).toHaveProperty("nonce");
     expect(console.error).toHaveBeenCalledWith("Test");
     console.error = consoleErrorSave;
   });
