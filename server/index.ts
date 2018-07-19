@@ -1,15 +1,11 @@
 import { formatError } from "apollo-errors";
-import {
-  graphiqlExpress,
-  graphqlExpress as graphqlHTTP,
-} from "apollo-server-express";
+import { ApolloServer } from "apollo-server-express";
 import { createComplexityLimitRule } from "graphql-validation-complexity";
 // import parseDbUrl from "parse-database-url";
 import { v4 as uuidv4 } from "uuid";
 
 import routes from "../lib/routes";
 import {
-  bodyParser,
   compression,
   cookieParser,
   cors,
@@ -49,41 +45,42 @@ app
       }),
     );
     server.use(cookieParser());
-    server.use(
-      "/graphql",
-      checkJwt,
-      bodyParser.json(),
-      graphqlHTTP(req => ({
-        cacheControl: true,
-        context: {
+    server.use("/graphql", checkJwt);
+    new ApolloServer({
+      cacheControl: true,
+      context: ({ req }) => {
+        return {
           userSub: req.user.sub,
-        },
-        formatError,
-        rootValue: req.user.sub,
-        schema: GraphqlSchema,
-        tracing: dev,
-        validationRules: [
-          createComplexityLimitRule(1000, {
-            listFactor: 10,
-            objectCost: 1,
-            scalarCost: 1,
-          }),
-        ],
-      })),
-    );
-    server.use(
-      "/graphiql",
-      graphiqlExpress({
-        endpointURL: "/graphql",
-      }),
-    );
+        };
+      },
+      debug: dev /*
+      formatError: e => {
+        console.error(e);
+        return e;
+      },*/,
+      formatError,
+      schema: GraphqlSchema,
+      tracing: dev,
+      validationRules: [
+        createComplexityLimitRule(1000, {
+          listFactor: 10,
+          objectCost: 1,
+          scalarCost: 1,
+        }),
+      ],
+    }).applyMiddleware({
+      app: server,
+      path: "/graphql",
+    });
     server.get("*", (req, res) => {
       const nonce = uuidv4();
       req.params.nonce = nonce;
-      res.set(
-        "Content-Security-Policy",
-        `default-src 'self' *.auth0.com 'nonce-${nonce}'; script-src 'self' *.auth0.com 'nonce-${nonce}'; style-src 'self' *.auth0.com 'nonce-${nonce}' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-HHV9fpgXZciNMx/a9/fYJs5easPqtqmMjfsvEiT6J58=';`,
-      );
+      if (!dev) {
+        res.set(
+          "Content-Security-Policy",
+          `default-src 'self' *.auth0.com 'nonce-${nonce}'; script-src 'self' *.auth0.com 'nonce-${nonce}'; style-src 'self' *.auth0.com 'nonce-${nonce}' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-HHV9fpgXZciNMx/a9/fYJs5easPqtqmMjfsvEiT6J58=';`,
+        );
+      }
       return handle(req, res);
     });
     server.use((error, _, res, __) => {
