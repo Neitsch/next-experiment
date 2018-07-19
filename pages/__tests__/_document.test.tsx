@@ -27,8 +27,8 @@ describe("Documents", () => {
     });
     const propsInit = await Document.getInitialProps({
       renderPage,
-      req: {
-        params: { nonce: "ghi" },
+      res: {
+        locals: { nonce: "ghi" },
       },
     });
     const jssFun = renderPage.mock.calls[0][0];
@@ -51,8 +51,8 @@ describe("Documents", () => {
     });
     const propsInit = await Document.getInitialProps({
       renderPage,
-      req: {
-        params: { nonce: "ghi" },
+      res: {
+        locals: { nonce: "ghi" },
       },
     });
     const jssFun = renderPage.mock.calls[0][0];
@@ -65,8 +65,8 @@ describe("Documents", () => {
 
     const propsInit2 = await Document.getInitialProps({
       renderPage,
-      req: {
-        params: { nonce: "ghi" },
+      res: {
+        locals: { nonce: "ghi" },
       },
     });
   });
