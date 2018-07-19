@@ -1,5 +1,5 @@
 import { Builder, until, WebDriver } from "selenium-webdriver";
-import { AxeBuilder } from "axe-webdriverjs";
+import axe, { AxeBuilder } from "axe-webdriverjs";
 
 describe("Smoke", () => {
   let webdriver: WebDriver;
@@ -16,7 +16,10 @@ describe("Smoke", () => {
 
   it("Axe", () => {
     return new Promise(resolve => {
-      AxeBuilder(webdriver!).analyze(result => {
+      // @ts-ignore
+      const AxeB = axe as AxeBuilder;
+      // @ts-ignore
+      new AxeB(webdriver!).analyze(result => {
         expect(result.violations).toHaveLength(0);
         resolve();
       });
