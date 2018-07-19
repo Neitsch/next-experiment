@@ -14,7 +14,7 @@ class MyDocument extends Document {
       };
       return WrappedComponent;
     });
-    const { nonce } = ctx.req.params;
+    const { nonce } = ctx.res.locals;
     return {
       nonce,
       ...page,
