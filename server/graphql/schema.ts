@@ -3,7 +3,7 @@ import { GraphQLObjectType, GraphQLSchema, GraphQLString } from "graphql";
 const queryType = new GraphQLObjectType({
   fields: {
     user: {
-      resolve: (_source, _args, context, _info) => context.userSub,
+      resolve: (_, ___, context) => context.userSub,
       type: GraphQLString,
     },
   },

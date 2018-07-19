@@ -48,16 +48,10 @@ app
     server.use("/graphql", checkJwt);
     new ApolloServer({
       cacheControl: true,
-      context: ({ req }) => {
-        return {
-          userSub: req.user.sub,
-        };
-      },
-      debug: dev /*
-      formatError: e => {
-        console.error(e);
-        return e;
-      },*/,
+      context: ({ req }) => ({
+        userSub: req.user.sub,
+      }),
+      debug: dev,
       formatError,
       schema: GraphqlSchema,
       tracing: dev,
@@ -75,12 +69,10 @@ app
     server.get("*", (req, res) => {
       const nonce = uuidv4();
       req.params.nonce = nonce;
-      if (!dev) {
-        res.set(
-          "Content-Security-Policy",
-          `default-src 'self' *.auth0.com 'nonce-${nonce}'; script-src 'self' *.auth0.com 'nonce-${nonce}'; style-src 'self' *.auth0.com 'nonce-${nonce}' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-HHV9fpgXZciNMx/a9/fYJs5easPqtqmMjfsvEiT6J58=';`,
-        );
-      }
+      res.set(
+        "Content-Security-Policy",
+        `default-src 'self' *.auth0.com 'nonce-${nonce}'; script-src 'self' *.auth0.com 'nonce-${nonce}'; style-src 'self' *.auth0.com 'nonce-${nonce}' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-HHV9fpgXZciNMx/a9/fYJs5easPqtqmMjfsvEiT6J58=';`,
+      );
       return handle(req, res);
     });
     server.use((error, _, res, __) => {

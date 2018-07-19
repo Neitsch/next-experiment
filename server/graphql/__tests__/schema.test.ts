@@ -5,7 +5,7 @@ describe("Graphql", () => {
     it("Resolves", () => {
       const res = Schema.getQueryType()
         .getFields()
-        .user.resolve("test", null, null, null);
+        .user.resolve(null, null, { userSub: "test" }, null);
       expect(res).toBe("test");
     });
   });
