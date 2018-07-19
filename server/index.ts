@@ -80,7 +80,7 @@ app
     server.use("/graphql", checkJwt);
     new ApolloServer({
       cacheControl: true,
-      context: ({ req }) => ({
+      context: ({ req }: { req: RQ }) => ({
         userSub: req.user.sub,
       }),
       debug: dev,
