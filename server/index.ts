@@ -1,9 +1,5 @@
 import { formatError } from "apollo-errors";
-import {
-  graphiqlExpress,
-  graphqlExpress as graphqlHTTP,
-} from "apollo-server-express";
-import bodyParser from "body-parser";
+import { ApolloServer } from "apollo-server-express";
 import compression from "compression";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -81,40 +77,27 @@ app
         },
       }),
     );
-    server.use(
-      "/graphql",
-      checkJwt,
-      bodyParser.json(),
-      graphqlHTTP(req => {
-        let userId = null;
-        if (req && req.user && req.user.sub) {
-          userId = req.user.sub;
-        }
-        return {
-          cacheControl: true,
-          context: {
-            userSub: userId,
-          },
-          formatError,
-          rootValue: userId,
-          schema: GraphqlSchema,
-          tracing: dev,
-          validationRules: [
-            createComplexityLimitRule(1000, {
-              listFactor: 10,
-              objectCost: 1,
-              scalarCost: 1,
-            }),
-          ],
-        };
+    server.use("/graphql", checkJwt);
+    new ApolloServer({
+      cacheControl: true,
+      context: ({ req }: { req: RQ }) => ({
+        userSub: req.user.sub,
       }),
-    );
-    server.use(
-      "/graphiql",
-      graphiqlExpress({
-        endpointURL: "/graphql",
-      }),
-    );
+      debug: dev,
+      formatError,
+      schema: GraphqlSchema,
+      tracing: dev,
+      validationRules: [
+        createComplexityLimitRule(1000, {
+          listFactor: 10,
+          objectCost: 1,
+          scalarCost: 1,
+        }),
+      ],
+    }).applyMiddleware({
+      app: server,
+      path: "/graphql",
+    });
     server.get("*", (req: RQ, res: RS) => {
       return handle(req, res);
     });

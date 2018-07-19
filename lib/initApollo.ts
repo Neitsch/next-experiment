@@ -43,15 +43,7 @@ function create(jwt) {
   return new ApolloClient({
     cache,
     connectToDevTools: !!process.browser,
-    link: setAuthorizationLink(jwt).concat(
-      createPersistedQueryLink().concat(
-        new HttpLink({
-          credentials: "same-origin",
-          fetch: isomorphicUnfetch,
-          uri: getUri(),
-        }),
-      ),
-    ),
+    link: setupLink(jwt),
     ssrMode: !process.browser,
   });
 }

@@ -24,9 +24,11 @@ describe("Server", () => {
         },
       }),
     }));
-    const innerGql = jest.fn();
+    const innerGql = {
+      applyMiddleware: jest.fn(),
+    };
     const getFn = jest.fn();
-    const gqlFn = jest.fn().mockReturnValue(innerGql);
+    const gqlFn = jest.fn().mockImplementation(() => innerGql);
     const useFn = jest.fn();
     jest.doMock("body-parser", () => ({ json: jest.fn() }));
     jest.doMock("compression", () => jest.fn());
@@ -45,8 +47,7 @@ describe("Server", () => {
       expressJwtSecret: jest.fn(),
     }));
     jest.doMock("apollo-server-express", () => ({
-      graphiqlExpress: jest.fn(),
-      graphqlExpress: gqlFn,
+      ApolloServer: gqlFn,
     }));
     jest.doMock("graphql-validation-complexity");
     require("../index");
@@ -65,18 +66,15 @@ describe("Server", () => {
     expect(() => {
       errorFunc!();
     }).not.toThrow();
-    const reqIn = { user: { sub: "SUB" } };
-    useFn.mock.calls[5][3](reqIn, otherArg);
-    expect(useFn.mock.calls[5][3]).toEqual(innerGql);
-    expect(
-      gqlFn.mock.calls[0][0]({ user: { sub: "MySub" } }),
-    ).toMatchSnapshot();
-    expect(gqlFn.mock.calls[0][0](null)).toMatchSnapshot();
     expect(() => {
       promise.catch.mock.calls[0][0]("Test");
     }).not.toThrow();
+    expect(
+      gqlFn.mock.calls[0][0].context({ req: { user: { sub: "Test" } } })
+        .userSub,
+    ).toEqual("Test");
     const resFn = jest.fn();
-    useFn.mock.calls[7][0](new Error("test"), null, { json: resFn });
+    useFn.mock.calls[6][0](new Error("test"), null, { json: resFn });
     expect(resFn.mock.calls).toMatchSnapshot();
     const cb = jest.fn();
     const res = { locals: {} };

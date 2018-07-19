@@ -10,7 +10,12 @@ describe("Graphql", () => {
       const userField = fields.user!;
       // @ts-ignore
       const resolveInfo: GraphQLResolveInfo = {};
-      const res = userField.resolve!("test", {}, null, resolveInfo)!;
+      const res = userField.resolve!(
+        null,
+        {},
+        { userSub: "test" },
+        resolveInfo,
+      )!;
       expect(res).toBe("test");
     });
   });
