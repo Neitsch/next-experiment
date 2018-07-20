@@ -37,7 +37,9 @@ describe("Signed In", () => {
   it("fails without token", () => {
     jest.resetModules();
     jest.resetAllMocks();
+    // tslint:disable-next-line
     const consoleErrorSave = console.error;
+    // tslint:disable-next-line
     console.error = jest.fn();
     const checkSecretFn = jest.fn().mockReturnValue(false);
     const extractInfoFromHashFn = jest.fn().mockReturnValue({
@@ -66,7 +68,9 @@ describe("Signed In", () => {
     expect(checkSecretFn).toHaveBeenCalledTimes(1);
     expect(extractInfoFromHashFn).toHaveBeenCalledTimes(1);
     expect(innerRouter.push).not.toHaveBeenCalled();
+    // tslint:disable-next-line
     expect(console.error).toHaveBeenCalled();
+    // tslint:disable-next-line
     console.error = consoleErrorSave;
   });
 });
