@@ -8,7 +8,7 @@ describe("Smoke", () => {
   });
   beforeEach(async () => {
     await webdriver!.get("http://localhost:3000");
-  });
+  }, 20000);
 
   it("Title", async () => {
     await webdriver!.wait(until.titleIs("Condor Club"), 1000);
