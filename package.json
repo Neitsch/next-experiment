@@ -7,7 +7,7 @@
     "dev": "nodemon server/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .next/production-server/server/index.js",
-    "test": "jest --silent --ci",
+    "test": "snyk test && jest --silent --ci",
     "format": "prettier --loglevel silent --write '{,!(node_modules)/**/}*.{ts,tsx,js,css,md}'",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
@@ -97,7 +97,8 @@
     "selenium-webdriver": "4.0.0-alpha.1",
     "ts-jest": "23.0.1",
     "ts-node": "7.0.0",
-    "tslint-config-prettier": "1.14.0"
+    "tslint-config-prettier": "1.14.0",
+    "snyk": "^1.89.0"
   },
   "husky": {
     "hooks": {
