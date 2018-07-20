@@ -36,7 +36,7 @@ describe("Smoke", () => {
       await emailComponent.sendKeys(email);
       await passwordComponent.sendKeys(password);
       await submitComponent.click();
-      await webdriver!.wait(until.urlIs("http://localhost:3000/"), 40000);
+      await webdriver!.wait(until.urlIs("http://localhost:3000/"), 100000);
 
       // Logout part
       await webdriver!.wait(until.elementLocated(By.id("accountButton")));
@@ -44,7 +44,7 @@ describe("Smoke", () => {
       await webdriver!.findElement(By.id("logout")).click();
       await webdriver!.wait(until.elementLocated(By.id("login")));
     },
-    60000,
+    100000,
   );
   afterAll(async () => {
     webdriver!.quit();
