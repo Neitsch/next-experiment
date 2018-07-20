@@ -18,7 +18,7 @@ describe("Smoke", () => {
           return readyState === "complete";
         });
     });
-  });
+  }, 20000);
 
   it(
     "Login and Logout",
