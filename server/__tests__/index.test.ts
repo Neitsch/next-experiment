@@ -4,7 +4,9 @@ describe("Server", () => {
     let serverLauncher: () => void;
     let errorFunc: (v?: any) => void;
     let setPort;
+    // tslint:disable-next-line
     const consoleErrorSave = console.error;
+    // tslint:disable-next-line
     console.error = jest.fn();
     const promise = {
       catch: jest.fn(),
@@ -81,7 +83,9 @@ describe("Server", () => {
     useFn.mock.calls[4][0]({}, res, cb);
     expect(cb).toHaveBeenCalled();
     expect(res.locals).toHaveProperty("nonce");
+    // tslint:disable-next-line
     expect(console.error).toHaveBeenCalledWith("Test");
+    // tslint:disable-next-line
     console.error = consoleErrorSave;
   });
 });
