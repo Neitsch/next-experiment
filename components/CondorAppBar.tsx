@@ -10,6 +10,8 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuIcon from "@material-ui/icons/Menu";
 import React from "react";
 
+import { Router } from "../lib/routes";
+
 const styles = {
   flex: {
     flex: 1,
@@ -70,7 +72,9 @@ class CondorAppBar extends React.Component<Props, IState> {
                   open={true}
                 >
                   <MenuItem>Profile</MenuItem>
-                  <MenuItem>My account</MenuItem>
+                  <MenuItem id="logout" onClick={this.logout}>
+                    Sign Out
+                  </MenuItem>
                 </Menu>
               ) : null}
             </div>
@@ -86,6 +90,9 @@ class CondorAppBar extends React.Component<Props, IState> {
     this.setState(() => ({
       openAccountMenu: target,
     }));
+  };
+  private logout = () => {
+    Router.pushRoute("/auth/sign-out");
   };
 }
 

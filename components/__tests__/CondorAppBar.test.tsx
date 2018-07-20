@@ -3,8 +3,15 @@ import React from "react";
 
 describe("AppBar", () => {
   let shallow;
+  let pushRoute;
   beforeEach(() => {
     jest.resetModules();
+    pushRoute = jest.fn();
+    jest.doMock("../../lib/routes", () => ({
+      Router: {
+        pushRoute,
+      },
+    }));
     shallow = createShallow({ dive: true });
   });
   describe("unauthenticated", () => {
@@ -33,6 +40,14 @@ describe("AppBar", () => {
       const anchorElem = jest.fn();
       method({ currentTarget: anchorElem });
       expect(AppBarRendered.state("openAccountMenu")).toEqual(anchorElem);
+    });
+    it("Logout", () => {
+      AppBarRendered.setState({
+        openAccountMenu: true,
+      });
+      const method = AppBarRendered.find("#logout").props().onClick;
+      method();
+      expect(pushRoute!).toHaveBeenCalled();
     });
   });
 });
