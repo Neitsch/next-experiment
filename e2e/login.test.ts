@@ -36,7 +36,16 @@ describe("Smoke", () => {
       await emailComponent.sendKeys(email);
       await passwordComponent.sendKeys(password);
       await submitComponent.click();
-      await webdriver!.wait(until.urlIs("http://localhost:3000/"), 100000);
+      try {
+        // tslint:disable-next-line
+        console.log(await webdriver!.getCurrentUrl());
+        await webdriver!.wait(until.urlIs("http://localhost:3000/"), 80000);
+      } catch (e) {
+        // tslint:disable-next-line
+        console.log(e);
+        // tslint:disable-next-line
+        console.log(await webdriver!.getCurrentUrl());
+      }
 
       // Logout part
       await webdriver!.wait(until.elementLocated(By.id("accountButton")));
