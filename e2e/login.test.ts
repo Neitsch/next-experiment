@@ -1,8 +1,8 @@
 import { Builder, By, until, WebDriver } from "selenium-webdriver";
 // import axe, { AxeBuilder } from "axe-webdriverjs";
 
-const email = process.env["SAMPLE_EMAIL"];
-const password = process.env["SAMPLE_PASSWORD"];
+const email = String(process.env["SAMPLE_EMAIL"]);
+const password = String(process.env["SAMPLE_PASSWORD"]);
 
 describe("Smoke", () => {
   let webdriver: WebDriver;
