@@ -51,6 +51,7 @@ exports[`AppBar unauthenticated renders 1`] = `
     </WithStyles(Typography)>
     <WithStyles(Button)
       color="inherit"
+      id="login"
     >
       Login
     </WithStyles(Button)>

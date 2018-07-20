@@ -79,7 +79,9 @@ class CondorAppBar extends React.Component<Props, IState> {
               ) : null}
             </div>
           ) : (
-            <Button color="inherit">Login</Button>
+            <Button id="login" color="inherit">
+              Login
+            </Button>
           )}
         </Toolbar>
       </AppBar>
