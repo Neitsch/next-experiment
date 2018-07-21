@@ -4,16 +4,20 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: HomeFragment
+// GraphQL mutation operation: ChangeUsername
 // ====================================================
 
-export interface HomeFragment_user {
+export interface ChangeUsername_changeUsername {
   username: string | null;
   id: string;
 }
 
-export interface HomeFragment {
-  user: HomeFragment_user;
+export interface ChangeUsername {
+  changeUsername: ChangeUsername_changeUsername;
+}
+
+export interface ChangeUsernameVariables {
+  username: string;
 }
 
 /* tslint:disable */

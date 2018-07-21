@@ -1,3 +1,12 @@
+type Mutation {
+  changeUsername(username: String!): User!
+}
+
 type Query {
-  user: String
+  user: User!
+}
+
+type User {
+  id: ID!
+  username: String
 }

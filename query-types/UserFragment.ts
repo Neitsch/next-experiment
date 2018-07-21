@@ -4,16 +4,12 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: HomeFragment
+// GraphQL fragment: UserFragment
 // ====================================================
 
-export interface HomeFragment_user {
+export interface UserFragment {
   username: string | null;
   id: string;
-}
-
-export interface HomeFragment {
-  user: HomeFragment_user;
 }
 
 /* tslint:disable */

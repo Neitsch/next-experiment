@@ -11,6 +11,8 @@ import helmet from "helmet";
 import jwksRsa from "jwks-rsa";
 import nextServer from "next";
 // import parseDbUrl from "parse-database-url";
+import "reflect-metadata";
+import { createConnection } from "typeorm";
 import { v4 as uuidv4 } from "uuid";
 
 import routes from "../lib/routes";
@@ -34,9 +36,35 @@ const checkJwt = jwt({
   }),
 });
 
+const baseDbConfig = {
+  entities: ["server/entity/**/*.ts"],
+  migrations: ["server/migration/**/*.ts"],
+  subscribers: ["server/subscriber/**/*.ts"],
+  synchronize: true,
+};
+
 app
   .prepare()
   .then(() => {
+    return createConnection(
+      dev
+        ? {
+            ...baseDbConfig,
+            type: "sqlite",
+            database: "db.sqlite",
+          }
+        : {
+            ...baseDbConfig,
+            type: "postgres",
+            host: "localhost",
+            port: 5432,
+            username: "test",
+            password: "test",
+            database: "test",
+          },
+    );
+  })
+  .then(connection => {
     // const dbConfig = parseDbUrl(process.env["DATABASE_URL"] ? );
     const server = expressServer();
     server.use(compression());
@@ -52,39 +80,45 @@ app
       }),
     );
     server.use(cookieParser());
-    server.use(
-      (_, res, next) => {
-        res.locals.nonce = uuidv4();
-        next();
-      },
-      helmet.contentSecurityPolicy({
-        directives: {
-          defaultSrc: ["'self'", "*.auth0.com"],
-          scriptSrc: [
-            "'self'",
-            "*.auth0.com",
-            /* istanbul ignore next */
-            (_: RQ, res: RS) => `'nonce-${res.locals.nonce}'`,
-          ],
-          styleSrc: [
-            "'self'",
-            "*.auth0.com",
-            /* istanbul ignore next */
-            (_: RQ, res: RS) => `'nonce-${res.locals.nonce}'`,
-            "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
-            "'sha256-HHV9fpgXZciNMx/a9/fYJs5easPqtqmMjfsvEiT6J58='",
-          ],
+    if (!dev) {
+      server.use(
+        (_, res, next) => {
+          res.locals.nonce = uuidv4();
+          next();
         },
-      }),
-    );
+        helmet.contentSecurityPolicy({
+          directives: {
+            defaultSrc: ["'self'", "*.auth0.com"],
+            scriptSrc: [
+              "'self'",
+              "*.auth0.com",
+              /* istanbul ignore next */
+              (_: RQ, res: RS) => `'nonce-${res.locals.nonce}'`,
+            ],
+            styleSrc: [
+              "'self'",
+              "*.auth0.com",
+              /* istanbul ignore next */
+              (_: RQ, res: RS) => `'nonce-${res.locals.nonce}'`,
+              "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
+              "'sha256-HHV9fpgXZciNMx/a9/fYJs5easPqtqmMjfsvEiT6J58='",
+            ],
+          },
+        }),
+      );
+    }
     server.use("/graphql", checkJwt);
     new ApolloServer({
       cacheControl: true,
       context: ({ req }: { req: RQ }) => ({
         userSub: req.user.sub,
+        connection,
       }),
       debug: dev,
-      formatError,
+      formatError: (error: Error) => {
+        console.log(error);
+        return formatError(error);
+      },
       schema: GraphqlSchema,
       tracing: dev,
       validationRules: [
