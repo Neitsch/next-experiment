@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import React from "react";
 
 import { HomeFragment } from "../query-types/HomeFragment";
-import ChangeUsername from "./ChangeUsername";
+import ChangeUsername from "./smart/ChangeUsername";
 
 export const USER_QUERY = gql`
   fragment UserFragment on User {

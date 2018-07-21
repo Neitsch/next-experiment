@@ -1,15 +1,15 @@
-import { Entity, PrimaryColumn, Generated, Column } from "typeorm";
+import { Column, Entity, Generated, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class User {
   @Column()
   @Generated("uuid")
-  uuid?: string;
+  public uuid?: string;
 
-  @PrimaryColumn() sub: string;
+  @PrimaryColumn() public sub: string;
 
   @Column({ nullable: true })
-  username?: string;
+  public username?: string;
 
   constructor(sub: string) {
     this.sub = sub;

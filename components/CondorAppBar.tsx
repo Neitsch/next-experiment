@@ -8,7 +8,9 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuIcon from "@material-ui/icons/Menu";
+import gql from "graphql-tag";
 import React from "react";
+import { Query } from "react-apollo";
 
 import { Router } from "../lib/routes";
 
@@ -27,6 +29,14 @@ type Props = IProps & WithStyles<typeof styles>;
 interface IState {
   openAccountMenu?: HTMLElement;
 }
+
+const APP_BAR_DATA = gql`
+  query AppBarData {
+    user {
+      username
+    }
+  }
+`;
 
 class CondorAppBar extends React.Component<Props, IState> {
   constructor(props: Props) {
@@ -58,24 +68,33 @@ class CondorAppBar extends React.Component<Props, IState> {
                 <AccountCircle />
               </IconButton>
               {this.state.openAccountMenu ? (
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={this.state.openAccountMenu}
-                  anchorOrigin={{
-                    horizontal: "right",
-                    vertical: "top",
-                  }}
-                  transformOrigin={{
-                    horizontal: "right",
-                    vertical: "top",
-                  }}
-                  open={true}
-                >
-                  <MenuItem>Profile</MenuItem>
-                  <MenuItem id="logout" onClick={this.logout}>
-                    Sign Out
-                  </MenuItem>
-                </Menu>
+                <Query query={APP_BAR_DATA}>
+                  {({ data }) =>
+                    data && data.user && data.user.username ? (
+                      <Menu
+                        id="menu-appbar"
+                        anchorEl={this.state.openAccountMenu}
+                        anchorOrigin={{
+                          horizontal: "right",
+                          vertical: "top",
+                        }}
+                        transformOrigin={{
+                          horizontal: "right",
+                          vertical: "top",
+                        }}
+                        open={true}
+                        onClose={() =>
+                          this.setState(() => ({ openAccountMenu: null }))
+                        }
+                      >
+                        <MenuItem>Hey, {data.user.username}</MenuItem>
+                        <MenuItem id="logout" onClick={this.logout}>
+                          Sign Out
+                        </MenuItem>
+                      </Menu>
+                    ) : null
+                  }
+                </Query>
               ) : null}
             </div>
           ) : (

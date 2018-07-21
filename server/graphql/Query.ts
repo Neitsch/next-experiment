@@ -1,8 +1,8 @@
 import { GraphQLNonNull, GraphQLObjectType } from "graphql";
 import { Connection } from "typeorm";
 
-import GraphQLUser from "./GraphQLUser";
 import { User } from "../entity/account/User";
+import GraphQLUser from "./GraphQLUser";
 
 export default new GraphQLObjectType({
   fields: {

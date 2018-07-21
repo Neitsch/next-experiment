@@ -31,6 +31,30 @@ module.exports = {
       testEnvironment: "jest-environment-jsdom-global",
     },
     {
+      automock: true,
+      clearMocks: true,
+      unmockedModulePathPatterns: [
+        "lodash",
+        "enzyme",
+        "enzyme-to-json",
+        "enzyme-adapter-react-16",
+        "jest-extended",
+      ],
+      snapshotSerializers: ["enzyme-to-json/serializer"],
+      setupTestFrameworkScriptFile: "<rootDir>lib/setupTests.js",
+      displayName: "unit",
+      transform: {
+        // "^.+\\.jsx?$": "babel-jest",
+        "^.+\\.tsx?$": "ts-jest",
+      },
+      testRegex: "/__tests__/.*\\.spec\\.(jsx?|tsx?)$",
+      moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+      testEnvironment: "jest-environment-jsdom-global",
+      moduleNameMapper: {
+        "^jwks-rsa$": "<rootDir>/__unit_mocks__/jwks-rsa.mock.ts",
+      },
+    },
+    {
       runner: "jest-runner-tslint",
       displayName: "lint",
       moduleFileExtensions: [
