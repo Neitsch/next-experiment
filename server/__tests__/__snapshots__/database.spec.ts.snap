@@ -35,5 +35,6 @@ Object {
   "synchronize": true,
   "type": "postgresql",
   "user": "testUser",
+  "username": "testUser",
 }
 `;
