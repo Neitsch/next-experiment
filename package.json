@@ -7,7 +7,7 @@
     "dev": "nodemon server/launch.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .next/production-server/server/launch.js",
-    "test": "jest -c jest.config.js --silent --ci",
+    "test": "jest -c jest.config.js --silent --ci -i",
     "lint": "jest -c jest.lint.config.js --silent --ci",
     "format": "prettier --loglevel silent --write '{,!(node_modules)/**/}*.{ts,tsx,js,css,md}'",
     "styleguide": "styleguidist server",
