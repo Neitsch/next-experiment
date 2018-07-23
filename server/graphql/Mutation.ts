@@ -14,7 +14,7 @@ export default new GraphQLObjectType({
       },
       resolve: async (
         _,
-        args,
+        { username },
         context: { userSub: string; connection: Connection },
       ) => {
         let user = await context.connection
@@ -23,7 +23,7 @@ export default new GraphQLObjectType({
         if (!user) {
           throw new Error("User not registered");
         }
-        user.username = args.username;
+        user.username = username;
         user = await context.connection.getRepository(User).save(user);
         return user;
       },

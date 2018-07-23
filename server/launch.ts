@@ -3,7 +3,8 @@ import express from "express";
 import db from "./database";
 import exp from "./express/index";
 
-(async () => {
+export const launchFn = async () => {
+  /* istanbul ignore next */
   const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
   const initialConfig = {
     dev: process.env.NODE_ENV !== "production",
@@ -11,7 +12,7 @@ import exp from "./express/index";
 
   const app = express();
   const connection = await db(initialConfig)();
-  exp({
+  await exp({
     ...initialConfig,
     graphqlPath: "/graphql",
     initialContext: {
@@ -23,4 +24,6 @@ import exp from "./express/index";
       throw err;
     }
   });
-})();
+};
+
+export default launchFn();

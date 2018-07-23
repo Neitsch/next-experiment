@@ -1,7 +1,7 @@
 import { createConnection } from "typeorm";
 
 const baseDbConfig = {
-  entities: ["server/entity/**/*.ts"],
+  entities: ["server/entity/account/*.ts"],
   migrations: ["server/migration/**/*.ts"],
   subscribers: ["server/subscriber/**/*.ts"],
   synchronize: true,

@@ -1,17 +1,17 @@
 import { Express } from "express";
 
-import common from "./setupCommonMiddleware";
-import security from "./security";
 import graphql from "./graphql-server";
 import next from "./nextHandle";
+import security from "./security";
+import common from "./setupCommonMiddleware";
 
 export default (config: {
   dev: boolean;
   graphqlPath: string;
   initialContext: any;
-}) => (expressApp: Express) => {
+}) => async (expressApp: Express) => {
   common(expressApp);
   security(config)(expressApp);
   graphql(config)(expressApp);
-  next(config)(expressApp);
+  await next(config)(expressApp);
 };

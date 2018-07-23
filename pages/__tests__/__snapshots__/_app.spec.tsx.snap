@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App page renders - with JSS 1`] = `
+<mockConstructor>
+  <JssProvider
+    generateClassName={[MockFunction]}
+    registry={
+      Object {
+        "add": [MockFunction],
+      }
+    }
+  >
+    <MuiThemeProvider
+      sheetsManager={Map {}}
+      theme={Object {}}
+    >
+      <WithStyles(CssBaseline) />
+      <ApolloProvider
+        client={[MockFunction]}
+      >
+        <WithStyles(CondorAppBar) />
+        <Component
+          pageContext={
+            Object {
+              "generateClassName": [MockFunction],
+              "sheetsManager": Map {},
+              "sheetsRegistry": Object {
+                "add": [MockFunction],
+              },
+              "theme": Object {},
+            }
+          }
+        />
+      </ApolloProvider>
+    </MuiThemeProvider>
+  </JssProvider>
+</mockConstructor>
+`;
+
+exports[`App page renders 1`] = `
+<mockConstructor>
+  <JssProvider
+    generateClassName={[MockFunction]}
+    registry={
+      Object {
+        "add": [MockFunction],
+      }
+    }
+  >
+    <MuiThemeProvider
+      sheetsManager={Map {}}
+      theme={Object {}}
+    >
+      <WithStyles(CssBaseline) />
+      <ApolloProvider
+        client={[MockFunction]}
+      >
+        <WithStyles(CondorAppBar) />
+        <Component
+          pageContext={
+            Object {
+              "generateClassName": [MockFunction],
+              "sheetsManager": Map {},
+              "sheetsRegistry": Object {
+                "add": [MockFunction],
+              },
+              "theme": Object {},
+            }
+          }
+        />
+      </ApolloProvider>
+    </MuiThemeProvider>
+  </JssProvider>
+</mockConstructor>
+`;

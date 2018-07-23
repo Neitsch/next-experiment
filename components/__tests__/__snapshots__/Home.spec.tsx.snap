@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders no username 1`] = `
+<WithStyles(Card)>
+  <WithStyles(CardContent)>
+    <div>
+      test-id
+       -
+       
+      Anonymous
+    </div>
+    <div>
+      <ChangeUsernameComponent />
+    </div>
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
+`;
+
+exports[`Home renders username 1`] = `
+<WithStyles(Card)>
+  <WithStyles(CardContent)>
+    <div>
+      test-id
+       -
+       
+      Test User
+    </div>
+    <div>
+      <ChangeUsernameComponent />
+    </div>
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
+`;

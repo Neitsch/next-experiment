@@ -68,7 +68,7 @@ class CondorAppBar extends React.Component<Props, IState> {
                 <AccountCircle />
               </IconButton>
               {this.state.openAccountMenu ? (
-                <Query query={APP_BAR_DATA}>
+                <Query query={APP_BAR_DATA} id="query">
                   {({ data }) =>
                     data && data.user && data.user.username ? (
                       <Menu

@@ -1,6 +1,6 @@
 import { setSecret } from "./index";
 
-import uuid from "uuid";
+import { v4 } from "uuid";
 
 export const getLock = options => {
   const config = require("./config.json");
@@ -15,7 +15,7 @@ export const getLock = options => {
 const getBaseUrl = () => `${window.location.protocol}//${window.location.host}`;
 
 const getOptions = container => {
-  const secret = uuid.v4();
+  const secret = v4();
   setSecret(secret);
   return {
     auth: {

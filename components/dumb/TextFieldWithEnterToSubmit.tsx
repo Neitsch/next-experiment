@@ -9,11 +9,11 @@ interface IProps {
 
 type Props = IProps;
 
-interface State {
+interface IState {
   textcontent: string;
 }
 
-class TextFieldWithEnterToSubmit extends React.Component<Props, State> {
+class TextFieldWithEnterToSubmit extends React.Component<Props, IState> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -25,22 +25,23 @@ class TextFieldWithEnterToSubmit extends React.Component<Props, State> {
       <TextField
         value={this.state.textcontent}
         onChange={this.usernameChange}
-        onKeyPress={(e: React.KeyboardEvent<HTMLDivElement>) => {
-          if (e.charCode !== 13) {
-            return;
-          }
-          e.preventDefault();
-          this.props.onSubmit(this.state.textcontent);
-          if (this.props.doClear) {
-            this.setState(() => ({
-              textcontent: "",
-            }));
-          }
-        }}
+        onKeyPress={this.onKeyPress}
         {...this.props.textFieldProps}
       />
     );
   }
+  private onKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.charCode !== 13) {
+      return;
+    }
+    e.preventDefault();
+    this.props.onSubmit(this.state.textcontent);
+    if (this.props.doClear) {
+      this.setState(() => ({
+        textcontent: "",
+      }));
+    }
+  };
   private usernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const textcontent = e.currentTarget.value;

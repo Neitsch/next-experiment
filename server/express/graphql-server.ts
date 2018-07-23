@@ -33,8 +33,10 @@ export const makeServer = ({
   });
 
 export const errorReporting = (expressApp: Express) => {
-  expressApp.use((error: Error, _: Request, res: Response) => {
-    res.json({ errors: [{ name: error.name, message: error.message }] });
+  expressApp.use((error: Error, _: Request, res: Response, __: any) => {
+    if (error) {
+      res.json({ errors: [{ name: error.name, message: error.message }] });
+    }
   });
 };
 
@@ -55,4 +57,5 @@ export default ({
     app: expressApp,
     path: graphqlPath,
   });
+  errorReporting(expressApp);
 };

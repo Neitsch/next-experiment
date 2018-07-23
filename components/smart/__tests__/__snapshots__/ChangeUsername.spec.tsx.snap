@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChangeUsername renders base 1`] = `
+<Mutation
+  mutation={
+    Object {
+      "data": Array [
+        "
+  mutation ChangeUsername($username: String!) {
+    changeUsername(username: $username) {
+      username
+      id
+    }
+  }
+",
+      ],
+    }
+  }
+/>
+`;
+
+exports[`ChangeUsername renders mutation 1`] = `
+<TextFieldWithEnterToSubmit
+  doClear={true}
+  onSubmit={[Function]}
+/>
+`;

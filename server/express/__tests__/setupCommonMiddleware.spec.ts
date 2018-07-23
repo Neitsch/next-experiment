@@ -10,8 +10,11 @@ jest.unmock("../setupCommonMiddleware");
 describe("Express Server Launch", () => {
   describe("Common", () => {
     it("instantiates", () => {
+      // @ts-ignore
       compression.mockReturnValue("compression");
+      // @ts-ignore
       cookieParser.mockReturnValue("cookieParser");
+      // @ts-ignore
       cors.mockReturnValue("cors");
       const express = jest.fn<Express>().mockReturnValue({
         use: jest.fn(),

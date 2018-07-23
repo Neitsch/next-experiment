@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Init Apollo Auth link 1`] = `
-Object {
-  "headers": Object {
-    "authorization": "Bearer My jwt",
-  },
-}
-`;

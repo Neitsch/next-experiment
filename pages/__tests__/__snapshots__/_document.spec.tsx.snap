@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Documents init props client 1`] = `
+<div>
+  Hi!
+</div>
+`;
+
+exports[`Documents init props client 2`] = `<Helper />`;
+
+exports[`Documents init props client 3`] = `
+Object {
+  "nonce": "ghi",
+  "pageContext": Object {
+    "sheetsRegistry": Object {},
+  },
+  "styles": <React.Fragment>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "[object Object]",
+        }
+      }
+      id="jss-server-side"
+      nonce="ghi"
+    />
+  </React.Fragment>,
+}
+`;
+
+exports[`Documents init props client 4`] = `
+<div>
+  Hi!
+</div>
+`;
+
+exports[`Documents init props server 1`] = `
+<div>
+  Hi!
+</div>
+`;
+
+exports[`Documents init props server 2`] = `<Helper />`;
+
+exports[`Documents init props server 3`] = `
+Object {
+  "nonce": "ghi",
+  "pageContext": Object {
+    "sheetsRegistry": Object {},
+  },
+  "styles": <React.Fragment>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "[object Object]",
+        }
+      }
+      id="jss-server-side"
+      nonce="ghi"
+    />
+  </React.Fragment>,
+}
+`;
+
+exports[`Documents renders 1`] = `
+<html
+  dir="ltr"
+  lang="en"
+>
+  <Component>
+    <title>
+      Condor Club
+    </title>
+    <meta
+      charSet="utf-8"
+    />
+    <meta
+      content="user-scalable=0, initial-scale=1, minimum-scale=1, width=device-width, height=device-height"
+      name="viewport"
+    />
+    <meta
+      property="csp-nonce"
+    />
+    <meta
+      content="test"
+      name="theme-color"
+    />
+  </Component>
+  <body>
+    <Component />
+    <Component />
+  </body>
+</html>
+`;

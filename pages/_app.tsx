@@ -11,7 +11,7 @@ import CondorAppBar from "../components/CondorAppBar";
 import { getPageContext } from "../lib/material-helper";
 import withApolloClient from "../lib/withApolloClient";
 
-class MyApp extends App<{
+export class MyApp extends App<{
   apollo: ApolloClient<{}>;
   Component: React.Factory<{}>;
 }> {
@@ -51,4 +51,4 @@ class MyApp extends App<{
   }
 }
 
-export default withApolloClient(MyApp);
+export default withApolloClient()(MyApp);

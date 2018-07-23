@@ -24,6 +24,7 @@ before_install:
 - tar -xzf geckodriver-v0.21.0-linux64.tar.gz -C geckodriver
 - export PATH=$PATH:$PWD/geckodriver
 script:
+- yarn run lint
 - yarn run test
 - yarn run build
 - yarn run start &
