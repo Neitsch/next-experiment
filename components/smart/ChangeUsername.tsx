@@ -1,5 +1,5 @@
-import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
 import gql from "graphql-tag";
 import React from "react";
 import { Mutation, MutationFn } from "react-apollo";
@@ -43,8 +43,8 @@ class ChangeUsernameComponent extends React.Component {
                   changeUsername({ variables: { username } });
                 }}
                 textFieldProps={{
-                  label: "Enter new Username",
                   error: !!error,
+                  label: "Enter new Username",
                 }}
               />
               {errorInfo}

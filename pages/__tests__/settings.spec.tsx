@@ -1,8 +1,8 @@
 import { shallow } from "enzyme";
 import React from "react";
 
-import { Router } from "../../lib/routes";
 import { getLocalCookie, getServerCookie } from "../../lib/auth/index";
+import { Router } from "../../lib/routes";
 import Settings from "../settings";
 
 jest.unmock("../settings");

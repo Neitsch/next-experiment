@@ -1,8 +1,8 @@
 import React from "react";
 
+import ChangeUsername from "../components/smart/ChangeUsername";
 import { getLocalCookie, getServerCookie } from "../lib/auth/index";
 import { Router } from "../lib/routes";
-import ChangeUsername from "../components/smart/ChangeUsername";
 
 export default class Settings extends React.Component<{
   isAuthenticated: boolean;
