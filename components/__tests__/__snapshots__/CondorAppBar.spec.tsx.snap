@@ -79,8 +79,102 @@ exports[`AppBar authenticated Logout 1`] = `
     onKeyDown={[Function]}
   >
     <WithStyles(MenuItem)>
-      Hey, 
+      Hey,
+       
       Test Username
+    </WithStyles(MenuItem)>
+    <WithStyles(MenuItem)
+      id="logout"
+      onClick={[Function]}
+    >
+      Sign Out
+    </WithStyles(MenuItem)>
+  </MenuList>
+</WithStyles(Popover)>
+`;
+
+exports[`AppBar authenticated Logout 2`] = `
+<WithStyles(Popover)
+  PaperProps={
+    Object {
+      "classes": Object {
+        "root": "MuiMenu-paper-2",
+      },
+    }
+  }
+  anchorEl={
+    <WithStyles(AppBar)
+      position="static"
+    >
+      <WithStyles(Toolbar)>
+        <WithStyles(IconButton)
+          aria-label="Menu"
+        >
+          <pure(Menu) />
+        </WithStyles(IconButton)>
+        <WithStyles(Typography)
+          className="CondorAppBar-flex-1"
+          color="inherit"
+          variant="title"
+        >
+          Condor Club
+        </WithStyles(Typography)>
+        <div>
+          <WithStyles(IconButton)
+            aria-haspopup="true"
+            aria-owns="menu-appbar"
+            color="inherit"
+            id="accountButton"
+            onClick={[Function]}
+          >
+            <pure(AccountCircle) />
+          </WithStyles(IconButton)>
+          <Query
+            id="query"
+            query={
+              Object {
+                "data": Array [
+                  "
+  query AppBarData {
+    user {
+      username
+    }
+  }
+",
+                ],
+              }
+            }
+          />
+        </div>
+      </WithStyles(Toolbar)>
+    </WithStyles(AppBar)>
+  }
+  anchorOrigin={
+    Object {
+      "horizontal": "right",
+      "vertical": "top",
+    }
+  }
+  getContentAnchorEl={[Function]}
+  id="menu-appbar"
+  onClose={[Function]}
+  onEnter={[Function]}
+  open={true}
+  transformOrigin={
+    Object {
+      "horizontal": "right",
+      "vertical": "top",
+    }
+  }
+  transitionDuration="auto"
+>
+  <MenuList
+    onKeyDown={[Function]}
+  >
+    <WithStyles(MenuItem)>
+      Hey,
+       
+      Anonymous
     </WithStyles(MenuItem)>
     <WithStyles(MenuItem)
       id="logout"
