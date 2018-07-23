@@ -40,6 +40,7 @@ module.exports = {
     "^express$": "<rootDir>/__unit_mocks__/express.mock.ts",
     "^graphql$": "<rootDir>/__unit_mocks__/graphql.mock.ts",
     "^graphql-tag$": "<rootDir>/__unit_mocks__/graphql-tag.mock.ts",
+    "^joi$": "<rootDir>/__unit_mocks__/joi.mock.ts",
     "^jwks-rsa$": "<rootDir>/__unit_mocks__/jwks-rsa.mock.ts",
     "^next$": "<rootDir>/__unit_mocks__/next.mock.ts",
     "^next/app$": "<rootDir>/__unit_mocks__/next.app.mock.ts",

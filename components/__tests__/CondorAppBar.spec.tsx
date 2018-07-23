@@ -59,7 +59,11 @@ describe("AppBar", () => {
 
       const method = queryRender.find("#logout").props().onClick;
       method();
-      expect(Router.pushRoute).toHaveBeenCalled();
+      expect(Router.pushRoute).toHaveBeenCalledTimes(1);
+
+      const settings = queryRender.find("#settingsButton").props().onClick;
+      settings();
+      expect(Router.pushRoute).toHaveBeenCalledTimes(2);
 
       const onCloseMethod = queryRender.find("#menu-appbar").props().onClose;
       expect(AppBarRendered.state("openAccountMenu")).not.toBeNull();

@@ -83,6 +83,13 @@ exports[`AppBar authenticated Logout 1`] = `
        
       Test Username
     </WithStyles(MenuItem)>
+    <WithStyles(Divider) />
+    <WithStyles(MenuItem)
+      id="settingsButton"
+      onClick={[Function]}
+    >
+      Settings
+    </WithStyles(MenuItem)>
     <WithStyles(MenuItem)
       id="logout"
       onClick={[Function]}
@@ -175,6 +182,13 @@ exports[`AppBar authenticated Logout 2`] = `
       Hey,
        
       Anonymous
+    </WithStyles(MenuItem)>
+    <WithStyles(Divider) />
+    <WithStyles(MenuItem)
+      id="settingsButton"
+      onClick={[Function]}
+    >
+      Settings
     </WithStyles(MenuItem)>
     <WithStyles(MenuItem)
       id="logout"

@@ -1,16 +1,11 @@
 import { shallow } from "enzyme";
-import gql from "graphql-tag";
+import toJson from "enzyme-to-json";
 import React from "react";
 
 import ChangeUsername from "../ChangeUsername";
 
 jest.unmock("../ChangeUsername");
 jest.unmock("../../dumb/TextFieldWithEnterToSubmit");
-jest.mock("graphql-tag", () =>
-  jest.fn().mockImplementation(a => ({
-    data: a,
-  })),
-);
 
 describe("ChangeUsername", () => {
   describe("renders", () => {
@@ -21,17 +16,35 @@ describe("ChangeUsername", () => {
     it("mutation", () => {
       const changeUsername = jest.fn();
       const baseRendered = shallow(<ChangeUsername />);
-      const mutationRendered = baseRendered.props().children(changeUsername);
+      const mutationRendered = baseRendered
+        .props()
+        .children(changeUsername, {});
       expect(mutationRendered).toMatchSnapshot();
     });
     it("submit setup", () => {
       const changeUsername = jest.fn();
       const baseRendered = shallow(<ChangeUsername />);
-      const mutationRendered = baseRendered.props().children(changeUsername);
-      mutationRendered.props.onSubmit("Test");
+      const mutationRendered = shallow(
+        baseRendered.props().children(changeUsername, {}),
+      ).find("#change-username-field");
+      mutationRendered.props().onSubmit("Test");
       expect(changeUsername).toHaveBeenLastCalledWith({
         variables: { username: "Test" },
       });
+    });
+    it("Error display", () => {
+      const changeUsername = jest.fn();
+      const baseRendered = shallow(<ChangeUsername />);
+      const mutationRendered = shallow(
+        baseRendered.props().children(changeUsername, {
+          error: {
+            graphQLErrors: [
+              { extensions: { exception: { details: ["Test Details"] } } },
+            ],
+          },
+        }),
+      );
+      expect(mutationRendered).toMatchSnapshot();
     });
   });
 });
