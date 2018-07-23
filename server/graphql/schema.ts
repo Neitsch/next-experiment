@@ -1,13 +1,6 @@
-import { GraphQLObjectType, GraphQLSchema, GraphQLString } from "graphql";
+import { GraphQLSchema } from "graphql";
 
-const queryType = new GraphQLObjectType({
-  fields: {
-    user: {
-      resolve: (_, ___, context) => context.userSub,
-      type: GraphQLString,
-    },
-  },
-  name: "Query",
-});
+import mutation from "./Mutation";
+import query from "./Query";
 
-export default new GraphQLSchema({ query: queryType });
+export default new GraphQLSchema({ query, mutation });

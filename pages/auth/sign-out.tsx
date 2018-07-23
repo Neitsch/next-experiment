@@ -1,4 +1,5 @@
 import React from "react";
+import { ApolloConsumer } from "react-apollo";
 
 import { unsetToken } from "../../lib/auth/index";
 import { logout } from "../../lib/auth/lock";
@@ -9,6 +10,13 @@ export default class SignOut extends React.Component {
     logout();
   }
   public render() {
-    return null;
+    return (
+      <ApolloConsumer>
+        {client => {
+          client.cache.reset();
+          return null;
+        }}
+      </ApolloConsumer>
+    );
   }
 }

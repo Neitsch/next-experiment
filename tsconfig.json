@@ -24,6 +24,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "typeRoots": ["./node_modules/@types", "./typeDefs"],
     "lib": ["dom", "es2015", "es2016"]
   }

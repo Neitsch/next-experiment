@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get lock works 1`] = `
+Array [
+  Array [
+    "client_id",
+    "client_domain",
+    Object {
+      "auth": Object {
+        "params": Object {
+          "scope": "openid",
+          "state": undefined,
+        },
+        "redirectUrl": "about:///auth/signed-in",
+        "responseType": "token id_token",
+      },
+      "closable": false,
+      "container": "my-container",
+    },
+  ],
+]
+`;
+
+exports[`logout Raw lock 1`] = `
+Array [
+  Array [
+    "client_id",
+    "client_domain",
+    Object {
+      "auth": Object {
+        "params": Object {
+          "scope": "openid",
+          "state": undefined,
+        },
+        "redirectUrl": "about:///auth/signed-in",
+        "responseType": "token id_token",
+      },
+      "closable": false,
+      "container": "test-container",
+    },
+  ],
+]
+`;

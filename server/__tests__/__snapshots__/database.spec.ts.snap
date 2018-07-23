@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Database dev 1`] = `
+Object {
+  "database": "db.sqlite",
+  "entities": Array [
+    [MockFunction],
+  ],
+  "migrations": Array [
+    "server/migration/**/*.ts",
+  ],
+  "subscribers": Array [
+    "server/subscriber/**/*.ts",
+  ],
+  "synchronize": true,
+  "type": "sqlite",
+}
+`;
+
+exports[`Database prod 1`] = `
+Object {
+  "database": "testDb",
+  "driver": "postgresql",
+  "entities": Array [
+    [MockFunction],
+  ],
+  "host": "testhost",
+  "migrations": Array [
+    "server/migration/**/*.ts",
+  ],
+  "password": "testPassword",
+  "subscribers": Array [
+    "server/subscriber/**/*.ts",
+  ],
+  "synchronize": true,
+  "type": "postgresql",
+  "user": "testUser",
+}
+`;
