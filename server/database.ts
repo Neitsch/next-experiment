@@ -2,8 +2,10 @@
 import parseDbUrl from "parse-database-url";
 import { createConnection } from "typeorm";
 
+import { User } from "./entity/account/User";
+
 const baseDbConfig = {
-  entities: ["server/entity/account/*.ts"],
+  entities: [User],
   migrations: ["server/migration/**/*.ts"],
   subscribers: ["server/subscriber/**/*.ts"],
   synchronize: true,
