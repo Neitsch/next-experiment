@@ -69,8 +69,8 @@ class CondorAppBar extends React.Component<Props, IState> {
               </IconButton>
               {this.state.openAccountMenu ? (
                 <Query query={APP_BAR_DATA} id="query">
-                  {({ data }) =>
-                    data && data.user && data.user.username ? (
+                  {({ data }) => {
+                    return data && data.user ? (
                       <Menu
                         id="menu-appbar"
                         anchorEl={this.state.openAccountMenu}
@@ -87,13 +87,18 @@ class CondorAppBar extends React.Component<Props, IState> {
                           this.setState(() => ({ openAccountMenu: null }))
                         }
                       >
-                        <MenuItem>Hey, {data.user.username}</MenuItem>
+                        <MenuItem>
+                          Hey,{" "}
+                          {data.user.username
+                            ? data.user.username
+                            : "Anonymous"}
+                        </MenuItem>
                         <MenuItem id="logout" onClick={this.logout}>
                           Sign Out
                         </MenuItem>
                       </Menu>
-                    ) : null
-                  }
+                    ) : null;
+                  }}
                 </Query>
               ) : null}
             </div>

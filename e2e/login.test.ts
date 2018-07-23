@@ -41,7 +41,10 @@ describe("Smoke", () => {
       // Logout part
       await webdriver!.wait(until.elementLocated(By.id("accountButton")));
       await webdriver!.findElement(By.id("accountButton")).click();
-      await webdriver!.findElement(By.id("logout")).click();
+      await webdriver!.wait(until.elementLocated(By.id("logout")));
+      const logout = await webdriver!.findElement(By.id("logout"));
+      await webdriver!.wait(until.elementIsVisible(logout));
+      await logout.click();
       await webdriver!.wait(until.elementLocated(By.id("login")));
     },
     40000,
