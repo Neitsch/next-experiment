@@ -18,6 +18,7 @@ export default ({ dev }: { dev: boolean }) => () => {
       ...baseDbConfig,
       ...urlData,
       type: urlData.driver,
+      username: urlData.user,
     };
     return createConnection(connectionData);
   }
