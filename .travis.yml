@@ -8,6 +8,8 @@ cache:
   yarn: true
 node_js:
 - 9
+services:
+  - postgresql
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 addons:
@@ -16,13 +18,14 @@ env:
   matrix:
   - MOZ_HEADLESS=1
   global:
-  - secure: edk1xSkACZi7VOZmnk/QlRbUy8hLGtnScWQf7VbrBombZQj+kNSP/nJEK3sJJs1WcQwky/vnNtC2xmTdYpIODVeRDQppFVtaC2HRZLM2/T/XlPGfZkYZeUz/In7WoWXJhIB+7aexRW63mNGHD9LDVNPwNV8FSsaM2ZVZYUVeZUCpGvFGh+u//JPEIlJXKsThJTIuP+f6/CP87vu7226LA1x6JrBKFoXQIwuoA+FrTX3dXQssU3TjGQCStC2zZy0oZ0QimWWr/ByG+8UnRWnnMH8nJAg8t0vmuz2FnkhZg/WEsHrontGYoEkT15YvZnlRqnE8QKxBd9jtKmHZqJkSDs39nXZpB6/icBKfzxbwg+R7LENU1Z5qiZcaWsKzVzMh5aKS/a5DSca+CxwbydVZUErXyhRhb3TjKIKIXEff5bqt4MMZE5+13Ua5HUcd9algmv6/B32XFFM9fLdaVgd1f66lyxe2Yd6rZdksqGG3hPlP7TqRjnNVJdi0XICSTWGDDMUpJZciC8x8Y85OwmLglxh2EfuHXgmPIFNwRQkC0W/SoU7g5h5VUpPcQ4XrZmrSl4oPoMWtqP3z9Yp75QMj6dMjaTyrEu4RHWPVLlxabDg8UJcdfyQhbNdIobjJkIJ8BS8bnASCRHcp7gCYMuxOOxkBjL2VLa6mehZFQjTfgLg=
-  - secure: R8Bg/zdUUoV7Vt4cedt9HfTCTdn+Pb3Z/H29aCmEFztt/y5Sy/Hs/wteTRMVlqxJoRuBQEN8yF7IC6tqGjO5nTsmjokmuu0ejl4GS1Jn/TAUv380o5yXNjNxNJ2O1i3ze891sgZOK6u1G0WpSNJNjMNMyXrxkBoOg2tMyge1TQNJmYrcHO1N79tK0VTxn5+oq/FXQTkFeGRIVMtiYov0dbaJdtLPQ0uoCRwbQXaKy+qwepSLCiodt2ZzwEDHgl8/JvnxK3O4eCo6Qv1l6Zg+8IoG/U+Edy/UoeIEzCwwEcyeTSCta+Ly4dqsuKfbkWpFzvvQVXL82xOuoVRJPFHXq7lxa9VE+OB6M80XwEEea19rNGXcesZ3eTbv5DtQMrKGLlp0HBiOHvaHw80KZDcyOM17eJp9JNoWmtCDKPCqLLW6uKvpM4Q0yd+8KIwzh5lO1qq14BbhnO3VGuT/cKoPiui22IJFCs5acLVDEXFCdkqld5xgqe0DCWAwkPnfdvi8KuVHc3x7CHapNmIOJIn9m7vY03Q9JmR1jzn/kGn8R2+e10l9csKbT5XNbTowC1fbbR7IDhDRlTsjuUTs/lcSfDnlZguFvkzi4mXtquOC+v91PXrVGcfhxc6j7O+j5VJKmec5rp8HV8lHxc+3DHTNd2dMt+N84k8ooTFQRp3AYyI=
+  - DATABASE_URL=postgresql://postgres@localhost/travis_db
 before_install:
 - wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
 - mkdir geckodriver
 - tar -xzf geckodriver-v0.21.0-linux64.tar.gz -C geckodriver
 - export PATH=$PATH:$PWD/geckodriver
+before_script:
+- psql -c 'create database travis_db;' -U postgres
 script:
 - yarn run lint
 - yarn run test

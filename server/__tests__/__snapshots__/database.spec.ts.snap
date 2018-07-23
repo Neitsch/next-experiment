@@ -19,21 +19,20 @@ Object {
 
 exports[`Database prod 1`] = `
 Object {
-  "database": "test",
+  "database": "testDb",
+  "driver": "postgresql",
   "entities": Array [
     "server/entity/account/*.ts",
   ],
-  "host": "localhost",
+  "host": "testhost",
   "migrations": Array [
     "server/migration/**/*.ts",
   ],
-  "password": "test",
-  "port": 5432,
+  "password": "testPassword",
   "subscribers": Array [
     "server/subscriber/**/*.ts",
   ],
   "synchronize": true,
-  "type": "postgres",
-  "username": "test",
+  "user": "testUser",
 }
 `;

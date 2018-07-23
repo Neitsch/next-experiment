@@ -41,7 +41,7 @@ describe("Express Server Launch", () => {
           resolve();
         });
         express.use.mock.calls.filter(
-          (c: Array<string>) => c[1] === "contentSecurityPolicy",
+          (c: string[]) => c[1] === "contentSecurityPolicy",
         )[0][0](null, data, cb);
       });
 

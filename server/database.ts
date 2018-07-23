@@ -1,3 +1,5 @@
+// @ts-ignore
+import parseDbUrl from "parse-database-url";
 import { createConnection } from "typeorm";
 
 const baseDbConfig = {
@@ -8,21 +10,16 @@ const baseDbConfig = {
 };
 
 export default ({ dev }: { dev: boolean }) => () => {
-  return createConnection(
-    dev
-      ? {
-          ...baseDbConfig,
-          database: "db.sqlite",
-          type: "sqlite",
-        }
-      : {
-          ...baseDbConfig,
-          database: "test",
-          host: "localhost",
-          password: "test",
-          port: 5432,
-          type: "postgres",
-          username: "test",
-        },
-  );
+  if (!dev) {
+    const url_data = parseDbUrl(process.env.DATABASE_URL);
+    return createConnection({
+      ...baseDbConfig,
+      ...url_data,
+    });
+  }
+  return createConnection({
+    ...baseDbConfig,
+    database: "db.sqlite",
+    type: "sqlite",
+  });
 };
