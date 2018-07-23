@@ -36,7 +36,7 @@ exports[`AppBar authenticated Logout 1`] = `
           >
             <pure(AccountCircle) />
           </WithStyles(IconButton)>
-          <Query
+          <mockConstructor
             id="query"
             query={
               Object {
@@ -129,7 +129,7 @@ exports[`AppBar authenticated Logout 2`] = `
           >
             <pure(AccountCircle) />
           </WithStyles(IconButton)>
-          <Query
+          <mockConstructor
             id="query"
             query={
               Object {

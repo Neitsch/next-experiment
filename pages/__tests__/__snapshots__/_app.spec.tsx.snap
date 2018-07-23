@@ -2,7 +2,7 @@
 
 exports[`App page renders - with JSS 1`] = `
 <mockConstructor>
-  <JssProvider
+  <mockConstructor
     generateClassName={[MockFunction]}
     registry={
       Object {
@@ -33,13 +33,13 @@ exports[`App page renders - with JSS 1`] = `
         />
       </ApolloProvider>
     </MuiThemeProvider>
-  </JssProvider>
+  </mockConstructor>
 </mockConstructor>
 `;
 
 exports[`App page renders 1`] = `
 <mockConstructor>
-  <JssProvider
+  <mockConstructor
     generateClassName={[MockFunction]}
     registry={
       Object {
@@ -70,6 +70,6 @@ exports[`App page renders 1`] = `
         />
       </ApolloProvider>
     </MuiThemeProvider>
-  </JssProvider>
+  </mockConstructor>
 </mockConstructor>
 `;

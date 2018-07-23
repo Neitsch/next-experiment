@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChangeUsername renders base 1`] = `
-<Mutation
+<mockConstructor
   mutation={
     Object {
       "data": Array [
