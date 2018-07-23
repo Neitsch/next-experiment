@@ -12,10 +12,12 @@ const baseDbConfig = {
 export default ({ dev }: { dev: boolean }) => () => {
   if (!dev) {
     const url_data = parseDbUrl(process.env.DATABASE_URL);
-    return createConnection({
+    const connectionData = {
       ...baseDbConfig,
       ...url_data,
-    });
+      type: url_data.driver,
+    };
+    return createConnection(connectionData);
   }
   return createConnection({
     ...baseDbConfig,

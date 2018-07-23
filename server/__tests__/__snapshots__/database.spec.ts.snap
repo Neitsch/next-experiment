@@ -33,6 +33,7 @@ Object {
     "server/subscriber/**/*.ts",
   ],
   "synchronize": true,
+  "type": "postgresql",
   "user": "testUser",
 }
 `;
