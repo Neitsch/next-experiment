@@ -50,7 +50,7 @@ describe("Graphql", () => {
         ).rejects.toBeDefined();
       });
       it("validates and returns error", async () => {
-				// @ts-ignore
+        // @ts-ignore
         Joi.validate.mockReturnValue({
           error: {
             details: ["Test Message"],
