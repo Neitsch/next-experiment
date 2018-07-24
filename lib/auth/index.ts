@@ -26,9 +26,9 @@ export const setToken = (token, accessToken, expiresIn) => {
   }
   const expires = new Date();
   expires.setSeconds(expires.getSeconds() + expiresIn);
-  Cookie.set("user", jwtDecode(token), { expires });
-  Cookie.set("jwt", token, { expires });
-  Cookie.set("token", accessToken, { expires });
+  Cookie.set("user", jwtDecode(token), { expires, SameSite: "Lax" });
+  Cookie.set("jwt", token, { expires, SameSite: "Lax" });
+  Cookie.set("token", accessToken, { expires, SameSite: "Lax" });
 };
 
 export const unsetToken = () => {
@@ -72,7 +72,8 @@ export const getUserFromLocalCookie = () => {
   return Cookie.getJSON("user");
 };
 
-export const setSecret = secret => Cookie.set("secret", secret);
+export const setSecret = secret =>
+  Cookie.set("secret", secret, { SameSite: "Lax" });
 
 export const checkSecret = secret => {
   return Cookie.get("secret") === secret;

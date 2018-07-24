@@ -116,7 +116,7 @@ describe("Client Cookie", () => {
 describe("Secret", () => {
   it("Set", () => {
     setSecret("hey");
-    expect(set).toHaveBeenCalledWith("secret", "hey");
+    expect(set).toHaveBeenCalledWith("secret", "hey", expect.anything());
   });
   it("Check", () => {
     get.mockReturnValue("hey");
