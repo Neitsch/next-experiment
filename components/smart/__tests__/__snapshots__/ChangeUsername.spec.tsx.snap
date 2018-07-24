@@ -1,27 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChangeUsername renders base 1`] = `
-<mockConstructor
-  mutation={
+exports[`ChangeUsername renders Error display 1`] = `
+<FormControl
+  classes={
     Object {
-      "data": Array [
-        "
-  mutation ChangeUsername($username: String!) {
-    changeUsername(username: $username) {
-      username
-      id
+      "fullWidth": "MuiFormControl-fullWidth-4",
+      "marginDense": "MuiFormControl-marginDense-3",
+      "marginNormal": "MuiFormControl-marginNormal-2",
+      "root": "MuiFormControl-root-1",
     }
   }
-",
-      ],
+  component="div"
+  disabled={false}
+  error={true}
+  fullWidth={false}
+  margin="none"
+  required={false}
+>
+  <TextFieldWithEnterToSubmit
+    doClear={true}
+    id="change-username-field"
+    onSubmit={[Function]}
+    textFieldProps={
+      Object {
+        "error": true,
+        "label": "Enter new Username",
+      }
     }
-  }
-/>
+  />
+  <WithStyles(FormHelperText)
+    key="Test Details"
+  >
+    Test Details
+  </WithStyles(FormHelperText)>
+</FormControl>
 `;
 
+exports[`ChangeUsername renders base 1`] = `<mockConstructor />`;
+
 exports[`ChangeUsername renders mutation 1`] = `
-<TextFieldWithEnterToSubmit
-  doClear={true}
-  onSubmit={[Function]}
-/>
+<WithStyles(FormControl)
+  error={false}
+>
+  <TextFieldWithEnterToSubmit
+    doClear={true}
+    id="change-username-field"
+    onSubmit={[Function]}
+    textFieldProps={
+      Object {
+        "error": false,
+        "label": "Enter new Username",
+      }
+    }
+  />
+</WithStyles(FormControl)>
 `;

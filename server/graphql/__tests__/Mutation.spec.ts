@@ -1,4 +1,5 @@
 import { GraphQLObjectType, GraphQLObjectTypeConfig } from "graphql";
+import Joi from "joi";
 
 jest.unmock("../Mutation");
 
@@ -45,6 +46,24 @@ describe("Graphql", () => {
               username: "Test Username",
             },
             { userSub: "Some sub", connection },
+          ),
+        ).rejects.toBeDefined();
+      });
+      it("validates and returns error", async () => {
+        // @ts-ignore
+        Joi.validate.mockReturnValue({
+          error: {
+            details: ["Test Message"],
+          },
+        });
+        expect(
+          // @ts-ignore
+          MutationData.fields.changeUsername.resolve(
+            null,
+            {
+              username: "Test Username",
+            },
+            { userSub: null, connection: null },
           ),
         ).rejects.toBeDefined();
       });

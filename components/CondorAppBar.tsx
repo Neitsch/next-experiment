@@ -1,5 +1,6 @@
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
+import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -93,6 +94,10 @@ class CondorAppBar extends React.Component<Props, IState> {
                             ? data.user.username
                             : "Anonymous"}
                         </MenuItem>
+                        <Divider />
+                        <MenuItem id="settingsButton" onClick={this.settings}>
+                          Settings
+                        </MenuItem>
                         <MenuItem id="logout" onClick={this.logout}>
                           Sign Out
                         </MenuItem>
@@ -119,6 +124,9 @@ class CondorAppBar extends React.Component<Props, IState> {
   };
   private logout = () => {
     Router.pushRoute("/auth/sign-out");
+  };
+  private settings = () => {
+    Router.pushRoute("/settings");
   };
 }
 

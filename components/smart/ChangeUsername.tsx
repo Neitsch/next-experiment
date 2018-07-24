@@ -1,3 +1,5 @@
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
 import gql from "graphql-tag";
 import React from "react";
 import { Mutation, MutationFn } from "react-apollo";
@@ -23,14 +25,32 @@ class ChangeUsernameComponent extends React.Component {
       <Mutation mutation={CHANGE_USERNAME}>
         {(
           changeUsername: MutationFn<ChangeUsername, ChangeUsernameVariables>,
-        ) => (
-          <TextFieldWithEnterToSubmit
-            doClear
-            onSubmit={username => {
-              changeUsername({ variables: { username } });
-            }}
-          />
-        )}
+          { error },
+        ) => {
+          let errorInfo = [];
+          if (error) {
+            errorInfo = error.graphQLErrors
+              .map(e => e.extensions.exception.details)
+              .reduce((acc, val) => acc.concat(val), [])
+              .map(e => <FormHelperText key={e}>{e}</FormHelperText>);
+          }
+          return (
+            <FormControl error={!!error}>
+              <TextFieldWithEnterToSubmit
+                id="change-username-field"
+                doClear
+                onSubmit={username => {
+                  changeUsername({ variables: { username } });
+                }}
+                textFieldProps={{
+                  error: !!error,
+                  label: "Enter new Username",
+                }}
+              />
+              {errorInfo}
+            </FormControl>
+          );
+        }}
       </Mutation>
     );
   }
