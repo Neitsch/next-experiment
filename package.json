@@ -42,7 +42,7 @@
     "@types/uuid": "3.4.3",
     "@zeit/next-typescript": "1.1.0",
     "apollo-cache-hermes": "0.6.3",
-    "apollo-cache-inmemory": "1.2.5",
+    "apollo-cache-inmemory": "1.2.6",
     "apollo-cache-persist": "0.1.1",
     "apollo-client": "2.3.7",
     "apollo-errors": "1.9.0",
