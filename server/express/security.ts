@@ -30,6 +30,7 @@ export const withCSP = (expressApp: Express) => {
   const getNonce = (_: Request, res: Response) => `'nonce-${res.locals.nonce}'`;
   const cspPolicy = helmet.contentSecurityPolicy({
     directives: {
+      baseUri: ["'self'"],
       defaultSrc: ["'self'", "*.auth0.com"],
       scriptSrc: ["'self'", "*.auth0.com", getNonce],
       styleSrc: [
