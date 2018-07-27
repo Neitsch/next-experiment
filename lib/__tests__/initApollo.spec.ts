@@ -20,11 +20,12 @@ describe("Init Apollo", () => {
   });
 
   it("Creates Server", () => {
+    process.env.PORT = "1234";
     process.browser = false;
     InitApollo(null);
     expect(ApolloClient.mock.calls[0][0].ssrMode).toBeTruthy();
     expect(HttpLink.mock.calls[0][0].uri).toEqual(
-      "http://localhost:3000/graphql",
+      "http://localhost:1234/graphql",
     );
   });
   it("Creates Client", () => {

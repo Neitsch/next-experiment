@@ -17,7 +17,9 @@ export const setAuthorizationLink = jwt =>
 const getUri = () =>
   process.browser
     ? "/graphql"
-    : `http://localhost:${parseInt(process.env.PORT, 10) || 3000}/graphql`;
+    : `http://localhost:${
+        /* istanbul ignore next */ parseInt(process.env.PORT, 10) || 3000
+      }/graphql`;
 
 export const setupLink = jwt =>
   setAuthorizationLink(jwt).concat(
