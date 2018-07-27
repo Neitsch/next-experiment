@@ -1,8 +1,18 @@
 import { Express, NextFunction, Request, Response } from "express";
 import jwt from "express-jwt";
+import RateLimit from "express-rate-limit";
 import helmet from "helmet";
 import jwksRsa from "jwks-rsa";
 import { v4 as uuidv4 } from "uuid";
+
+export const withRateLimit = (expressApp: Express) =>
+  expressApp.use(
+    new RateLimit({
+      windowMs: 15*60*1000,
+      max: 100,
+      delayMs: 0,
+    })
+  );
 
 export const withHelmet = (expressApp: Express, { dev }: { dev: boolean }) =>
   expressApp.use(
@@ -59,6 +69,7 @@ export default ({
   dev: boolean;
   graphqlPath: string;
 }) => (expressApp: Express) => {
+  withRateLimit(expressApp);
   withHelmet(expressApp, { dev });
   withCSP(expressApp);
   withJwt(expressApp, { graphqlPath });

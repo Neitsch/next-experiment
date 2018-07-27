@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/yarn'
+  args: ['install']
+- name: 'gcr.io/cloud-builders/yarn'
+  args: ['lint']
+- name: 'gcr.io/cloud-builders/yarn'
+  args: ['test']
