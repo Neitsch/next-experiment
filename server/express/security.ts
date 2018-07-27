@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 export const withRateLimit = (expressApp: Express) =>
   expressApp.use(
     new RateLimit({
-      windowMs: 15*60*1000,
+      windowMs: 15 * 60 * 1000,
       max: 100,
       delayMs: 0,
     })
