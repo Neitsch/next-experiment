@@ -5684,9 +5684,9 @@ jest@23.4.2:
     import-local "^1.0.0"
     jest-cli "^23.4.2"
 
-joi@^13.4.0:
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-13.4.0.tgz#afc359ee3d8bc5f9b9ba6cdc31b46d44af14cecc"
+joi@^13.5.2:
+  version "13.5.2"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-13.5.2.tgz#32207c85fa76d889f1e971c7eaaf69b232259a91"
   dependencies:
     hoek "5.x.x"
     isemail "3.x.x"
