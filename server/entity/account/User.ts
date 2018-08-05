@@ -6,7 +6,8 @@ export class User {
   @Generated("uuid")
   public uuid?: string;
 
-  @PrimaryColumn() public sub: string;
+  @PrimaryColumn()
+  public sub: string;
 
   @Column({ nullable: true })
   public username?: string;
