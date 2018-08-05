@@ -2,6 +2,13 @@
 
 A project that uses several modern technologies to deliver a fantastic user and developer experience.
 
+Technologies include:
+* Auth0
+* Graphql (Apollo)
+* Material UI
+* Next.js
+* Typescript
+
 ## Change log
 
 The change log can be found on the [Releases page](https://github.com/Neitsch/next-js/releases).
