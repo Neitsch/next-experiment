@@ -10,3 +10,6 @@ Thumbs.db
 *.log
 package-lock.json
 db.sqlite
+query-types/
+schema.json
+schema.graphql
