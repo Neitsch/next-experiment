@@ -15,7 +15,7 @@
     "heroku-postbuild": "yarn run build",
     "gen:schema:graphql": "ts-node --compilerOptions '{\"module\":\"commonjs\"}' typeDefs/printSchema.ts",
     "gen:schema:json": "apollo-codegen introspect-schema schema.graphql --output schema.json",
-    "gen:schema:types": "apollo-codegen generate '{,!(node_modules)/**/}*.{ts,tsx,js}' --target typescript --output query-types --schema ./schema.json",
+    "gen:schema:types": "mkdir query-types && apollo-codegen generate '{,!(node_modules)/**/}*.{ts,tsx,js}' --target typescript --output query-types --schema ./schema.json",
     "gen:schema": "yarn run gen:schema:graphql && yarn run gen:schema:json && yarn run gen:schema:types",
     "clear-jest": "jest --clearCache"
   },
