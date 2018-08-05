@@ -1,8 +1,13 @@
 # next-js
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Neitsch/next-experiment.svg)](https://greenkeeper.io/)
+A project that uses several modern technologies to deliver a fantastic user and developer experience.
 
-...
+Technologies include:
+* Auth0
+* Graphql (Apollo)
+* Material UI
+* Next.js
+* Typescript
 
 ## Change log
 
