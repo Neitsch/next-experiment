@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@material-ui/core": "1.5.1",
-    "@material-ui/icons": "2.0.2",
+    "@material-ui/icons": "2.0.3",
     "@types/axe-webdriverjs": "2.0.0",
     "@types/body-parser": "1.17.0",
     "@types/compression": "0.0.36",
