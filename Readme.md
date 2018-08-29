@@ -2,12 +2,28 @@
 
 A project that uses several modern technologies to deliver a fantastic user and developer experience.
 
-Technologies include:
+Primary technologies include:
 * Auth0
-* Graphql (Apollo)
+* Graphql
 * Material UI
 * Next.js
+* React
 * Typescript
+
+As well as other tools, such as:
+* Apollo Client
+* Apollo Server
+* AXE
+* Babel
+* Enzyme
+* Express
+* Husky
+* Jest
+* JOI
+* PostgreSQL
+* Prettier
+* Selenium
+* TypeORM
 
 ## Change log
 
