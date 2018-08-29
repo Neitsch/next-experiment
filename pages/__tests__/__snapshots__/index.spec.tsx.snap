@@ -15,7 +15,9 @@ exports[`Index page Renders auth Exists 1`] = `
       ],
     }
   }
-/>
+>
+  <Component />
+</mockConstructor>
 `;
 
 exports[`Index page Renders auth Query Data 1`] = `
