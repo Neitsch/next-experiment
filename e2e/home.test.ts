@@ -6,7 +6,7 @@ describe("Smoke", () => {
   let webdriver: WebDriver;
   beforeAll(async () => {
     const opts = new firefox.Options();
-    opts.addArguments("--headless");
+    opts.headless();
     webdriver = await new Builder()
       .forBrowser("firefox")
       .setFirefoxOptions(opts)
