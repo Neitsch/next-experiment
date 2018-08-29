@@ -1,34 +1,35 @@
+sudo: required
 branches:
   only:
-  - master
+    - master
 language: node_js
 cache:
   directories:
-  - node_modules
+    - node_modules
   yarn: true
 node_js:
-- 9
+  - 9
 services:
   - postgresql
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 addons:
   firefox: latest
 env:
   matrix:
-  - MOZ_HEADLESS=1
+    - MOZ_HEADLESS=1
   global:
-  - DATABASE_URL=postgres://postgres@localhost/travis_db
+    - DATABASE_URL=postgres://postgres@localhost/travis_db
 before_install:
-- wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
-- mkdir geckodriver
-- tar -xzf geckodriver-v0.21.0-linux64.tar.gz -C geckodriver
-- export PATH=$PATH:$PWD/geckodriver
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver-v0.21.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
 before_script:
-- psql -c 'create database travis_db;' -U postgres
+  - psql -c 'create database travis_db;' -U postgres
 script:
-- yarn run lint
-- yarn run test
-- yarn run build
-- yarn run start &
-- yarn run jest -c e2e.config.js --runInBand
+  - yarn run lint
+  - yarn run test
+  - yarn run build
+  - yarn run start &
+  - yarn run jest -c e2e.config.js --runInBand
