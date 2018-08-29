@@ -2,6 +2,8 @@ import { Builder, By, until, WebDriver } from "selenium-webdriver";
 import * as firefox from "selenium-webdriver/firefox";
 // import axe, { AxeBuilder } from "axe-webdriverjs";
 
+jest.setTimeout(10000);
+
 const email = String(process.env["SAMPLE_EMAIL"]);
 const password = String(process.env["SAMPLE_PASSWORD"]);
 

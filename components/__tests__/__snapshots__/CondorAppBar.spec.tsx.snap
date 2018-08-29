@@ -17,7 +17,7 @@ exports[`AppBar authenticated Logout 1`] = `
         <WithStyles(IconButton)
           aria-label="Menu"
         >
-          <pure(Menu) />
+          <pure(MenuIcon) />
         </WithStyles(IconButton)>
         <WithStyles(Typography)
           className="CondorAppBar-flex-1"
@@ -34,7 +34,7 @@ exports[`AppBar authenticated Logout 1`] = `
             id="accountButton"
             onClick={[Function]}
           >
-            <pure(AccountCircle) />
+            <pure(AccountCircleIcon) />
           </WithStyles(IconButton)>
           <mockConstructor
             id="query"
@@ -51,7 +51,9 @@ exports[`AppBar authenticated Logout 1`] = `
                 ],
               }
             }
-          />
+          >
+            <Component />
+          </mockConstructor>
         </div>
       </WithStyles(Toolbar)>
     </WithStyles(AppBar)>
@@ -117,7 +119,7 @@ exports[`AppBar authenticated Logout 2`] = `
         <WithStyles(IconButton)
           aria-label="Menu"
         >
-          <pure(Menu) />
+          <pure(MenuIcon) />
         </WithStyles(IconButton)>
         <WithStyles(Typography)
           className="CondorAppBar-flex-1"
@@ -134,7 +136,7 @@ exports[`AppBar authenticated Logout 2`] = `
             id="accountButton"
             onClick={[Function]}
           >
-            <pure(AccountCircle) />
+            <pure(AccountCircleIcon) />
           </WithStyles(IconButton)>
           <mockConstructor
             id="query"
@@ -151,7 +153,9 @@ exports[`AppBar authenticated Logout 2`] = `
                 ],
               }
             }
-          />
+          >
+            <Component />
+          </mockConstructor>
         </div>
       </WithStyles(Toolbar)>
     </WithStyles(AppBar)>
@@ -208,7 +212,7 @@ exports[`AppBar authenticated renders 1`] = `
     <WithStyles(IconButton)
       aria-label="Menu"
     >
-      <pure(Menu) />
+      <pure(MenuIcon) />
     </WithStyles(IconButton)>
     <WithStyles(Typography)
       className="CondorAppBar-flex-1"
@@ -225,7 +229,7 @@ exports[`AppBar authenticated renders 1`] = `
         id="accountButton"
         onClick={[Function]}
       >
-        <pure(AccountCircle) />
+        <pure(AccountCircleIcon) />
       </WithStyles(IconButton)>
     </div>
   </WithStyles(Toolbar)>
@@ -240,7 +244,7 @@ exports[`AppBar unauthenticated renders 1`] = `
     <WithStyles(IconButton)
       aria-label="Menu"
     >
-      <pure(Menu) />
+      <pure(MenuIcon) />
     </WithStyles(IconButton)>
     <WithStyles(Typography)
       className="CondorAppBar-flex-1"
