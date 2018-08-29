@@ -680,7 +680,7 @@
     core-js "^2.5.3"
     regenerator-runtime "^0.11.1"
 
-"@babel/runtime@7.0.0-beta.56", "@babel/runtime@^7.0.0-beta.55":
+"@babel/runtime@7.0.0-beta.56":
   version "7.0.0-beta.56"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.56.tgz#cda612dffd5b1719a7b8e91e3040bd6ae64de8b0"
   dependencies:
@@ -786,12 +786,12 @@
     recompose "^0.28.2"
     warning "^4.0.1"
 
-"@material-ui/icons@2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-2.0.3.tgz#d3da9d6e31b1adfbc48efe33c7cb75b32b784096"
+"@material-ui/icons@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-3.0.0.tgz#4a482f5c533b19d8ac7f7c5a645246dfb5b14d74"
   dependencies:
     "@babel/runtime" "7.0.0-rc.1"
-    recompose "^0.28.0"
+    recompose "^0.28.2"
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -8194,17 +8194,6 @@ recast@^0.13.0:
     esprima "~4.0.0"
     private "~0.1.5"
     source-map "~0.6.1"
-
-recompose@^0.28.0:
-  version "0.28.1"
-  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.28.1.tgz#a70aa017f9421df59539b9e6033135b10eb09e4c"
-  dependencies:
-    "@babel/runtime" "^7.0.0-beta.55"
-    change-emitter "^0.1.2"
-    fbjs "^0.8.1"
-    hoist-non-react-statics "^2.3.1"
-    react-lifecycles-compat "^3.0.2"
-    symbol-observable "^1.0.4"
 
 recompose@^0.28.2:
   version "0.28.2"
