@@ -57,6 +57,12 @@ describe("AppBar", () => {
       const queryRenderNoUsername = shallow(queryComponentNoUsername);
       expect(queryRenderNoUsername).toMatchSnapshot();
 
+      expect(
+        AppBarRendered.find("#query")
+          .props()
+          .children({ data: {} }),
+      ).toBeNull();
+
       const method = queryRender.find("#logout").props().onClick;
       method();
       expect(Router.pushRoute).toHaveBeenCalledTimes(1);
