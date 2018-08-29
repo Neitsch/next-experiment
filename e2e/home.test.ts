@@ -1,10 +1,16 @@
 import { Builder, until, WebDriver } from "selenium-webdriver";
+import * as firefox from "selenium-webdriver/firefox";
 import axe, { AxeBuilder } from "axe-webdriverjs";
 
 describe("Smoke", () => {
   let webdriver: WebDriver;
   beforeAll(async () => {
-    webdriver = await new Builder().forBrowser("firefox").build();
+    const opts = new firefox.Options();
+    opts.headless();
+    webdriver = await new Builder()
+      .forBrowser("firefox")
+      .setFirefoxOptions(opts)
+      .build();
   });
   beforeEach(async () => {
     await webdriver!.get("http://localhost:3000");

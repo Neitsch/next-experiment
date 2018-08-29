@@ -51,7 +51,9 @@ exports[`AppBar authenticated Logout 1`] = `
                 ],
               }
             }
-          />
+          >
+            <Component />
+          </mockConstructor>
         </div>
       </WithStyles(Toolbar)>
     </WithStyles(AppBar)>
@@ -151,7 +153,9 @@ exports[`AppBar authenticated Logout 2`] = `
                 ],
               }
             }
-          />
+          >
+            <Component />
+          </mockConstructor>
         </div>
       </WithStyles(Toolbar)>
     </WithStyles(AppBar)>

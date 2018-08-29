@@ -36,7 +36,11 @@ exports[`ChangeUsername renders Error display 1`] = `
 </FormControl>
 `;
 
-exports[`ChangeUsername renders base 1`] = `<mockConstructor />`;
+exports[`ChangeUsername renders base 1`] = `
+<mockConstructor>
+  <Component />
+</mockConstructor>
+`;
 
 exports[`ChangeUsername renders mutation 1`] = `
 <WithStyles(FormControl)
