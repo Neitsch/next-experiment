@@ -69,12 +69,7 @@ describe("AppBar", () => {
       expect(AppBarRendered.state("openAccountMenu")).not.toBeNull();
       onCloseMethod();
       expect(AppBarRendered.state("openAccountMenu")).toBeNull();
-
-      expect(
-        AppBarRendered.find("#query")
-          .props()
-          .children({ data: {} }),
-      ).toBeNull();
+      expect(AppBarRendered.exists("#query")).toBeFalsy();
     });
   });
 });
