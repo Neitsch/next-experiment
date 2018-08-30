@@ -1,8 +1,9 @@
-import { Builder, By, until, WebDriver } from "selenium-webdriver";
+import { Builder, By, until, WebDriver, promise } from "selenium-webdriver";
 import * as firefox from "selenium-webdriver/firefox";
 // import axe, { AxeBuilder } from "axe-webdriverjs";
 
 jest.setTimeout(10000);
+promise.USE_PROMISE_MANAGER = false;
 
 const email = String(process.env["SAMPLE_EMAIL"]);
 const password = String(process.env["SAMPLE_PASSWORD"]);
@@ -12,10 +13,10 @@ describe("Smoke", () => {
   beforeAll(async () => {
     const opts = new firefox.Options();
     opts.headless();
-    webdriver = await new Builder()
-      .forBrowser("firefox")
-      .setFirefoxOptions(opts)
-      .build();
+    let inst = new Builder();
+    inst = inst.forBrowser("firefox");
+    inst = inst.setFirefoxOptions(opts);
+    webdriver = await inst.build();
   });
   beforeEach(async () => {
     await webdriver!.get("http://localhost:3000/auth/sign-in");
