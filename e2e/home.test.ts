@@ -1,16 +1,23 @@
-import { Builder, until, WebDriver } from "selenium-webdriver";
+import { Builder, until, WebDriver, promise } from "selenium-webdriver";
 import * as firefox from "selenium-webdriver/firefox";
 import axe, { AxeBuilder } from "axe-webdriverjs";
+
+promise.USE_PROMISE_MANAGER = false;
 
 describe("Smoke", () => {
   let webdriver: WebDriver;
   beforeAll(async () => {
     const opts = new firefox.Options();
     opts.headless();
-    webdriver = await new Builder()
-      .forBrowser("firefox")
-      .setFirefoxOptions(opts)
-      .build();
+    console.log("Pre setup");
+    let inst = new Builder();
+    console.log("Started Builder");
+    inst = inst.forBrowser("firefox");
+    console.log("Configured browser");
+    inst = inst.setFirefoxOptions(opts);
+    console.log("Set opts");
+    webdriver = await inst.build();
+    console.log("Awaited webdriver");
   });
   beforeEach(async () => {
     await webdriver!.get("http://localhost:3000");

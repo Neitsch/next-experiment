@@ -19,6 +19,7 @@ env:
   matrix:
     - MOZ_HEADLESS=1
   global:
+    - SELENIUM_PROMISE_MANAGER=0
     - DATABASE_URL=postgres://postgres@localhost/travis_db
 before_install:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
