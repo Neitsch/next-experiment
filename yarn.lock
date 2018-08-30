@@ -1626,8 +1626,9 @@ auth0-lock@11.9.0:
     trim "0.0.1"
     url-join "^1.1.0"
 
-"auth0-password-policies@github:auth0/auth0-password-policies#v1.0.1":
+auth0-password-policies@auth0/auth0-password-policies#v1.0.1:
   version "1.0.1"
+  uid "0b3da9b369b122a8b294d496143abfd33311e6b2"
   resolved "https://codeload.github.com/auth0/auth0-password-policies/tar.gz/0b3da9b369b122a8b294d496143abfd33311e6b2"
   dependencies:
     password-sheriff "^1.1.0"
@@ -6714,9 +6715,9 @@ node-pre-gyp@^0.10.0, node-pre-gyp@^0.10.3:
     semver "^5.3.0"
     tar "^4"
 
-nodemon@1.18.3:
-  version "1.18.3"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.18.3.tgz#46e681ee0dd1b590562e03019b4c5df234f906f9"
+nodemon@1.18.4:
+  version "1.18.4"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.18.4.tgz#873f65fdb53220eb166180cf106b1354ac5d714d"
   dependencies:
     chokidar "^2.0.2"
     debug "^3.1.0"
