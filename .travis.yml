@@ -33,4 +33,4 @@ script:
   - yarn run test
   - yarn run build
   - yarn run start &
-  - yarn run jest -c e2e.config.js --runInBand
+  - sleep 10 && yarn run jest -c e2e.config.js --runInBand
