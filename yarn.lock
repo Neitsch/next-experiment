@@ -8016,9 +8016,9 @@ react-lifecycles-compat@3.0.4, react-lifecycles-compat@^3.0.2, react-lifecycles-
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-styleguidist@7.3.5:
-  version "7.3.5"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.3.5.tgz#396b9beaf961c7f72c97a3c68e368275a5280e06"
+react-styleguidist@7.3.6:
+  version "7.3.6"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-7.3.6.tgz#abe0ded2f8b3833aeb24cae9e83202f229e28791"
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^5.7.1"
