@@ -105,7 +105,7 @@
     "jest-runner-tslint": "1.0.5",
     "nodemon": "1.18.4",
     "prettier": "1.14.2",
-    "react-styleguidist": "7.3.7",
+    "react-styleguidist": "7.3.8",
     "selenium-webdriver": "4.0.0-alpha.1",
     "ts-jest": "23.1.4",
     "ts-node": "7.0.1",
