@@ -47,7 +47,7 @@
     "apollo-cache-persist": "0.1.1",
     "apollo-client": "2.4.2",
     "apollo-errors": "1.9.0",
-    "apollo-link-context": "1.0.8",
+    "apollo-link-context": "1.0.9",
     "apollo-link-http": "1.5.4",
     "apollo-link-persisted-queries": "0.2.1",
     "apollo-server-express": "2.0.7",
