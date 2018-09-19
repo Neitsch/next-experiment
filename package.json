@@ -50,7 +50,7 @@
     "apollo-link-context": "1.0.9",
     "apollo-link-http": "1.5.5",
     "apollo-link-persisted-queries": "0.2.1",
-    "apollo-server-express": "2.0.7",
+    "apollo-server-express": "2.1.0",
     "auth0-lock": "11.9.1",
     "compression": "1.7.3",
     "cookie-parser": "1.4.3",
