@@ -41,7 +41,7 @@
     "@types/react": "16.4.14",
     "@types/selenium-webdriver": "3.0.10",
     "@types/uuid": "3.4.4",
-    "@zeit/next-typescript": "1.1.0",
+    "@zeit/next-typescript": "1.1.1",
     "apollo-cache-hermes": "0.6.3",
     "apollo-cache-inmemory": "1.2.10",
     "apollo-cache-persist": "0.1.1",
