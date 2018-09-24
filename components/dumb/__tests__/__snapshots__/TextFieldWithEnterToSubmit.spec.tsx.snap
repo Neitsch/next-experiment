@@ -7,5 +7,6 @@ exports[`TextFieldWithEnterToSubmit renders 1`] = `
   required={false}
   select={false}
   value=""
+  variant="standard"
 />
 `;

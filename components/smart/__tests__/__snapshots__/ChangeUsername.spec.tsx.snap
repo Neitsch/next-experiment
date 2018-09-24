@@ -16,6 +16,7 @@ exports[`ChangeUsername renders Error display 1`] = `
   fullWidth={false}
   margin="none"
   required={false}
+  variant="standard"
 >
   <TextFieldWithEnterToSubmit
     doClear={true}
