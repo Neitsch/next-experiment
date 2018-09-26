@@ -66,7 +66,7 @@
     "graphql-tag": "2.9.2",
     "graphql-validation-complexity": "0.2.3",
     "helmet": "3.13.0",
-    "husky": "1.0.0-rc.15",
+    "husky": "1.0.0",
     "isomorphic-unfetch": "3.0.0",
     "joi": "^13.6.0",
     "js-cookie": "2.2.0",
