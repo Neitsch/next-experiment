@@ -39,7 +39,7 @@
     "@types/next": "6.1.8",
     "@types/node": "^10.11.0",
     "@types/react": "16.4.14",
-    "@types/selenium-webdriver": "3.0.10",
+    "@types/selenium-webdriver": "3.0.11",
     "@types/uuid": "3.4.4",
     "@zeit/next-typescript": "1.1.1",
     "apollo-cache-hermes": "0.6.3",
