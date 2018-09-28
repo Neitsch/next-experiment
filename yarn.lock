@@ -1674,10 +1674,10 @@
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.2.tgz#07b90f6adf75d42c34230c026a2529e56c249dbb"
   integrity sha512-D1xlXHZpDonVX+VJ28XtcD5xlu8ex6Fc4cQNnrm2wJvlQnbec9RedhCrhQr6kRAE9XWHSec+JPuTmqJ9jC0qsA==
 
-"@types/joi@^13.4.5":
-  version "13.4.5"
-  resolved "https://registry.yarnpkg.com/@types/joi/-/joi-13.4.5.tgz#1329006d79c4db16d1e201d1e35f7bf371137f64"
-  integrity sha512-QbjxYGGd68Id890q+5nYI4o4/WYFFRvmhf5SGT0NJjLVtIHaZkeZrA4kxs5FJ/2wAUYBoVeZq9oMHyFSbQoKZA==
+"@types/joi@^13.6.0":
+  version "13.6.0"
+  resolved "https://registry.yarnpkg.com/@types/joi/-/joi-13.6.0.tgz#69b289d18619efb298aed9a3efdc9ad286fb0c64"
+  integrity sha512-vgxADik+Va7AcMZ89C7MVod3DlB3SWcj4dDI+XIceObGFfscehtjA0fFzBCZLoRr7ShjLVHNu1gMk+HtrG8WeQ==
 
 "@types/js-cookie@2.2.0":
   version "2.2.0"
