@@ -8026,6 +8026,11 @@ lodash.flattendeep@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
   integrity sha1-+wMJF/hqMTTlvJvsDWngAT3f7bI=
 
+lodash.flowright@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.flowright/-/lodash.flowright-3.5.0.tgz#2b5fff399716d7e7dc5724fe9349f67065184d67"
+  integrity sha1-K1//OZcW1+fcVyT+k0n2cGUYTWc=
+
 lodash.get@^4.0.0:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
@@ -10309,15 +10314,15 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-apollo@2.2.1, react-apollo@^2.1.9:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.2.1.tgz#4db6b1ecfdb6482139fa4843e893657a1e1acdc9"
-  integrity sha512-M1UY0o66e2rc4xhAtLKXWRx183yHW/ei1XAno8vWyIUQaEAg3rP5Sgw9nzl3wvpvU1lFjlsY50sbh2Ia1NB5+w==
+react-apollo@2.2.3, react-apollo@^2.1.9:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.2.3.tgz#a1072bfd182d2daadddab15ff943e8ef742c653c"
+  integrity sha512-auuiYVMZJY61esHOPVNa4mo1/4S32d0vNZxh0Z93w8/KzBnIH1br3i9sfX4CD4XYWdQYW0UDOFcJusXR4C183w==
   dependencies:
     fbjs "^1.0.0"
     hoist-non-react-statics "^3.0.0"
     invariant "^2.2.2"
-    lodash "^4.17.10"
+    lodash.flowright "^3.5.0"
     prop-types "^15.6.0"
 
 react-codemirror2@^5.1.0:
