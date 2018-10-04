@@ -1155,10 +1155,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/selenium-webdriver@*", "@types/selenium-webdriver@3.0.11":
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.11.tgz#85e0a09307b7616e063ffc22558a26be3b090eaf"
-  integrity sha512-IjLJR0Q6iUN88LCjwViSSMDpP6EX5OdxD1Z0N43dCOEXdzzfsYQYDYtd3mW6Xfnj0tgdYNv3CtLEq+NNyT2WrA==
+"@types/selenium-webdriver@*", "@types/selenium-webdriver@3.0.12":
+  version "3.0.12"
+  resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-3.0.12.tgz#6affe5aed1ba379175075a889adbe2bc3aa62159"
+  integrity sha512-hYn+eoOehVUIdMwp5h34ZsGAO1ydja10GDup4BwyoFCdcH5MQ35nQq+AInSaBMEMopD5hEooFCyKo2Pajbe1ag==
 
 "@types/serve-static@*":
   version "1.13.2"
