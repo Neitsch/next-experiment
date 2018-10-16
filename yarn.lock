@@ -987,10 +987,10 @@
   resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"
   integrity sha512-KEIlhXnIutzKwRbQkGWb/I4HFqBuUykAdHgDED6xqwXJfONCjF5VoE0cXEiurh3XauygxzeDzgtXUqvLkxFzzA==
 
-"@types/express-graphql@0.6.1":
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/@types/express-graphql/-/express-graphql-0.6.1.tgz#9e8c5544a5099c3db82d29847b1efb2af4ad147c"
-  integrity sha512-GFWXi4hIn3PP7Et6+zVsqqLn7pnkiSAqtB1/v/prLQgIiSmYO0cZuQVtHQCeHH79nlWCMEzESIjAqUPgFGm0jA==
+"@types/express-graphql@0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@types/express-graphql/-/express-graphql-0.6.2.tgz#2b0608e74f2aa63fae0948f3b58abf03b613867f"
+  integrity sha512-6ZixmJn0wvdGkBg2XTyVJH5qqE1GViD1lMbCRVFzLLL0mHKmsyc0ji1A9Rv/3lGrTnP8v468+k5vTy91mlxNpQ==
   dependencies:
     "@types/express" "*"
     "@types/graphql" "*"
