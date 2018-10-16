@@ -7857,14 +7857,14 @@ next-routes@1.4.2:
   dependencies:
     path-to-regexp "^2.1.0"
 
-next-with-apollo@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-3.2.0.tgz#aa9c37ab30858dbf1dae9accc1381c83a5e5a60f"
-  integrity sha512-54dx4652ytnEg5T1+IXsPyo11mxFyeIP/qflFaGRCSBQMVSZXsbU67rVMpSxiKEnC/ZKTKshFjmF1OeqI1uaYg==
+next-with-apollo@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-3.2.1.tgz#843c3dee26e0f9d266528d965817685c13ffe132"
+  integrity sha512-RA6g5nxWtozDkRIesnxGW8m18/o5VZsKfcnAaBDfTkOAJmyj2ooC7HNYYvQ5H6sqbH3NZKl6EMwmaOjEQJQ8eQ==
   dependencies:
     isomorphic-unfetch "^3.0.0"
     prop-types "^15.6.2"
-    react-apollo "^2.2.3"
+    react-apollo "^2.2.4"
 
 next@7.0.0:
   version "7.0.0"
@@ -9399,7 +9399,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-apollo@2.2.4, react-apollo@^2.2.3:
+react-apollo@2.2.4, react-apollo@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.2.4.tgz#05b2a91deb4d5f30d2511fc663abc465b219435e"
   integrity sha512-haS5R30Qvteb65ZLfWomUZQh47VU4ld4Kof3zlqdbLOrYPt3/DdVZC8ZFPZSxd5zPeIJtZqpUfAxD1WHVoMPIA==
