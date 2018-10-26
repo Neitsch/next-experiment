@@ -7266,12 +7266,12 @@ markdown-table@^1.1.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.2.tgz#c78db948fa879903a41bce522e3b96f801c63786"
   integrity sha512-NcWuJFHDA8V3wkDgR/j4+gZx+YQwstPgfQDV8ndUeWWzta3dnDTBxpVzqS9lkmJAuV5YX35lmyojl6HO5JXAgw==
 
-markdown-to-jsx@^6.6.8:
-  version "6.6.9"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.6.9.tgz#d1afea3b3194b3c9f0accf2bbb2b8594de46748d"
-  integrity sha1-0a/qOzGUs8nwrM8ruyuFlN5GdI0=
+markdown-to-jsx@^6.8.3:
+  version "6.8.3"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.8.3.tgz#c9c157e50ba680626700ffd2452bd01eb909eb7d"
+  integrity sha512-I/kRZDvHFMEoKCjFS119v6Op4R1wZJEUEwhWSNtsE7WHRVcxKrLZ9vApvNb1j80MAFIY4/e4m1f4vIwSgKUZ8g==
   dependencies:
-    prop-types "^15.5.10"
+    prop-types "^15.6.2"
     unquote "^1.1.0"
 
 math-random@^1.0.1:
@@ -9134,10 +9134,10 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-styleguidist@8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-8.0.0.tgz#73013db0f87aabaccacb3f5f224cc6e74adf247c"
-  integrity sha512-D7Ed/bydCGweY+25/F2q5FLH5KvjMchOna97UzL8Yu7t21gURdImaLinHEYNkuNSfyFgi16lsGXelZnFXbH85g==
+react-styleguidist@8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-8.0.1.tgz#0da7d27a56131777767275ad0d13214f5aa5e990"
+  integrity sha512-WHjdUpibY/gNhQyfZ9CWKtTPProgICb+dozLtyqmRiZfi5abWoBZ8Ts7gByFcLQ69Nfk7pZsCxJKf5HMUdae9w==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^5.7.1"
@@ -9175,7 +9175,7 @@ react-styleguidist@8.0.0:
     loader-utils "^1.1.0"
     lodash "^4.17.10"
     lowercase-keys "^1.0.1"
-    markdown-to-jsx "^6.6.8"
+    markdown-to-jsx "^6.8.3"
     mini-html-webpack-plugin "^0.2.3"
     minimist "^1.2.0"
     ora "^2.1.0"
