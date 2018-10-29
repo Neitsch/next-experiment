@@ -9134,10 +9134,10 @@ react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-styleguidist@8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-8.0.1.tgz#0da7d27a56131777767275ad0d13214f5aa5e990"
-  integrity sha512-WHjdUpibY/gNhQyfZ9CWKtTPProgICb+dozLtyqmRiZfi5abWoBZ8Ts7gByFcLQ69Nfk7pZsCxJKf5HMUdae9w==
+react-styleguidist@8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-8.0.2.tgz#d6d91db7133baf0d3cfaa44a40247b833818a956"
+  integrity sha512-m6P/blxGzAdVNoSuyrOZIi67K6tBfTDAbxNw7I3rq6QNBPmNkrI1qEqSEgwIbUbrR8m7Ts42bplh5XRfRCH1rA==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^5.7.1"
