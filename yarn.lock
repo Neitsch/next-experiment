@@ -1573,10 +1573,10 @@ apollo-cache-control@^0.2.5:
     apollo-server-env "^2.0.3"
     graphql-extensions "^0.2.1"
 
-apollo-cache-hermes@0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/apollo-cache-hermes/-/apollo-cache-hermes-0.6.6.tgz#dedfdc8f946ca63877a42e124f2185f49c033913"
-  integrity sha512-FRcJbxKMMwKsPT4TbaI9lXKF34yKNkeEZAm8i20mLTmXBFVadZ5vSk3ZV1XdxyWYQH2TNrl+N4ZV/nfZFSr91A==
+apollo-cache-hermes@0.6.8:
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/apollo-cache-hermes/-/apollo-cache-hermes-0.6.8.tgz#f392e47dbe6ce5ccae2abcccdf60ebea9e6b452f"
+  integrity sha512-FcFbDGa34SPS6sj17+4f7JRGhJB6cKOTVJt65/xKF577OxrALG0veVScY8XbUnfKoEu0Vb7XR0u3t0GGU3xc3w==
   dependencies:
     apollo-cache "^1.0.0"
     apollo-utilities "^1.0.0"
