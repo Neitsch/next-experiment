@@ -2095,10 +2095,10 @@ axe-core@^3.0.0, axe-core@^3.0.3:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.0.3.tgz#ce016fd01476e23f4f3199d48a3f07125450b5db"
   integrity sha512-Xj6LLvybA1g0kAZQ+eGifzbvY4nB/BUZq3z7eWmaEvTj1xp54aaB79cCC5eQjbTlH8n0CWI2CNBpidELUe2w9Q==
 
-axe-webdriverjs@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/axe-webdriverjs/-/axe-webdriverjs-2.0.1.tgz#4024185ba3daa3d580b94b3ebc62c4b12bd11c9f"
-  integrity sha512-TdRNoV7martUlw6PvQ4kff86Y9NLqdS1gWDxe71oB4YQfalT8I7zWaGoHqKmFYe6p4XToUHfXWcWKgol+XW66g==
+axe-webdriverjs@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/axe-webdriverjs/-/axe-webdriverjs-2.0.3.tgz#b84b63ddc345ffbc978fd9b9d48f03f04d3544fe"
+  integrity sha512-zhJ1i4LZZ6O/l2dzR4hfY/Ox7gWQwbhl5M57JqMWPaTq+TI19ZXBzGRgBdM2vaeCQrLhHxjDk6YG6tfgORtx4A==
   dependencies:
     axe-core "^3.0.0"
     babel-runtime "^6.26.0"
