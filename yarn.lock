@@ -7686,10 +7686,10 @@ next-routes@1.4.2:
   dependencies:
     path-to-regexp "^2.1.0"
 
-next-with-apollo@3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-3.2.1.tgz#843c3dee26e0f9d266528d965817685c13ffe132"
-  integrity sha512-RA6g5nxWtozDkRIesnxGW8m18/o5VZsKfcnAaBDfTkOAJmyj2ooC7HNYYvQ5H6sqbH3NZKl6EMwmaOjEQJQ8eQ==
+next-with-apollo@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-3.2.2.tgz#708c985d6da9d1898cc9f89414567db5557f60e3"
+  integrity sha512-CPxPvy68jrZR2UwrSNjf4Ec8R+lv4s4pGACcJjcQt/jRBEhBtyhxk93ZPbsWk+oBHnh+5P8+4yYyWRbz0TxxJw==
   dependencies:
     isomorphic-unfetch "^3.0.0"
     prop-types "^15.6.2"
