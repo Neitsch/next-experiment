@@ -2117,13 +2117,14 @@ axe-core@^3.0.0, axe-core@^3.0.3:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.0.3.tgz#ce016fd01476e23f4f3199d48a3f07125450b5db"
   integrity sha512-Xj6LLvybA1g0kAZQ+eGifzbvY4nB/BUZq3z7eWmaEvTj1xp54aaB79cCC5eQjbTlH8n0CWI2CNBpidELUe2w9Q==
 
-axe-webdriverjs@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/axe-webdriverjs/-/axe-webdriverjs-2.0.3.tgz#b84b63ddc345ffbc978fd9b9d48f03f04d3544fe"
-  integrity sha512-zhJ1i4LZZ6O/l2dzR4hfY/Ox7gWQwbhl5M57JqMWPaTq+TI19ZXBzGRgBdM2vaeCQrLhHxjDk6YG6tfgORtx4A==
+axe-webdriverjs@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/axe-webdriverjs/-/axe-webdriverjs-2.1.0.tgz#79dc1c83bc98e85019f53e5f398640c83acfdda1"
+  integrity sha512-0gX7SvxSqnT2OTDTiAYJPlqw08Lt+dGW24jQhQHgYZCp1kSuP17koKUbNxJNhU1bHITYSz9pK64me7om2Wn6gA==
   dependencies:
     axe-core "^3.0.0"
     babel-runtime "^6.26.0"
+    depd "^2.0.0"
 
 babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -3699,6 +3700,11 @@ depd@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
   integrity sha1-V4O04cRZ8G+lyif5kfPQbnoxA1k=
+
+depd@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
+  integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
 
 depd@~1.1.1, depd@~1.1.2:
   version "1.1.2"
