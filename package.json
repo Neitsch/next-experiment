@@ -38,7 +38,7 @@
     "@types/jwt-decode": "2.2.1",
     "@types/next": "7.0.4",
     "@types/node": "^10.12.7",
-    "@types/react": "16.7.3",
+    "@types/react": "16.7.5",
     "@types/selenium-webdriver": "3.0.13",
     "@types/uuid": "3.4.4",
     "@zeit/next-typescript": "1.1.1",
