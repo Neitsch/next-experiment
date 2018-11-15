@@ -79,7 +79,7 @@
     "next-with-apollo": "3.2.2",
     "parse-database-url": "0.3.0",
     "pg": "^7.6.1",
-    "react": "16.6.1",
+    "react": "16.6.3",
     "react-apollo": "2.2.4",
     "react-dom": "16.6.1",
     "react-jss": "8.6.1",
