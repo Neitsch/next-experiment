@@ -76,7 +76,7 @@
     "localforage": "1.7.3",
     "next": "7.0.0",
     "next-routes": "1.4.2",
-    "next-with-apollo": "3.2.2",
+    "next-with-apollo": "3.3.0",
     "parse-database-url": "0.3.0",
     "pg": "^7.6.1",
     "react": "16.6.3",
