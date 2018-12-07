@@ -86,7 +86,7 @@
     "reflect-metadata": "^0.1.12",
     "sqlite3": "^4.0.4",
     "typeorm": "^0.2.9",
-    "typescript": "3.2.1",
+    "typescript": "3.2.2",
     "uuid": "3.3.2"
   },
   "devDependencies": {
