@@ -103,7 +103,7 @@
     "jest-extended": "^0.11.0",
     "jest-runner-prettier": "0.2.6",
     "jest-runner-tslint": "1.0.5",
-    "nodemon": "1.18.8",
+    "nodemon": "1.18.9",
     "prettier": "1.15.3",
     "react-styleguidist": "8.0.6",
     "selenium-webdriver": "4.0.0-alpha.1",
