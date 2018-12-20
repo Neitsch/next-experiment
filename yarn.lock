@@ -1218,12 +1218,11 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.2.tgz#fa8e1ad1d474688a757140c91de6dace6f4abc8d"
   integrity sha512-HtKGu+qG1NPvYe1z7ezLsyIaXYyi8SoAVqWDZgDQ8dLrsZvSzUNCwZyfX33uhWxL/SU0ZDQZ3nwZ0nimt507Kw==
 
-"@types/react-dom@^16.0.9":
-  version "16.0.9"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.9.tgz#73ceb7abe6703822eab6600e65c5c52efd07fb91"
-  integrity sha512-4Z0bW+75zeQgsEg7RaNuS1k9MKhci7oQqZXxrV5KUGIyXZHHAAL3KA4rjhdH8o6foZ5xsRMSqkoM5A3yRVPR5w==
+"@types/react-dom@^16.0.11":
+  version "16.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.11.tgz#bd10ccb0d9260343f4b9a49d4f7a8330a5c1f081"
+  integrity sha512-x6zUx9/42B5Kl2Vl9HlopV8JF64wLpX3c+Pst9kc1HgzrsH+mkehe/zmHMQTplIrR48H2gpU7ZqurQolYu8XBA==
   dependencies:
-    "@types/node" "*"
     "@types/react" "*"
 
 "@types/react-loadable@*":
@@ -7846,15 +7845,15 @@ next-routes@1.4.2:
   dependencies:
     path-to-regexp "^2.1.0"
 
-next-with-apollo@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-3.3.0.tgz#74191a67fd15d2d400ba06c4b9ec25d8dc3f7334"
-  integrity sha512-qE2jaNnphtFo5LZSbg88AyQw90ezrjSV8K+5itaJtcNHEN/owMOLRusdbGQbEHKwPTSN4Y+ZIZg4E1N1rhyGGw==
+next-with-apollo@3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-3.3.1.tgz#f7e3d5e3d26b5f0649d7a172897e93964c748d26"
+  integrity sha512-sxJcx39okz6iw/Ed2qI39dvNQJvjM9xc1erZSL3bNGDmTSCtrDnkC1jO/AumWNeL1X9zjA+pHqIXUlgi+xp5vw==
   dependencies:
-    "@types/react-dom" "^16.0.9"
+    "@types/react-dom" "^16.0.11"
     isomorphic-unfetch "^3.0.0"
     prop-types "^15.6.2"
-    react-apollo "^2.3.1"
+    react-apollo "^2.3.3"
     react-dom "^16.6.3"
 
 next@7.0.0:
@@ -9138,7 +9137,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-apollo@2.3.3, react-apollo@^2.3.1:
+react-apollo@2.3.3, react-apollo@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.3.3.tgz#a4609f3112d4351a1e363090d8cd363b04e2cc91"
   integrity sha512-y4CwwmJjp0De/An7vrvEWOJ27lxmS/SXT8z22I8aOEBC2wzdcavDPjKzeLYJKs+hv1MGS3h84PSwFtlU4Em/bA==
