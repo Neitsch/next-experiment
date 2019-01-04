@@ -3,9 +3,9 @@ import React from "react";
 // tslint:disable-next-line
 import StyledJsxServer from "styled-jsx/server";
 
-import Document from "../_document";
+import Document from "../pages/_document";
 
-jest.unmock("../_document");
+jest.unmock("../pages/_document");
 
 class Helper extends React.Component {
   public render() {

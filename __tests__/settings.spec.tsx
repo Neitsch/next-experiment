@@ -1,11 +1,11 @@
 import { shallow } from "enzyme";
 import React from "react";
 
-import { getLocalCookie, getServerCookie } from "../../lib/auth/index";
-import { Router } from "../../lib/routes";
-import Settings from "../settings";
+import { getLocalCookie, getServerCookie } from "../lib/auth/index";
+import { Router } from "../lib/routes";
+import Settings from "../pages/settings";
 
-jest.unmock("../settings");
+jest.unmock("../pages/settings");
 
 describe("Settings page", () => {
   it("Initial props", async () => {

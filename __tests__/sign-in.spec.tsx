@@ -1,10 +1,10 @@
 import { shallow } from "enzyme";
 import React from "react";
 
-import { show } from "../../../lib/auth/lock";
-import SignIn from "../sign-in";
+import { show } from "../lib/auth/lock";
+import SignIn from "../pages/auth/sign-in";
 
-jest.unmock("../sign-in");
+jest.unmock("../pages/auth/sign-in");
 
 describe("Sign In", () => {
   it("renders", () => {
