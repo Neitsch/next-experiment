@@ -10,7 +10,7 @@ exports[`App page renders - with JSS 1`] = `
       }
     }
   >
-    <MuiThemeProvider
+    <MuiThemeProviderOld
       sheetsManager={Map {}}
       theme={Object {}}
     >
@@ -32,7 +32,7 @@ exports[`App page renders - with JSS 1`] = `
           }
         />
       </ApolloProvider>
-    </MuiThemeProvider>
+    </MuiThemeProviderOld>
   </mockConstructor>
 </mockConstructor>
 `;
@@ -47,7 +47,7 @@ exports[`App page renders 1`] = `
       }
     }
   >
-    <MuiThemeProvider
+    <MuiThemeProviderOld
       sheetsManager={Map {}}
       theme={Object {}}
     >
@@ -69,7 +69,7 @@ exports[`App page renders 1`] = `
           }
         />
       </ApolloProvider>
-    </MuiThemeProvider>
+    </MuiThemeProviderOld>
   </mockConstructor>
 </mockConstructor>
 `;

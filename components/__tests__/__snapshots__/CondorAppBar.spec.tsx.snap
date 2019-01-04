@@ -67,7 +67,7 @@ exports[`AppBar authenticated Logout 1`] = `
   getContentAnchorEl={[Function]}
   id="menu-appbar"
   onClose={[Function]}
-  onEnter={[Function]}
+  onEntering={[Function]}
   open={true}
   transformOrigin={
     Object {
@@ -169,7 +169,7 @@ exports[`AppBar authenticated Logout 2`] = `
   getContentAnchorEl={[Function]}
   id="menu-appbar"
   onClose={[Function]}
-  onEnter={[Function]}
+  onEntering={[Function]}
   open={true}
   transformOrigin={
     Object {
