@@ -16,6 +16,7 @@ exports[`ChangeUsername renders Error display 1`] = `
   fullWidth={false}
   margin="none"
   required={false}
+  variant="standard"
 >
   <TextFieldWithEnterToSubmit
     doClear={true}
@@ -28,11 +29,11 @@ exports[`ChangeUsername renders Error display 1`] = `
       }
     }
   />
-  <WithStyles(FormHelperText)
+  <WithStyles(WithFormControlContext(FormHelperText))
     key="Test Details"
   >
     Test Details
-  </WithStyles(FormHelperText)>
+  </WithStyles(WithFormControlContext(FormHelperText))>
 </FormControl>
 `;
 
