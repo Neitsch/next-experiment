@@ -1,11 +1,11 @@
 import { shallow } from "enzyme";
 import React from "react";
 
-import { unsetToken } from "../../../lib/auth/index";
-import { logout } from "../../../lib/auth/lock";
-import SignOut from "../sign-out";
+import { unsetToken } from "../lib/auth/index";
+import { logout } from "../lib/auth/lock";
+import SignOut from "../pages/auth/sign-out";
 
-jest.unmock("../sign-out");
+jest.unmock("../pages/auth/sign-out");
 
 describe("Sign In", () => {
   beforeEach(() => {

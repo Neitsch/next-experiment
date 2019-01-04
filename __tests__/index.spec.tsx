@@ -1,16 +1,16 @@
 import { shallow } from "enzyme";
 import React from "react";
 
-import { getLocalCookie, getServerCookie } from "../../lib/auth/index";
-import Index from "../index";
+import { getLocalCookie, getServerCookie } from "../lib/auth/index";
+import Index from "../pages/index";
 
-jest.unmock("../index");
+jest.unmock("../pages/index");
 jest.mock("graphql-tag", () =>
   jest.fn().mockImplementation(a => ({
     data: a,
   })),
 );
-jest.doMock("../../lib/routes", () => ({
+jest.doMock("../lib/routes", () => ({
   Link: () => <div>Link</div>,
 }));
 

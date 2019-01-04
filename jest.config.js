@@ -53,5 +53,5 @@ module.exports = {
     "^sshpk$": "<rootDir>/__unit_mocks__/sshpk.mock.ts",
     "^typeorm$": "<rootDir>/__unit_mocks__/typeorm.mock.ts",
   },
-  roots: ["server/", "pages/", "lib/", "components/"],
+  roots: ["__tests__/", "server/", "pages/", "lib/", "components/"],
 };

@@ -1,12 +1,12 @@
 import { shallow } from "enzyme";
 import React from "react";
 
-import { checkSecret, extractInfoFromHash } from "../../../lib/auth/index";
-import InitApollo from "../../../lib/initApollo";
-import { Router } from "../../../lib/routes";
-import SignedIn from "../signed-in";
+import { checkSecret, extractInfoFromHash } from "../lib/auth/index";
+import InitApollo from "../lib/initApollo";
+import { Router } from "../lib/routes";
+import SignedIn from "../pages/auth/signed-in";
 
-jest.unmock("../signed-in");
+jest.unmock("../pages/auth/signed-in");
 
 describe("Signed In", () => {
   it("works", () => {
