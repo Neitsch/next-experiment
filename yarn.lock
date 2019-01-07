@@ -988,9 +988,9 @@
     "@types/express" "*"
     "@types/express-unless" "*"
 
-"@types/express-jwt@0.0.40":
-  version "0.0.40"
-  resolved "https://registry.yarnpkg.com/@types/express-jwt/-/express-jwt-0.0.40.tgz#07df88f324f329df6599e84a052eec6ccba7b764"
+"@types/express-jwt@0.0.41":
+  version "0.0.41"
+  resolved "https://registry.yarnpkg.com/@types/express-jwt/-/express-jwt-0.0.41.tgz#4066960d8c3ce91e94b41c82c15b691314b3996d"
   dependencies:
     "@types/express" "*"
     "@types/express-unless" "*"
