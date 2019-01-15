@@ -6770,9 +6770,9 @@ next-routes@1.4.2:
   dependencies:
     path-to-regexp "^2.1.0"
 
-next-with-apollo@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-3.3.1.tgz#f7e3d5e3d26b5f0649d7a172897e93964c748d26"
+next-with-apollo@3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-3.3.2.tgz#a3bb092fb20c903f127ef7449008247a6d826189"
   dependencies:
     "@types/react-dom" "^16.0.11"
     isomorphic-unfetch "^3.0.0"
