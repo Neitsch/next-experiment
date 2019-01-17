@@ -85,7 +85,7 @@
     "react-apollo": "2.3.3",
     "react-dom": "16.7.0",
     "react-jss": "8.6.1",
-    "reflect-metadata": "^0.1.12",
+    "reflect-metadata": "^0.1.13",
     "sqlite3": "^4.0.6",
     "typeorm": "^0.2.10",
     "typescript": "3.2.2",
