@@ -1490,21 +1490,21 @@ apollo-cache-persist@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/apollo-cache-persist/-/apollo-cache-persist-0.1.1.tgz#e6cfe1983b998982a679aaf05241d3ed395edb1e"
 
-apollo-cache@1.1.22, apollo-cache@^1.0.0, apollo-cache@^1.1.22:
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.22.tgz#d4682ea6e8b2508a934f61c2fd9e36b4a65041d9"
+apollo-cache@1.1.23, apollo-cache@^1.0.0, apollo-cache@^1.1.22:
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.23.tgz#4765571223cae756ab7faf29792f1ab9a8450a91"
   dependencies:
-    apollo-utilities "^1.0.27"
+    apollo-utilities "^1.1.0"
 
-apollo-client@2.4.8:
-  version "2.4.8"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.4.8.tgz#3a798f1076243465a59061d44d11bd030b68deb9"
+apollo-client@2.4.9:
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.4.9.tgz#c5fbd4d04645e228dd6a49f5b03b41cb1c2e5ae7"
   dependencies:
     "@types/zen-observable" "^0.8.0"
-    apollo-cache "1.1.22"
+    apollo-cache "1.1.23"
     apollo-link "^1.0.0"
     apollo-link-dedup "^1.0.0"
-    apollo-utilities "1.0.27"
+    apollo-utilities "1.1.0"
     symbol-observable "^1.0.2"
     zen-observable "^0.8.0"
   optionalDependencies:
@@ -1656,9 +1656,9 @@ apollo-tracing@0.4.0:
     apollo-server-env "2.2.0"
     graphql-extensions "0.4.0"
 
-apollo-utilities@1.0.27, apollo-utilities@^1.0.0, apollo-utilities@^1.0.1, apollo-utilities@^1.0.27:
-  version "1.0.27"
-  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.27.tgz#77c550f9086552376eca3a48e234a1466b5b057e"
+apollo-utilities@1.1.0, apollo-utilities@^1.0.0, apollo-utilities@^1.0.1, apollo-utilities@^1.0.27, apollo-utilities@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.1.0.tgz#e7603f834b57e4e109be6b450dc1cc1037aac94c"
   dependencies:
     fast-json-stable-stringify "^2.0.0"
 
