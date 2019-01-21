@@ -33,7 +33,7 @@
     "@types/express-jwt": "0.0.41",
     "@types/express-rate-limit": "^2.9.4",
     "@types/helmet": "0.0.42",
-    "@types/jest": "23.3.12",
+    "@types/jest": "23.3.13",
     "@types/joi": "^14.0.1",
     "@types/js-cookie": "2.2.0",
     "@types/jwt-decode": "2.2.1",
