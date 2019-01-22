@@ -4662,13 +4662,7 @@ hoist-non-react-statics@2.5.5, hoist-non-react-statics@^2.3.1, hoist-non-react-s
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
 
-hoist-non-react-statics@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.0.1.tgz#fba3e7df0210eb9447757ca1a7cb607162f0a364"
-  dependencies:
-    react-is "^16.3.2"
-
-hoist-non-react-statics@^3.2.1:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.2.1.tgz#c09c0555c84b38a7ede6912b61efddafd6e75e1e"
   dependencies:
@@ -7889,9 +7883,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-apollo@2.3.3, react-apollo@^2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.3.3.tgz#a4609f3112d4351a1e363090d8cd363b04e2cc91"
+react-apollo@2.4.0, react-apollo@^2.3.3:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.4.0.tgz#22f68c429120d3c332adaef0d02c60771055d9ea"
   dependencies:
     fbjs "^1.0.0"
     hoist-non-react-statics "^3.0.0"
