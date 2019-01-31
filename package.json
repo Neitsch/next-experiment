@@ -38,7 +38,7 @@
     "@types/js-cookie": "2.2.0",
     "@types/jwt-decode": "2.2.1",
     "@types/next": "7.0.7",
-    "@types/node": "^10.12.19",
+    "@types/node": "^10.12.20",
     "@types/react": "16.7.22",
     "@types/selenium-webdriver": "3.0.14",
     "@types/uuid": "3.4.4",
