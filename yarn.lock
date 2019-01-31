@@ -1841,9 +1841,9 @@ atob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.1.tgz#ae2d5a729477f289d60dd7f96a6314a22dd6c22a"
 
-auth0-js@^9.9.1:
-  version "9.9.1"
-  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.9.1.tgz#7173c987cfa1dcca1888eddcddd196e94bdf037e"
+auth0-js@^9.10.0:
+  version "9.10.0"
+  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.10.0.tgz#56d7886d4994fd94986778f0799d93340202c100"
   dependencies:
     base64-js "^1.2.0"
     idtoken-verifier "^1.2.0"
@@ -1853,11 +1853,11 @@ auth0-js@^9.9.1:
     url-join "^4.0.0"
     winchan "^0.2.1"
 
-auth0-lock@11.13.2:
-  version "11.13.2"
-  resolved "https://registry.yarnpkg.com/auth0-lock/-/auth0-lock-11.13.2.tgz#4a2396b6834bd0ed3624625667669b13e35af054"
+auth0-lock@11.14.0:
+  version "11.14.0"
+  resolved "https://registry.yarnpkg.com/auth0-lock/-/auth0-lock-11.14.0.tgz#214f52d652f0cf009b848f3d5eeff03cd50b8969"
   dependencies:
-    auth0-js "^9.9.1"
+    auth0-js "^9.10.0"
     auth0-password-policies "^1.0.2"
     blueimp-md5 "2.3.1"
     fbjs "^0.3.1"
