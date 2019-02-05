@@ -1536,11 +1536,11 @@ apollo-errors@1.9.0:
     assert "^1.4.1"
     extendable-error "^0.1.5"
 
-apollo-link-context@1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/apollo-link-context/-/apollo-link-context-1.0.12.tgz#02d72e621a3b75239d4419a9bfd38d8bd9bb0d3f"
+apollo-link-context@1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/apollo-link-context/-/apollo-link-context-1.0.14.tgz#6265eef49bedadddbbcff4026d04cd351094cd6c"
   dependencies:
-    apollo-link "^1.2.6"
+    apollo-link "^1.2.8"
 
 apollo-link-dedup@^1.0.0:
   version "1.0.9"
@@ -1568,7 +1568,7 @@ apollo-link-persisted-queries@0.2.2:
     apollo-link "^1.2.1"
     hash.js "^1.1.3"
 
-apollo-link@^1.0.0, apollo-link@^1.2.1, apollo-link@^1.2.2, apollo-link@^1.2.3, apollo-link@^1.2.6, apollo-link@^1.2.8:
+apollo-link@^1.0.0, apollo-link@^1.2.1, apollo-link@^1.2.2, apollo-link@^1.2.3, apollo-link@^1.2.8:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.8.tgz#0f252adefd5047ac1a9f35ba9439d216587dcd84"
   dependencies:
