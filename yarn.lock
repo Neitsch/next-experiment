@@ -1009,9 +1009,9 @@
   version "14.3.1"
   resolved "https://registry.yarnpkg.com/@types/joi/-/joi-14.3.1.tgz#1bc31b60a928da30cc206b1b4f88e13a48bffc79"
 
-"@types/js-cookie@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-2.2.0.tgz#ae2eabaa4bc892ba553c664cca21e6ee5224e5b5"
+"@types/js-cookie@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-2.2.1.tgz#aa6f6d5e5aaf7d97959e9fa938ac2501cf1a76f4"
 
 "@types/jss@^9.5.6":
   version "9.5.7"
