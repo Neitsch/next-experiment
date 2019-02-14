@@ -1040,9 +1040,9 @@
     "@types/react" "*"
     "@types/react-loadable" "*"
 
-"@types/next@8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@types/next/-/next-8.0.0.tgz#e2dbf3fbc3d5f4dbd1f83d19a3971fb916c42263"
+"@types/next@8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@types/next/-/next-8.0.1.tgz#d19731594215e09a8db1ca0b8862d5308707d46a"
   dependencies:
     "@types/next-server" "*"
     "@types/node" "*"
