@@ -5574,9 +5574,9 @@ jest-each@^24.0.0:
     jest-util "^24.0.0"
     pretty-format "^24.0.0"
 
-jest-environment-jsdom-global@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/jest-environment-jsdom-global/-/jest-environment-jsdom-global-1.1.0.tgz#dea8a3991aa9a6e638dce8933957fdbc42c97bf6"
+jest-environment-jsdom-global@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/jest-environment-jsdom-global/-/jest-environment-jsdom-global-1.1.1.tgz#c0b5fd969ace23137fd9c4a3b8e3367a54b4ed15"
 
 jest-environment-jsdom@^23.4.0:
   version "23.4.0"
