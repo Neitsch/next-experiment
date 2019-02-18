@@ -92,7 +92,7 @@
     "uuid": "3.3.2"
   },
   "devDependencies": {
-    "@babel/core": "7.2.2",
+    "@babel/core": "7.3.3",
     "axe-webdriverjs": "2.1.0",
     "babel-core": "6.26.3",
     "babel-jest": "24.1.0",
