@@ -8081,9 +8081,9 @@ react-simple-code-editor@^0.9.3:
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.9.3.tgz#12af0f85455eb1be1a86f15e325ec7861bc0db75"
 
-react-styleguidist@9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-9.0.0.tgz#3396daf85dc48b6661943a9e19f09e874cbef87b"
+react-styleguidist@9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-9.0.1.tgz#ffb074664b510c5a3f36c7754506b0e3743f7abb"
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^6.1.0"
