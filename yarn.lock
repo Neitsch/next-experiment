@@ -1011,9 +1011,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@16.8.3":
-  version "16.8.3"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.3.tgz#7b67956f682bea30a5a09b3242c0784ff196c848"
+"@types/react@*", "@types/react@16.8.5":
+  version "16.8.5"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.5.tgz#03b9a6597bc20f6eaaed43f377a160f7e41c2b90"
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
