@@ -98,7 +98,7 @@
     "babel-jest": "24.1.0",
     "babel-loader": "8.0.5",
     "babel-plugin-graphql-tag": "2.0.0",
-    "enzyme-adapter-react-16": "1.9.1",
+    "enzyme-adapter-react-16": "1.10.0",
     "jest": "24.0.0",
     "jest-environment-jsdom": "^24.0.0",
     "jest-environment-jsdom-global": "1.1.1",
