@@ -95,7 +95,7 @@
     "@babel/core": "7.3.4",
     "axe-webdriverjs": "2.1.0",
     "babel-core": "6.26.3",
-    "babel-jest": "24.1.0",
+    "babel-jest": "24.3.1",
     "babel-loader": "8.0.5",
     "babel-plugin-graphql-tag": "2.0.0",
     "enzyme-adapter-react-16": "1.10.0",
