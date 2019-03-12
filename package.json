@@ -83,7 +83,7 @@
     "pg": "^7.8.2",
     "react": "16.8.4",
     "react-apollo": "2.5.2",
-    "react-dom": "16.8.3",
+    "react-dom": "16.8.4",
     "react-jss": "8.6.1",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^4.0.6",
