@@ -1585,11 +1585,12 @@ apollo-graphql@^0.1.0:
   dependencies:
     lodash.sortby "^4.7.0"
 
-apollo-link-context@1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/apollo-link-context/-/apollo-link-context-1.0.14.tgz#6265eef49bedadddbbcff4026d04cd351094cd6c"
+apollo-link-context@1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/apollo-link-context/-/apollo-link-context-1.0.16.tgz#bc0c77ba13b45d0c690705f2fa27c66371bcb4da"
   dependencies:
-    apollo-link "^1.2.8"
+    apollo-link "^1.2.10"
+    tslib "^1.9.3"
 
 apollo-link-dedup@^1.0.0:
   version "1.0.9"
@@ -1617,11 +1618,14 @@ apollo-link-persisted-queries@0.2.2:
     apollo-link "^1.2.1"
     hash.js "^1.1.3"
 
-apollo-link@^1.0.0, apollo-link@^1.2.1, apollo-link@^1.2.2, apollo-link@^1.2.3, apollo-link@^1.2.8:
-  version "1.2.8"
-  resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.8.tgz#0f252adefd5047ac1a9f35ba9439d216587dcd84"
+apollo-link@^1.0.0, apollo-link@^1.2.1, apollo-link@^1.2.10, apollo-link@^1.2.2, apollo-link@^1.2.3, apollo-link@^1.2.8:
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.10.tgz#98cf24c46c0d75cb878804143e39dcf9813f0c20"
   dependencies:
-    zen-observable-ts "^0.8.15"
+    apollo-utilities "^1.2.1"
+    ts-invariant "^0.3.2"
+    tslib "^1.9.3"
+    zen-observable-ts "^0.8.17"
 
 apollo-server-caching@0.3.1:
   version "0.3.1"
@@ -9776,7 +9780,7 @@ ts-invariant@^0.2.1:
   dependencies:
     tslib "^1.9.3"
 
-ts-invariant@^0.3.0:
+ts-invariant@^0.3.0, ts-invariant@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.3.2.tgz#89a2ffeb70879b777258df1df1c59383c35209b0"
   dependencies:
@@ -10712,10 +10716,11 @@ yn@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.0.0.tgz#0073c6b56e92aed652fbdfd62431f2d6b9a7a091"
 
-zen-observable-ts@^0.8.15:
-  version "0.8.15"
-  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.8.15.tgz#6cf7df6aa619076e4af2f707ccf8a6290d26699b"
+zen-observable-ts@^0.8.17:
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.8.17.tgz#b3183625fa55d3960c829e3a90061f82ec2d7863"
   dependencies:
+    tslib "^1.9.3"
     zen-observable "^0.8.0"
 
 zen-observable@^0.8.0:
