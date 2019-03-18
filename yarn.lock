@@ -3926,9 +3926,9 @@ express-graphql@0.7.1:
     http-errors "^1.7.1"
     raw-body "^2.3.3"
 
-express-jwt-authz@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/express-jwt-authz/-/express-jwt-authz-2.1.1.tgz#a0ab0ecd5d0fcc336822a66a13eb3c1035d6c772"
+express-jwt-authz@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/express-jwt-authz/-/express-jwt-authz-2.2.0.tgz#19e90e31afd81a7db9433e897410b39428f785ea"
 
 express-jwt@5.3.1:
   version "5.3.1"
