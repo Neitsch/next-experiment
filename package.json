@@ -32,7 +32,7 @@
     "@types/express-graphql": "0.6.2",
     "@types/express-jwt": "0.0.41",
     "@types/express-rate-limit": "^2.9.4",
-    "@types/helmet": "0.0.42",
+    "@types/helmet": "0.0.43",
     "@types/jest": "23.3.13",
     "@types/joi": "^14.3.2",
     "@types/js-cookie": "2.2.1",
