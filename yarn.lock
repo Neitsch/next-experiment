@@ -4591,11 +4591,11 @@ graphql-upload@^8.0.2:
     http-errors "^1.7.1"
     object-path "^0.11.4"
 
-graphql-validation-complexity@0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/graphql-validation-complexity/-/graphql-validation-complexity-0.2.4.tgz#a1007ba35dc8d256ad901383b99388064318ebe9"
+graphql-validation-complexity@0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/graphql-validation-complexity/-/graphql-validation-complexity-0.2.5.tgz#2eba920aa1aa0278c744ea91ccbd4bf503b697c8"
   dependencies:
-    warning "^3.0.0"
+    warning "^4.0.3"
 
 graphql@14.1.1:
   version "14.1.1"
@@ -10259,9 +10259,9 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-warning@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.1.tgz#66ce376b7fbfe8a887c22bdf0e7349d73d397745"
+warning@^4.0.1, warning@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
   dependencies:
     loose-envify "^1.0.0"
 
