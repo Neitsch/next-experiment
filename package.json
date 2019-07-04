@@ -18,7 +18,9 @@
     "gen:schema:json": "apollo-codegen introspect-schema schema.graphql --output schema.json",
     "gen:schema:types": "mkdir query-types && apollo-codegen generate '{,!(node_modules)/**/}*.{ts,tsx,js}' --target typescript --output query-types --schema ./schema.json",
     "gen:schema": "yarn run gen:schema:graphql && yarn run gen:schema:json && yarn run gen:schema:types",
-    "clear-jest": "jest --clearCache"
+    "clear-jest": "jest --clearCache",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@material-ui/core": "3.8.1",
@@ -89,7 +91,8 @@
     "sqlite3": "^4.0.6",
     "typeorm": "^0.2.16",
     "typescript": "3.3.4000",
-    "uuid": "3.3.2"
+    "uuid": "3.3.2",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
@@ -117,5 +120,6 @@
     "hooks": {
       "pre-commit": "yarn lint && yarn test"
     }
-  }
+  },
+  "snyk": true
 }
