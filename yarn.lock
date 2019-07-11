@@ -998,9 +998,9 @@
     "@types/express" "*"
     "@types/express-unless" "*"
 
-"@types/express-rate-limit@^2.9.4":
-  version "2.9.4"
-  resolved "https://registry.yarnpkg.com/@types/express-rate-limit/-/express-rate-limit-2.9.4.tgz#b43019f908949ef6a333105ab8b66255c8671833"
+"@types/express-rate-limit@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@types/express-rate-limit/-/express-rate-limit-3.3.0.tgz#fb87590b37f19629adcec8774c7a75049a4d1c36"
   dependencies:
     "@types/express" "*"
 
