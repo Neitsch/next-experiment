@@ -4597,9 +4597,9 @@ graphql-validation-complexity@0.2.5:
   dependencies:
     warning "^4.0.3"
 
-graphql@14.1.1:
-  version "14.1.1"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.1.1.tgz#d5d77df4b19ef41538d7215d1e7a28834619fac0"
+graphql@14.4.2:
+  version "14.4.2"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-14.4.2.tgz#553a7d546d524663eda49ed6df77577be3203ae3"
   dependencies:
     iterall "^1.2.2"
 

@@ -63,7 +63,7 @@
     "express-jwt": "5.3.1",
     "express-jwt-authz": "2.3.0",
     "express-rate-limit": "^3.4.0",
-    "graphql": "14.1.1",
+    "graphql": "14.4.2",
     "graphql-tag": "2.10.1",
     "graphql-validation-complexity": "0.2.5",
     "helmet": "3.15.0",
