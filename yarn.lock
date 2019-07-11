@@ -900,9 +900,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/axe-webdriverjs@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/axe-webdriverjs/-/axe-webdriverjs-2.0.0.tgz#d1833c1ce05b1114513e7281d1b3435d1abde08b"
+"@types/axe-webdriverjs@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@types/axe-webdriverjs/-/axe-webdriverjs-2.1.0.tgz#76370cf77e004b82e33b78d28a07ded2ddb62cc9"
   dependencies:
     "@types/selenium-webdriver" "*"
     axe-core "^3.0.3"
