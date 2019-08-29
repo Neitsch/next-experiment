@@ -109,7 +109,7 @@
     "prettier": "1.16.4",
     "react-styleguidist": "9.0.4",
     "selenium-webdriver": "4.0.0-alpha.1",
-    "ts-jest": "23.1.4",
+    "ts-jest": "24.0.2",
     "ts-node": "8.0.3",
     "tslint-config-prettier": "1.18.0"
   },
