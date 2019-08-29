@@ -21,7 +21,7 @@
     "clear-jest": "jest --clearCache"
   },
   "dependencies": {
-    "@material-ui/core": "3.8.1",
+    "@material-ui/core": "3.9.3",
     "@material-ui/icons": "3.0.2",
     "@types/axe-webdriverjs": "2.1.0",
     "@types/body-parser": "1.17.1",
