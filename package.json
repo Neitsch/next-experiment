@@ -86,7 +86,7 @@
     "react-dom": "16.8.4",
     "react-jss": "8.6.1",
     "reflect-metadata": "^0.1.13",
-    "sqlite3": "^4.0.6",
+    "sqlite3": "^5.0.3",
     "typeorm": "^0.2.16",
     "typescript": "3.3.4000",
     "uuid": "3.3.2"
